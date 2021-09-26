@@ -21,7 +21,7 @@ c --> UC3
 @enduml
 ```
 ### Maquette
-
+![GLC.PNG](./GLC.PNG)
 ### Enchaînement Textuel
 
 ## 2. Enregistrer les dépenses
