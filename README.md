@@ -1,4 +1,32 @@
 # **Application-CROUS**
+
+# Base de données
+```plantuml
+@startuml model1
+scale 1
+
+class Depenses {
+  id : int
+  date : date
+  titre : string
+  justificatif : string
+  montant : decimal
+  reparti : bool
+}
+
+class Colocataire {
+    id : int
+    nom : string
+    prenom : string
+    age : int
+    numTel : int
+    adresseMail : string
+}
+@enduml
+```
+
+
+
 # Composants logiciels à développer
 
 ## 1. Gérer les colocataires
