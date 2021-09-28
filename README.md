@@ -1,32 +1,5 @@
 # **Application-CROUS**
 
-# Base de données
-```plantuml
-@startuml model1
-scale 1
-
-class Depenses {
-  id : int
-  date : date
-  titre : string
-  justificatif : string
-  montant : decimal
-  reparti : bool
-}
-
-class Colocataire {
-    id : int
-    nom : string
-    prenom : string
-    age : int
-    numTel : int
-    adresseMail : string
-}
-@enduml
-```
-
-
-
 # Composants logiciels à développer
 
 ## 1. Gérer les colocataires
@@ -112,3 +85,77 @@ UC3 .> UC1 : <<extends>>
 ![MER_Lancer.PNG](./View/MER_Lancer.PNG)
 ### Enchaînement Textuel
 → On clique sur le bouton "Lancer" pour lancer la mise en répartition. Ensuite on va avoir un tableau qui va nous présenter le montant payé par chaque personne, le montant qu'on aurait dû payer et les soldes à régler.
+
+# Base de données
+```plantuml
+@startuml model1
+scale 1
+
+class Depenses {
+  id : int
+  date : date
+  titre : string
+  justificatif : string
+  montant : decimal
+  reparti : bool
+}
+
+class Colocataire {
+    id : int
+    nom : string
+    prenom : string
+    age : int
+    numTel : int
+    adresseMail : string
+}
+@enduml
+```
+
+# Diagramme de Classe
+## 1. Colocataire
+```plantuml
+@startuml model1
+scale 1
+
+class Colocataire_Classe {
+    - nom : string
+    - prenom : string
+    - age : int
+    + APayer() : decimal
+    + SoldeARegler() : decimal
+}
+class Colocataire_Collection {
+    - List<Colocataire> lesColocataires
+    + AjouterColocataire(string nom, string prenom, int age) : void
+    + SupprimerColocatire() : void
+}
+
+Colocataire_Classe <|-- Colocataire_Collection
+
+@enduml
+```
+## 2. Depense
+```plantuml
+@startuml model1
+scale 1
+
+class Depense_Classe {
+    - montant : int
+    - titre : string
+    - date : date
+}
+class Depense_Collection {
+    - List<Depense> lesDepenses
+    + AjouterDepense(int montant, string titre, date date) : void
+    + SupprimerDepense() : void
+}
+
+Depense_Classe <|-- Depense_Collection
+
+@enduml
+```
+
+
+
+
+
