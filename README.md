@@ -1,5 +1,17 @@
 # **Application-CROUS**
 
+# Contexte
+Le C.R.O.U.S (Centre Régional de Oeuvres Universitaires et Scolaires) est un établissement public placé sous la tutelle du Ministère de l'Enseignement supérieur. Il a pour mission d'améliorer les conditions de vie et de travail des étudiants de l'académie de Créteil.
+
+L'une des missions principales est le logement des étudiants. Il propose aux éleves habitant en colocation une application mieux organiser leur dépenses et donc leur budget.
+
+# Outils mis en oeuvre
+Pour réaliser ce projet on a mis en oeuvre plusiers outils :
+1. Visual Studio 2017 (Windows Form, C#, ado.net)
+2. Visual Studio Code (PlantUML)
+3. Git 
+4. MySQL (MySQL Lite pour la base de données)
+
 # Composants logiciels à développer
 
 ## 1. Gérer les colocataires
