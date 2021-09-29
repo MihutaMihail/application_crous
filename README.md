@@ -62,7 +62,7 @@ c --> UC3
 
 ## 3. Mise en répartition
 ### Objectif
-→ L'objectif est calculer le montant a payer et donc les soldes à régler sur une certaine période. De plus, on doit avoir le montant total payé par chaque colocataire.
+→ L'objectif de la mise en répartition est de calculer le montant que chaque personne a payé, aurait du payer et les soldes à régler sur une certaine période (c'est les colocataires qui choisissent quand ils veulent lancer la répartition). Une fois calculé, ces données vont être afficher dans un tableau pour que la personne soit capable de le visualer.
 ### Cas Utilisation
 ```plantuml
 @startuml model1
@@ -85,6 +85,33 @@ UC3 .> UC1 : <<extends>>
 ![MER_Lancer.PNG](./View/MER_Lancer.PNG)
 ### Enchaînement Textuel
 → On clique sur le bouton "Lancer" pour lancer la mise en répartition. Ensuite on va avoir un tableau qui va nous présenter le montant payé par chaque personne, le montant qu'on aurait dû payer et les soldes à régler.
+
+## 4. Solder une période
+### Objectif
+→ L'objectif de solder une période est de répartir les dépenses pour qu'ils ne sont pris plus en compte lors de la prochaine répartition.
+### Cas Utilisation
+```plantuml
+@startuml model1
+scale 1
+left to right direction
+actor Colocataire as c
+
+package SolderUnePériode {
+    usecase "Solder une période" as UC1
+    usecase "Lancer la répartition" as UC2
+    usecase "Réparti les dépenses" as UC3
+}
+c --> UC1
+UC1 ..|> UC2 : <<include>>
+UC1 --> UC3
+
+@enduml
+```
+### Maquette
+![.PNG](./View/.PNG)
+![.PNG](./View/.PNG)
+### Enchaînement Textuel
+→ 
 
 # Base de données
 ```plantuml
@@ -112,29 +139,6 @@ class Colocataire {
 ```
 
 # Diagramme de Classe
-## 1. Colocataire
-```plantuml
-@startuml model1
-scale 1
-
-class Colocataire_Classe {
-    - nom : string
-    - prenom : string
-    - age : int
-    + APayer() : decimal
-    + SoldeARegler() : decimal
-}
-class Colocataire_Collection {
-    - List<Colocataire> lesColocataires
-    + AjouterColocataire(string nom, string prenom, int age) : void
-    + SupprimerColocatire() : void
-}
-
-Colocataire_Classe <|-- Colocataire_Collection
-
-@enduml
-```
-## 2. Depense
 ```plantuml
 @startuml model1
 scale 1
@@ -150,11 +154,25 @@ class Depense_Collection {
     + SupprimerDepense() : void
 }
 
-Depense_Classe <|-- Depense_Collection
+class Colocataire_Classe {
+    - nom : string
+    - prenom : string
+    - age : int
+    + APayer() : decimal
+    + SoldeARegler() : decimal
+}
+class Colocataire_Collection {
+    - List<Colocataire> lesColocataires
+    + AjouterColocataire(string nom, string prenom, int age) : void
+    + SupprimerColocatire() : void
+}
+
+Colocataire_Classe "1" *-- "*" Depense_Classe
+Colocataire_Classe "*" *-- Colocataire_Collection
+Depense_Classe "*" *-- Depense_Collection
 
 @enduml
 ```
-
 
 
 
