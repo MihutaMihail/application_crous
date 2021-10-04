@@ -65,14 +65,16 @@ left to right direction
 actor Colocataire as c
 
 package EnregistrerLesDépenses {
-    usecase "Saisie une dépense" as UC1
-    usecase "Modifier une dépense" as UC2
+    usecase "Saisir une dépense" as UC1
+    usecase "Modifier une dépense" as UC2 
     usecase "Supprimer une dépense" as UC3
+    usecase "Justifier une dépense" as JD
 }
 c --> UC1
-(Justifier la dépense) .> UC1 : <<extends>>
 c --> UC2
 c --> UC3
+JD .> UC1 : <<extends>>
+JD .> UC2 : <<extends>>
 @enduml
 ```
 ### Maquette - Enregistrer les dépenses
@@ -83,13 +85,14 @@ c --> UC3
 • <i> **Ajouter une dépense** </i> <br>
     1. On clique sur le bouton **Ajouter** pour ajouter une nouvelle dépense. <br>
     2. On complète les champs (titre, montant, date, qui?) (le "qui?" est une liste déroulante où on va choisir le colocataire qui a effectué cette dépense). <br>
+    2B. (Optionnel) On peut justifier la dépense en sélectionnant un fichier (jpg,png,pdf,etc).  <br>
     3. On clique sur le bouton **Ajouter** après avoir fini. <br>
 
 • <i> **Modifier une dépense** </i> <br>
     1. On clique sur la dépense qu'on veut modifier. <br>
     2. On clique sur le bouton **Modifier**.<br>
-    2. On modifie les données qu'on a besoin de modifier. <br>
-    3. On clique sur le bouton **Modifier** après avoir fini. <br>
+    3. On modifie les données qu'on a besoin de modifier. <br>
+    4. On clique sur le bouton **Modifier** après avoir fini. <br>
 
 • <i> **Supprimer une dépense** </i> <br>
     1. On clique sur la dépense qu'on veut supprimer <br>
@@ -112,14 +115,17 @@ package MiseEnRépartition{
 }
 c --> UC1
 UC1 --> UC2
-UC3 .> UC1 : <<extends>>
+UC3 <. UC1 : <<include>>
 @enduml
 ```
 ### Maquette - Mise en répartition
 ![MER.PNG](./View/MER.PNG)
 ![MER_Lancer.PNG](./View/MER_Lancer.PNG)
 ### Enchaînement Textuel - Mise en répartition
-→ On clique sur le bouton "Lancer" pour lancer la mise en répartition. Ensuite on va avoir un tableau qui va nous présenter le montant payé par chaque personne, le montant qu'on aurait dû payer et les soldes à régler.
+• <i> **Lancer la répartition** </i> <br>
+    1. On clique sur le bouton **Lancer**. <br>
+    2. Ceci va lancer la mise en répartition qui va calculer le montant payé par chaque colocataire, le montant qu'ils aurait dû payer et les soldes à régler. .<br>
+    3. On visualise le tableau avec toutes les données précédentes. <br>
 
 ## 4. Solder une période
 ### Objectif
@@ -134,10 +140,10 @@ actor Colocataire as c
 package SolderUnePériode {
     usecase "Solder une période" as UC1
     usecase "Lancer la répartition" as UC2
-    usecase "Réparti les dépenses" as UC3
+    usecase "Répartir les dépenses" as UC3
 }
 c --> UC1
-UC1 ..|> UC2 : <<include>>
+UC1 .> UC2 : <<include>>
 UC1 --> UC3
 
 @enduml
@@ -146,7 +152,10 @@ UC1 --> UC3
 ![.PNG](./View/.PNG)
 ![.PNG](./View/.PNG)
 ### Enchaînement Textuel - Solder une période
-→ 
+• <i> **Solder une période** </i> <br>
+    1. On clique sur le bouton **Solder une période**. <br>
+    2. Toutes les dépenses précédentes vont être réparti<br>
+    3. Ceci lance la mise en répartition. <br>
 
 # Base de données
 ```plantuml
