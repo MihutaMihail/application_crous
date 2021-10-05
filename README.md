@@ -163,24 +163,54 @@ UC1 --> UC3
 scale 1
 
 class Depenses {
-  id : int
-  date : date
-  titre : string
-  justificatif : string
-  montant : decimal
-  reparti : bool
+  idDepense : INTEGER[]
+  dateDepense : DATE
+  titre : VARCHAR[20]
+  justificatif : VARCHAR[100]
+  montant : DECIMAL[10,2]
+  reparti : BOOLEAN
+  PRIMARY KEY (idDepense)
+  FOREIGN KEY (idColocataire) REFERENCES Colocataire(idColocataire)
 }
 
 class Colocataire {
-    id : int
-    nom : string
-    prenom : string
-    age : int
-    numTel : int
-    adresseMail : string
+    idColocataire : INTEGER[10]
+    nom : VARCHAR[50]
+    prenom : VARCHAR[50]
+    age : INTEGER[10]
+    numTel : INTEGER[10]
+    adresseMail : VARCHAR[50]
+    PRIMARY KEY (idColocataire)
 }
+
+Colocataire -> Depenses : "1"   effectue   "*"
 @enduml
 ```
+
+### Voici le script SQL
+```
+ CREATE TABLE Colocataire (
+    idColocataire INTEGER(10) NOT NULL AUTO_INCREMENT,
+    nom VARCHAR(50),
+    prenom VARCHAR(50),
+    age INTEGER(10),
+    numTel INTEGER(10),
+    adresseMail VARCHAR(50),
+    PRIMARY KEY (idColocataire)
+) ENGINE = InnoDB;
+
+CREATE TABLE Depenses (
+    idDepenses INTEGER(10) NOT NULL AUTO_INCREMENT,
+    dateDepense DATE,
+    titre VARCHAR(20),
+    justificatif VARCHAR(100),
+    montant DECIMAL(10,2),
+    reparti BOOLEAN,
+    PRIMARY KEY (idDepenses),
+    FOREIGN KEY (idColocataire) REFERENCES Colocataire(idColocataire)
+) ENGINE = InnoDB;
+```
+
 
 # Diagramme de Classe
 ```plantuml
@@ -188,30 +218,36 @@ class Colocataire {
 scale 1
 
 class Depense_Classe {
-    - montant : int
-    - titre : string
+    - idDepense : int
     - date : date
+    - titre : string
+    - justificatif : string
+    - montant : decimal
+    - reparti : bool
 }
 class Depense_Collection {
     - List<Depense> lesDepenses
-    + AjouterDepense(int montant, string titre, date date) : void
+    + AjouterDepense(date date, string titre, string justificatif, decimal montant, bool reparti) : void
     + SupprimerDepense() : void
 }
 
 class Colocataire_Classe {
+    - idColocataire : int
     - nom : string
     - prenom : string
     - age : int
+    - numTel : int
+    - adresseMail : string
     + APayer() : decimal
     + SoldeARegler() : decimal
 }
 class Colocataire_Collection {
     - List<Colocataire> lesColocataires
-    + AjouterColocataire(string nom, string prenom, int age) : void
+    + AjouterColocataire(string nom, string prenom, int age, int numTel, string adresseMail) : void
     + SupprimerColocatire() : void
 }
 
-Colocataire_Classe "1" *-- "*" Depense_Classe
+Colocataire_Classe "1" --* "*" Depense_Classe
 Colocataire_Classe "*" *-- Colocataire_Collection
 Depense_Classe "*" *-- Depense_Collection
 
