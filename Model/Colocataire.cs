@@ -17,7 +17,7 @@ namespace Model
         public Colocataire(string nom, string prenom, int age, int numTel, string adresseMail)
         {
             this.nom = nom;
-            this.prenom = nom;
+            this.prenom = prenom;
             this.age = age;
             this.numTel = numTel;
             this.adresseMail = adresseMail;

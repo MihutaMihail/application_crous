@@ -217,39 +217,54 @@ CREATE TABLE Depenses (
 @startuml model1
 scale 1
 
-class Depense_Classe {
-    - idDepense : int
+class Depense {
+    - id : int
     - date : date
     - titre : string
     - justificatif : string
     - montant : decimal
     - reparti : bool
+    + DateTime Date() : DateTime
+    + string Titre() : string
+    + string Justificatif() : string
+    + decimal Montant() : decimal
+    + bool Reparti() : bool
+    + Depense (DateTime date, string titre, string justificatif, decimal montant, bool reparti)
+    + string ToString() : string
+
 }
-class Depense_Collection {
+class Depenses {
     - List<Depense> lesDepenses
     + AjouterDepense(date date, string titre, string justificatif, decimal montant, bool reparti) : void
     + SupprimerDepense() : void
 }
 
-class Colocataire_Classe {
-    - idColocataire : int
+class Colocataire {
+    - id : int
     - nom : string
     - prenom : string
     - age : int
     - numTel : int
     - adresseMail : string
+    + string Nom() : string
+    + string Prenom() : string
+    + int Age() : int
+    + int NumTel() : int
+    + string AdresseMail() : string
+    + Colocataire(string nom, string prenom, int age, int numTel, string adresseMail) : void
+    + string ToString() : string
     + APayer() : decimal
     + SoldeARegler() : decimal
 }
-class Colocataire_Collection {
+class Colocataires {
     - List<Colocataire> lesColocataires
     + AjouterColocataire(string nom, string prenom, int age, int numTel, string adresseMail) : void
     + SupprimerColocatire() : void
 }
 
-Colocataire_Classe "1" --* "*" Depense_Classe
-Colocataire_Classe "*" *-- Colocataire_Collection
-Depense_Classe "*" *-- Depense_Collection
+Colocataire "1" --* "*" Depenses
+Colocataire "*" *-- Colocataires
+Depense "*" *-- Depenses
 
 @enduml
 ```
