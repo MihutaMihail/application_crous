@@ -34,9 +34,9 @@ c --> UC3
 @enduml
 ```
 ### Maquette - Gérer les colocataires
-![GLC.PNG](./View/GLC.PNG)
-![GLC_Ajouter.PNG](./View/GLC_Ajouter.PNG)
-![GLC_Modifier.PNG](./View/GLC_Modifier.PNG)
+![GLC.PNG](./View/Images_Maquettes/GLC.PNG)
+![GLC_Ajouter.PNG](./View/Images_Maquettes/GLC_Ajouter.PNG)
+![GLC_Modifier.PNG](./View/Images_Maquettes/GLC_Modifier.PNG)
 ### Enchaînement Textuel - Gérer les colocataires
 • <i> **Ajouter un colocataire** </i> <br>
     1. On clique sur le bouton **Ajouter** pour ajouter un nouveau colocataire. <br>
@@ -78,9 +78,9 @@ JD .> UC2 : <<extends>>
 @enduml
 ```
 ### Maquette - Enregistrer les dépenses
-![ELD.PNG](./View/ELD.PNG)
-![ELD_Ajouter.PNG](./View/ELD_Ajouter.PNG)
-![ELD_Modifier.PNG](./View/ELD_Modifier.PNG)
+![ELD.PNG](./View/Images_Maquettes/ELD.PNG)
+![ELD_Ajouter.PNG](./View/Images_Maquettes/ELD_Ajouter.PNG)
+![ELD_Modifier.PNG](./View/Images_Maquettes/ELD_Modifier.PNG)
 ### Enchaînement Textuel - Enregistrer les dépenses
 • <i> **Ajouter une dépense** </i> <br>
     1. On clique sur le bouton **Ajouter** pour ajouter une nouvelle dépense. <br>
@@ -119,8 +119,8 @@ UC3 <. UC1 : <<include>>
 @enduml
 ```
 ### Maquette - Mise en répartition
-![MER.PNG](./View/MER.PNG)
-![MER_Lancer.PNG](./View/MER_Lancer.PNG)
+![MER.PNG](./View/Images_Maquettes/MER.PNG)
+![MER_Lancer.PNG](./View/Images_Maquettes/MER_Lancer.PNG)
 ### Enchaînement Textuel - Mise en répartition
 • <i> **Lancer la répartition** </i> <br>
     1. On clique sur le bouton **Lancer**. <br>
@@ -149,8 +149,8 @@ UC1 --> UC3
 @enduml
 ```
 ### Maquette - Solder une période
-![.PNG](./View/.PNG)
-![.PNG](./View/.PNG)
+![.PNG](./View/Images_Maquettes/.PNG)
+![.PNG](./View/Images_Maquettes/.PNG)
 ### Enchaînement Textuel - Solder une période
 • <i> **Solder une période** </i> <br>
     1. On clique sur le bouton **Solder une période**. <br>
