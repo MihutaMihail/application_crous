@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.28307.902
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{5C920479-45E5-4798-9E34-8C24BAF24668}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dao", "Dao\Dao.csproj", "{1E23CB46-14D8-46CF-8D55-5F00C0C28FC7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "View", "View\View.csproj", "{401945A2-A9F9-4256-BA02-09CB151EC384}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{5C920479-45E5-4798-9E34-8C24BAF24668}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5C920479-45E5-4798-9E34-8C24BAF24668}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5C920479-45E5-4798-9E34-8C24BAF24668}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E23CB46-14D8-46CF-8D55-5F00C0C28FC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E23CB46-14D8-46CF-8D55-5F00C0C28FC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E23CB46-14D8-46CF-8D55-5F00C0C28FC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E23CB46-14D8-46CF-8D55-5F00C0C28FC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{401945A2-A9F9-4256-BA02-09CB151EC384}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{401945A2-A9F9-4256-BA02-09CB151EC384}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{401945A2-A9F9-4256-BA02-09CB151EC384}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{401945A2-A9F9-4256-BA02-09CB151EC384}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
