@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    class Depense
+    public class Depense
     {
-        private int id;
         private DateTime date;
         private string titre;
         private string justificatif;
@@ -16,9 +15,8 @@ namespace Model
         private bool reparti;
         private State state;
 
-        public Depense(int id,DateTime date, string titre, string justificatif, decimal montant, bool reparti,State state)
+        public Depense(DateTime date, string titre, string justificatif, decimal montant, bool reparti,State state)
         {
-            this.id = id;
             this.date = date;
             this.titre = titre;
             this.justificatif = justificatif;

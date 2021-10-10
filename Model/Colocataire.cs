@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    class Colocataire
+    public class Colocataire
     {
-        private int id;
         private string nom;
         private string prenom;
         private int age;
@@ -16,14 +15,14 @@ namespace Model
         private string adresseMail;
         private State state;
 
-        public Colocataire(int id, string nom, string prenom, int age, int numTel, string adresseMail, State state)
+        public Colocataire(string nom, string prenom, int age, int numTel, string adresseMail, State state)
         {
-            this.id = id;
             this.nom = nom;
             this.prenom = prenom;
             this.age = age;
             this.numTel = numTel;
             this.adresseMail = adresseMail;
+            this.state = state;
         }
 
         public void Remove()
@@ -69,8 +68,7 @@ namespace Model
 
         public override string ToString()
         {
-            string s = string.Format("Un colocataire nommé {0} {1} agé de {2} an(s). " +
-                "Son numéro de téléphone {3} et son adresse mail ''{4}''", 
+            string s = string.Format("Nom : {0} | Prénom : {1} | Age : {2} | Num° Tel : {3} | Mail : {4}", 
                 this.nom, this.prenom, this.age,this.numTel,this.adresseMail);
             return s;
         }
