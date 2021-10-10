@@ -4,11 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
+using Model;
 
 namespace Dao
 {
     class DaoDepense
     {
         MySqlConnection cnx = new MySqlConnection();
+        
     }
 }

@@ -4,11 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
+using Model;
 
 namespace Dao
 {
-    public class DaoColocataire
+    class DaoColocataire
     {
         MySqlConnection cnx = new MySqlConnection();
+
+        
     }
 }

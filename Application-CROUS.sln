@@ -1,13 +1,20 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.902
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{5C920479-45E5-4798-9E34-8C24BAF24668}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dao", "Dao\Dao.csproj", "{1E23CB46-14D8-46CF-8D55-5F00C0C28FC7}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5C920479-45E5-4798-9E34-8C24BAF24668} = {5C920479-45E5-4798-9E34-8C24BAF24668}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "View", "View\View.csproj", "{401945A2-A9F9-4256-BA02-09CB151EC384}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1E23CB46-14D8-46CF-8D55-5F00C0C28FC7} = {1E23CB46-14D8-46CF-8D55-5F00C0C28FC7}
+		{5C920479-45E5-4798-9E34-8C24BAF24668} = {5C920479-45E5-4798-9E34-8C24BAF24668}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

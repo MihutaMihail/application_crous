@@ -230,6 +230,9 @@ class Depense {
     - justificatif : string
     - montant : decimal
     - reparti : bool
+    - state : State
+    + void Remove() : void
+    + State state() : state
     + DateTime Date() : DateTime
     + string Titre() : string
     + string Justificatif() : string
@@ -252,6 +255,9 @@ class Colocataire {
     - age : int
     - numTel : int
     - adresseMail : string
+    - state : State
+    + void Remove() : void
+    + State state() : state
     + string Nom() : string
     + string Prenom() : string
     + int Age() : int
