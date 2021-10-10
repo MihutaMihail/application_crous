@@ -189,26 +189,32 @@ Colocataire -> Depenses : "1"   effectue   "*"
 
 ### Voici le script SQL
 ```
+USE mysql;
+drop database if exists crous;
+CREATE DATABASE crous;
+USE crous;
+
  CREATE TABLE Colocataire (
-    idColocataire INTEGER(10) NOT NULL AUTO_INCREMENT,
+    id INTEGER(10) NOT NULL AUTO_INCREMENT,
     nom VARCHAR(50),
     prenom VARCHAR(50),
     age INTEGER(10),
     numTel INTEGER(10),
     adresseMail VARCHAR(50),
-    PRIMARY KEY (idColocataire)
+    PRIMARY KEY (id)
 ) ENGINE = InnoDB;
 
 CREATE TABLE Depenses (
-    idDepenses INTEGER(10) NOT NULL AUTO_INCREMENT,
+    id INTEGER(10) NOT NULL AUTO_INCREMENT,
     dateDepense DATE,
     titre VARCHAR(20),
-    justificatif VARCHAR(100),
+    justificatif VARCHAR(200),
     montant DECIMAL(10,2),
     reparti BOOLEAN,
-    PRIMARY KEY (idDepenses),
-    FOREIGN KEY (idColocataire) REFERENCES Colocataire(idColocataire)
+    PRIMARY KEY (id)
 ) ENGINE = InnoDB;
+
+ALTER TABLE Depenses ADD CONSTRAINT FK_id FOREIGN KEY (id) REFERENCES Colocataire(id);
 ```
 
 
@@ -262,9 +268,9 @@ class Colocataires {
     + SupprimerColocatire() : void
 }
 
-Colocataire "1" --* "*" Depenses
-Colocataire "*" *-- Colocataires
-Depense "*" *-- Depenses
+Colocataire "1" --> "*" Depenses
+Colocataire "*" <-- Colocataires
+Depense "*" <-- Depenses
 
 @enduml
 ```
