@@ -8,6 +8,7 @@ namespace Model
 {
     public class Colocataire
     {
+        private int id;
         private string nom;
         private string prenom;
         private int age;
@@ -15,8 +16,9 @@ namespace Model
         private string adresseMail;
         private State state;
 
-        public Colocataire(string nom, string prenom, int age, int numTel, string adresseMail, State state)
+        public Colocataire(int id, string nom, string prenom, int age, int numTel, string adresseMail, State state)
         {
+            this.id = id;
             this.nom = nom;
             this.prenom = prenom;
             this.age = age;
@@ -28,6 +30,12 @@ namespace Model
         public void Remove()
         {
             this.state = State.deleted;
+        }
+
+        public int Id
+        {
+            get { return this.id; }
+            set { this.id = value; }
         }
 
         public State State

@@ -8,7 +8,7 @@ using Model;
 
 namespace Dao
 {
-    class DaoDepense
+    public class DaoDepense
     {
         MySqlConnection cnx = new MySqlConnection();
         

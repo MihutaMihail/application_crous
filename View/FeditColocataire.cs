@@ -54,7 +54,7 @@ namespace View
             switch (this.state)
             {
                 case State.added:
-                    items.Add(new Colocataire(this.tbNom.Text, this.tbPrenom.Text, Convert.ToInt32(this.tbAge.Text), Convert.ToInt32(this.tbTel.Text), this.tbMail.Text, this.state));
+                    items.Add(new Colocataire(0,this.tbNom.Text, this.tbPrenom.Text, Convert.ToInt32(this.tbAge.Text), Convert.ToInt32(this.tbTel.Text), this.tbMail.Text, this.state));
                     break;
                 case State.modified:
                     Colocataire colocataire = (Colocataire)items[this.position];

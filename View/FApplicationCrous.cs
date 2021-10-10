@@ -18,7 +18,7 @@ namespace View
             InitializeComponent();
             this.Text = "ApplicationCrous";
             btnColocataires.Click += btnColocataires_Click;
-            DaoConnectionSingleton.SetStringConnection("root", "Adrian3adrian&", "localhost", "crous");
+            DaoConnectionSingleton.SetStringConnection("root", "siojjr", "localhost", "crous");
         }
 
         private void btnColocataires_Click(object sender, EventArgs e)
