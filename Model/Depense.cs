@@ -8,21 +8,46 @@ namespace Model
 {
     public class Depense
     {
+        private int id;
         private DateTime date;
         private string titre;
         private string justificatif;
         private decimal montant;
         private bool reparti;
+        private int idColocataire;
         private State state;
 
-        public Depense(DateTime date, string titre, string justificatif, decimal montant, bool reparti,State state)
+        public Depense(int id,DateTime date, string titre, string justificatif, decimal montant, bool reparti,State state)
         {
+            this.id = id;
             this.date = date;
             this.titre = titre;
             this.justificatif = justificatif;
             this.montant = montant;
             this.reparti = reparti;
             this.state = state;
+        }
+        public Depense(int id, DateTime date, string titre, string justificatif, decimal montant, State state)
+        {
+            this.id = id;
+            this.date = date;
+            this.titre = titre;
+            this.justificatif = justificatif;
+            this.montant = montant;
+            this.reparti = false;
+            this.state = state;
+        }
+
+        public int IdColocataire
+        {
+            get { return this.idColocataire; }
+            set { this.idColocataire = value; }
+        }
+
+        public int Id
+        {
+            get { return this.id; }
+            set { this.id = value; }
         }
 
         public void Remove()

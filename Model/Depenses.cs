@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    class Depenses
+    public class Depenses
     {
         List<Depense> lesDepenses = new List<Depense>();
 

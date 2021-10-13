@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.btnColocataires = new System.Windows.Forms.Button();
-            this.btnDepenses = new System.Windows.Forms.Button();
+            this.btnRepartition = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnColocataires
@@ -42,22 +42,22 @@
             this.btnColocataires.Text = "Colocataires";
             this.btnColocataires.UseVisualStyleBackColor = true;
             // 
-            // btnDepenses
+            // btnRepartition
             // 
-            this.btnDepenses.Location = new System.Drawing.Point(75, 53);
-            this.btnDepenses.Margin = new System.Windows.Forms.Padding(2);
-            this.btnDepenses.Name = "btnDepenses";
-            this.btnDepenses.Size = new System.Drawing.Size(136, 27);
-            this.btnDepenses.TabIndex = 2;
-            this.btnDepenses.Text = "Depenses";
-            this.btnDepenses.UseVisualStyleBackColor = true;
+            this.btnRepartition.Location = new System.Drawing.Point(75, 49);
+            this.btnRepartition.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRepartition.Name = "btnRepartition";
+            this.btnRepartition.Size = new System.Drawing.Size(136, 27);
+            this.btnRepartition.TabIndex = 2;
+            this.btnRepartition.Text = "Mise en répartition";
+            this.btnRepartition.UseVisualStyleBackColor = true;
             // 
             // FApplicationCrous
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(289, 98);
-            this.Controls.Add(this.btnDepenses);
+            this.ClientSize = new System.Drawing.Size(289, 87);
+            this.Controls.Add(this.btnRepartition);
             this.Controls.Add(this.btnColocataires);
             this.Name = "FApplicationCrous";
             this.Text = "Form1";
@@ -68,7 +68,7 @@
         #endregion
 
         private System.Windows.Forms.Button btnColocataires;
-        private System.Windows.Forms.Button btnDepenses;
+        private System.Windows.Forms.Button btnRepartition;
     }
 }
 

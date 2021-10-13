@@ -1,7 +1,6 @@
-﻿
-namespace View
+﻿namespace View
 {
-    partial class FGestionColocataire
+    partial class FGestionDepense
     {
         /// <summary>
         /// Required designer variable.
@@ -33,8 +32,7 @@ namespace View
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.lbColocataires = new System.Windows.Forms.ListBox();
-            this.btnDepense = new System.Windows.Forms.Button();
+            this.lbDepenses = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // btnSave
@@ -43,7 +41,7 @@ namespace View
             this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(97, 25);
-            this.btnSave.TabIndex = 9;
+            this.btnSave.TabIndex = 15;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             // 
@@ -53,7 +51,7 @@ namespace View
             this.btnDelete.Margin = new System.Windows.Forms.Padding(2);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(97, 25);
-            this.btnDelete.TabIndex = 8;
+            this.btnDelete.TabIndex = 14;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
             // 
@@ -63,7 +61,7 @@ namespace View
             this.btnEdit.Margin = new System.Windows.Forms.Padding(2);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(97, 25);
-            this.btnEdit.TabIndex = 7;
+            this.btnEdit.TabIndex = 13;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
             // 
@@ -73,42 +71,31 @@ namespace View
             this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(97, 25);
-            this.btnAdd.TabIndex = 6;
+            this.btnAdd.TabIndex = 12;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
             // 
-            // lbColocataires
+            // lbDepenses
             // 
-            this.lbColocataires.FormattingEnabled = true;
-            this.lbColocataires.Location = new System.Drawing.Point(6, 8);
-            this.lbColocataires.Margin = new System.Windows.Forms.Padding(2);
-            this.lbColocataires.Name = "lbColocataires";
-            this.lbColocataires.Size = new System.Drawing.Size(501, 173);
-            this.lbColocataires.TabIndex = 5;
+            this.lbDepenses.FormattingEnabled = true;
+            this.lbDepenses.Location = new System.Drawing.Point(6, 8);
+            this.lbDepenses.Margin = new System.Windows.Forms.Padding(2);
+            this.lbDepenses.Name = "lbDepenses";
+            this.lbDepenses.Size = new System.Drawing.Size(400, 173);
+            this.lbDepenses.TabIndex = 11;
             // 
-            // btnDepense
-            // 
-            this.btnDepense.Location = new System.Drawing.Point(410, 190);
-            this.btnDepense.Margin = new System.Windows.Forms.Padding(2);
-            this.btnDepense.Name = "btnDepense";
-            this.btnDepense.Size = new System.Drawing.Size(97, 25);
-            this.btnDepense.TabIndex = 10;
-            this.btnDepense.Text = "Dépenses";
-            this.btnDepense.UseVisualStyleBackColor = true;
-            // 
-            // FGestionColocataire
+            // FGestionDepense
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(512, 223);
-            this.Controls.Add(this.btnDepense);
+            this.ClientSize = new System.Drawing.Size(418, 223);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.lbColocataires);
-            this.Name = "FGestionColocataire";
-            this.Text = "GestionColocataire";
+            this.Controls.Add(this.lbDepenses);
+            this.Name = "FGestionDepense";
+            this.Text = "FGestionDepense";
             this.ResumeLayout(false);
 
         }
@@ -119,7 +106,6 @@ namespace View
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.ListBox lbColocataires;
-        private System.Windows.Forms.Button btnDepense;
+        private System.Windows.Forms.ListBox lbDepenses;
     }
 }

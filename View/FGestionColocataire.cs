@@ -21,7 +21,14 @@ namespace View
             btnEdit.Click += btnEdit_Click;
             btnDelete.Click += btnDelete_Click;
             btnSave.Click += btnSave_Click;
+            btnDepense.Click += btnDepense_Click;
             this.load(new DaoColocataire().GetAll());
+        }
+
+        private void btnDepense_Click(object sender, EventArgs e)
+        {
+            FGestionDepense fEdit = new FGestionDepense();
+            fEdit.Show();
         }
 
         private void btnSave_Click(object sender, System.EventArgs e)

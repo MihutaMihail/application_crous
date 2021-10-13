@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    class Colocataires
+    public class Colocataires
     {
         List<Colocataire> lesColocataires = new List<Colocataire>();
 

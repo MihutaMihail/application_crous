@@ -64,11 +64,23 @@
     <Compile Include="FeditColocataire.Designer.cs">
       <DependentUpon>FeditColocataire.cs</DependentUpon>
     </Compile>
+    <Compile Include="FeditDepense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FeditDepense.Designer.cs">
+      <DependentUpon>FeditDepense.cs</DependentUpon>
+    </Compile>
     <Compile Include="FGestionColocataire.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FGestionColocataire.Designer.cs">
       <DependentUpon>FGestionColocataire.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FGestionDepense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FGestionDepense.Designer.cs">
+      <DependentUpon>FGestionDepense.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -78,8 +90,14 @@
     <EmbeddedResource Include="FeditColocataire.resx">
       <DependentUpon>FeditColocataire.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FeditDepense.resx">
+      <DependentUpon>FeditDepense.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FGestionColocataire.resx">
       <DependentUpon>FGestionColocataire.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FGestionDepense.resx">
+      <DependentUpon>FGestionDepense.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
