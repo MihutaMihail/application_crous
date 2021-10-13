@@ -215,7 +215,7 @@ CREATE TABLE Depenses (
     PRIMARY KEY (id)
 ) ENGINE = InnoDB;
 
-ALTER TABLE Depenses ADD CONSTRAINT fk_ FOREIGN KEY (idColocataire) REFERENCES Colocataire(id);
+ALTER TABLE Depenses ADD CONSTRAINT fk_Colocataire_A_Depenses FOREIGN KEY (idColocataire) REFERENCES Colocataire(id);
 
 ```
 
