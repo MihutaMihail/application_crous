@@ -211,10 +211,12 @@ CREATE TABLE Depenses (
     justificatif VARCHAR(200),
     montant DECIMAL(10,2),
     reparti BOOLEAN,
+    idColocataire INTEGER(10) NOT NULL,
     PRIMARY KEY (id)
 ) ENGINE = InnoDB;
 
-ALTER TABLE Depenses ADD CONSTRAINT FK_id FOREIGN KEY (id) REFERENCES Colocataire(id);
+ALTER TABLE Depenses ADD CONSTRAINT fk_ FOREIGN KEY (idColocataire) REFERENCES Colocataire(id);
+
 ```
 
 
