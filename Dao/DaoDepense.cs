@@ -35,8 +35,8 @@ namespace Dao
             using (MySqlConnection cnx = DaoConnectionSingleton.GetMySqlConnection())
             {
                 cnx.Open();
-                using (MySqlCommand cmd = new MySqlCommand("insert into Depenses(dateDepense,titre,justificatif,montant,reparti,idColocataire) " +
-                    "values(@dateDepense,@titre,@justificatif,@montant,@reparti,@id)", cnx))
+                using (MySqlCommand cmd = new MySqlCommand("insert into Depenses(dateDepense,titre,justificatif,montant,reparti,idColocataire)" +
+                    "values(@dateDepense,@titre,@justificatif,@montant,@reparti,@idColocataire)", cnx))
                 {
                     cmd.Parameters.Add(new MySqlParameter("@dateDepense", MySqlDbType.DateTime));
                     cmd.Parameters["@dateDepense"].Value = depense.Date;
@@ -52,6 +52,9 @@ namespace Dao
 
                     cmd.Parameters.Add(new MySqlParameter("@reparti", MySqlDbType.Bit));
                     cmd.Parameters["@reparti"].Value = depense.Reparti;
+
+                    cmd.Parameters.Add(new MySqlParameter("@idColocataire", MySqlDbType.Int32));
+                    cmd.Parameters["@idColocataire"].Value = depense.IdColocataire;
 
                     cmd.ExecuteNonQuery();
                 }
@@ -64,7 +67,7 @@ namespace Dao
             {
                 cnx.Open();
                 using (MySqlCommand cmd = new MySqlCommand("update Depenses set dateDepense=@dateDepense,titre=@titre,justificatif=@justificatif," +
-                    "montant=@montant,reparti=@reparti", cnx))
+                    "montant=@montant,reparti=@reparti,idColocataire=@idColocataire", cnx))
                 {
                     cmd.Parameters.Add(new MySqlParameter("@dateDepense", MySqlDbType.DateTime));
                     cmd.Parameters["@dateDepense"].Value = depense.Date;
@@ -80,6 +83,9 @@ namespace Dao
 
                     cmd.Parameters.Add(new MySqlParameter("@reparti", MySqlDbType.Bit));
                     cmd.Parameters["@reparti"].Value = depense.Reparti;
+
+                    cmd.Parameters.Add(new MySqlParameter("@idColocataire", MySqlDbType.Int32));
+                    cmd.Parameters["@idColocataire"].Value = depense.IdColocataire;
 
                     cmd.ExecuteNonQuery();
                 }
@@ -99,21 +105,20 @@ namespace Dao
                 }
             }
         }
-        public List<Depense> GetAll(int idColocataire)
+        public List<Depense> GetAll()
         {
             List<Depense> lesDepenses = new List<Depense>();
             using (MySqlConnection cnx = DaoConnectionSingleton.GetMySqlConnection())
             {
                 cnx.Open();
-                using (MySqlCommand cmd = new MySqlCommand("select id,dateDepense,titre,justificatif,montant,reparti from depenses" +
-                    "where idColocataire=@idColocataire", cnx))
+                using (MySqlCommand cmd = new MySqlCommand("select id,dateDepense,titre,justificatif,montant,reparti,idColocataire from depenses", cnx))
                 {
                     using (MySqlDataReader rdr = cmd.ExecuteReader())
                     {
                         while (rdr.Read())
                         {
-                            lesDepenses.Add(new Depense(Convert.ToInt32(rdr["id"]), (DateTime)rdr["dateDepense"], (string)rdr["titre"], (string)rdr["justificatif"],
-                                Convert.ToInt32(rdr["montant"]), (Boolean)rdr["reparti"], State.unChanged));
+                            lesDepenses.Add(new Depense(Convert.ToInt32(rdr["id"]), Convert.ToDateTime(rdr["dateDepense"]), Convert.ToString(rdr["titre"]), Convert.ToString(rdr["justificatif"]),
+                                Convert.ToInt32(rdr["montant"]), Convert.ToBoolean(rdr["reparti"]), Convert.ToInt32(rdr["idColocataire"]), State.unChanged));
                         }
                     }
                 }

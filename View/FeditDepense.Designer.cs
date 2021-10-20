@@ -39,11 +39,15 @@
             this.tbDate = new System.Windows.Forms.TextBox();
             this.lblTitre = new System.Windows.Forms.Label();
             this.lbldateDepense = new System.Windows.Forms.Label();
+            this.lbId = new System.Windows.Forms.Label();
+            this.tbId = new System.Windows.Forms.TextBox();
+            this.lblColocataire = new System.Windows.Forms.Label();
+            this.cbColocataire = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btnValider
             // 
-            this.btnValider.Location = new System.Drawing.Point(62, 189);
+            this.btnValider.Location = new System.Drawing.Point(69, 249);
             this.btnValider.Margin = new System.Windows.Forms.Padding(2);
             this.btnValider.Name = "btnValider";
             this.btnValider.Size = new System.Drawing.Size(85, 26);
@@ -53,7 +57,7 @@
             // 
             // tbReparti
             // 
-            this.tbReparti.Location = new System.Drawing.Point(79, 142);
+            this.tbReparti.Location = new System.Drawing.Point(81, 169);
             this.tbReparti.Margin = new System.Windows.Forms.Padding(2);
             this.tbReparti.Name = "tbReparti";
             this.tbReparti.ReadOnly = true;
@@ -63,7 +67,7 @@
             // lblReparti
             // 
             this.lblReparti.AutoSize = true;
-            this.lblReparti.Location = new System.Drawing.Point(21, 145);
+            this.lblReparti.Location = new System.Drawing.Point(23, 172);
             this.lblReparti.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblReparti.Name = "lblReparti";
             this.lblReparti.Size = new System.Drawing.Size(47, 13);
@@ -72,7 +76,7 @@
             // 
             // tbMontant
             // 
-            this.tbMontant.Location = new System.Drawing.Point(79, 109);
+            this.tbMontant.Location = new System.Drawing.Point(81, 136);
             this.tbMontant.Margin = new System.Windows.Forms.Padding(2);
             this.tbMontant.Name = "tbMontant";
             this.tbMontant.Size = new System.Drawing.Size(56, 20);
@@ -81,7 +85,7 @@
             // lblMontant
             // 
             this.lblMontant.AutoSize = true;
-            this.lblMontant.Location = new System.Drawing.Point(21, 112);
+            this.lblMontant.Location = new System.Drawing.Point(23, 139);
             this.lblMontant.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMontant.Name = "lblMontant";
             this.lblMontant.Size = new System.Drawing.Size(52, 13);
@@ -90,7 +94,7 @@
             // 
             // tbJustificatif
             // 
-            this.tbJustificatif.Location = new System.Drawing.Point(79, 76);
+            this.tbJustificatif.Location = new System.Drawing.Point(81, 103);
             this.tbJustificatif.Margin = new System.Windows.Forms.Padding(2);
             this.tbJustificatif.Name = "tbJustificatif";
             this.tbJustificatif.Size = new System.Drawing.Size(56, 20);
@@ -99,7 +103,7 @@
             // lblJustificatif
             // 
             this.lblJustificatif.AutoSize = true;
-            this.lblJustificatif.Location = new System.Drawing.Point(21, 79);
+            this.lblJustificatif.Location = new System.Drawing.Point(23, 106);
             this.lblJustificatif.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblJustificatif.Name = "lblJustificatif";
             this.lblJustificatif.Size = new System.Drawing.Size(62, 13);
@@ -108,7 +112,7 @@
             // 
             // tbTitre
             // 
-            this.tbTitre.Location = new System.Drawing.Point(79, 42);
+            this.tbTitre.Location = new System.Drawing.Point(81, 69);
             this.tbTitre.Margin = new System.Windows.Forms.Padding(2);
             this.tbTitre.Name = "tbTitre";
             this.tbTitre.Size = new System.Drawing.Size(56, 20);
@@ -116,7 +120,7 @@
             // 
             // tbDate
             // 
-            this.tbDate.Location = new System.Drawing.Point(79, 11);
+            this.tbDate.Location = new System.Drawing.Point(81, 38);
             this.tbDate.Margin = new System.Windows.Forms.Padding(2);
             this.tbDate.Name = "tbDate";
             this.tbDate.Size = new System.Drawing.Size(56, 20);
@@ -125,7 +129,7 @@
             // lblTitre
             // 
             this.lblTitre.AutoSize = true;
-            this.lblTitre.Location = new System.Drawing.Point(21, 45);
+            this.lblTitre.Location = new System.Drawing.Point(23, 72);
             this.lblTitre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTitre.Name = "lblTitre";
             this.lblTitre.Size = new System.Drawing.Size(37, 13);
@@ -135,18 +139,59 @@
             // lbldateDepense
             // 
             this.lbldateDepense.AutoSize = true;
-            this.lbldateDepense.Location = new System.Drawing.Point(21, 13);
+            this.lbldateDepense.Location = new System.Drawing.Point(23, 40);
             this.lbldateDepense.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbldateDepense.Name = "lbldateDepense";
             this.lbldateDepense.Size = new System.Drawing.Size(39, 13);
             this.lbldateDepense.TabIndex = 17;
             this.lbldateDepense.Text = "Date : ";
             // 
+            // lbId
+            // 
+            this.lbId.AutoSize = true;
+            this.lbId.Location = new System.Drawing.Point(23, 9);
+            this.lbId.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbId.Name = "lbId";
+            this.lbId.Size = new System.Drawing.Size(22, 13);
+            this.lbId.TabIndex = 28;
+            this.lbId.Text = "Id :";
+            // 
+            // tbId
+            // 
+            this.tbId.Location = new System.Drawing.Point(81, 6);
+            this.tbId.Margin = new System.Windows.Forms.Padding(2);
+            this.tbId.Name = "tbId";
+            this.tbId.ReadOnly = true;
+            this.tbId.Size = new System.Drawing.Size(56, 20);
+            this.tbId.TabIndex = 29;
+            // 
+            // lblColocataire
+            // 
+            this.lblColocataire.AutoSize = true;
+            this.lblColocataire.Location = new System.Drawing.Point(10, 202);
+            this.lblColocataire.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblColocataire.Name = "lblColocataire";
+            this.lblColocataire.Size = new System.Drawing.Size(66, 13);
+            this.lblColocataire.TabIndex = 30;
+            this.lblColocataire.Text = "Colocataire :";
+            // 
+            // cbColocataire
+            // 
+            this.cbColocataire.FormattingEnabled = true;
+            this.cbColocataire.Location = new System.Drawing.Point(81, 199);
+            this.cbColocataire.Name = "cbColocataire";
+            this.cbColocataire.Size = new System.Drawing.Size(121, 21);
+            this.cbColocataire.TabIndex = 31;
+            // 
             // FeditDepense
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(223, 226);
+            this.ClientSize = new System.Drawing.Size(223, 286);
+            this.Controls.Add(this.cbColocataire);
+            this.Controls.Add(this.lblColocataire);
+            this.Controls.Add(this.tbId);
+            this.Controls.Add(this.lbId);
             this.Controls.Add(this.btnValider);
             this.Controls.Add(this.tbReparti);
             this.Controls.Add(this.lblReparti);
@@ -178,5 +223,9 @@
         private System.Windows.Forms.TextBox tbDate;
         private System.Windows.Forms.Label lblTitre;
         private System.Windows.Forms.Label lbldateDepense;
+        private System.Windows.Forms.Label lbId;
+        private System.Windows.Forms.TextBox tbId;
+        private System.Windows.Forms.Label lblColocataire;
+        private System.Windows.Forms.ComboBox cbColocataire;
     }
 }

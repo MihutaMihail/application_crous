@@ -17,7 +17,7 @@ namespace Model
         private int idColocataire;
         private State state;
 
-        public Depense(int id,DateTime date, string titre, string justificatif, decimal montant, bool reparti,State state)
+        public Depense(int id,DateTime date, string titre, string justificatif, decimal montant, bool reparti,int idColocataire,State state)
         {
             this.id = id;
             this.date = date;
@@ -25,9 +25,10 @@ namespace Model
             this.justificatif = justificatif;
             this.montant = montant;
             this.reparti = reparti;
+            this.idColocataire = idColocataire;
             this.state = state;
         }
-        public Depense(int id, DateTime date, string titre, string justificatif, decimal montant, State state)
+        public Depense(int id, DateTime date, string titre, string justificatif, decimal montant,int idColocataire, State state)
         {
             this.id = id;
             this.date = date;
@@ -35,6 +36,7 @@ namespace Model
             this.justificatif = justificatif;
             this.montant = montant;
             this.reparti = false;
+            this.idColocataire = idColocataire;
             this.state = state;
         }
 
