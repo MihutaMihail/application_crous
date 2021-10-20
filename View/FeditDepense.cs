@@ -22,10 +22,10 @@ namespace View
         {
             InitializeComponent();
             btnValider.Click += btnValider_Click;
-            this.load(new DaoColocataire().GetAll());
             this.state = state;
             this.items = items;
             this.position = position;
+            this.load(new DaoColocataire().GetAll());
             switch (state)
             {
                 case State.added:

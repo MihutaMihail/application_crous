@@ -67,8 +67,11 @@ namespace Dao
             {
                 cnx.Open();
                 using (MySqlCommand cmd = new MySqlCommand("update Depenses set dateDepense=@dateDepense,titre=@titre,justificatif=@justificatif," +
-                    "montant=@montant,reparti=@reparti,idColocataire=@idColocataire", cnx))
+                    "montant=@montant,reparti=@reparti,idColocataire=@idColocataire where id=@id", cnx))
                 {
+                    cmd.Parameters.Add(new MySqlParameter("@id", MySqlDbType.Int32));
+                    cmd.Parameters["@id"].Value = depense.Id;
+
                     cmd.Parameters.Add(new MySqlParameter("@dateDepense", MySqlDbType.DateTime));
                     cmd.Parameters["@dateDepense"].Value = depense.Date;
 

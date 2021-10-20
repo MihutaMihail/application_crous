@@ -62,8 +62,12 @@ namespace Dao
             using (MySqlConnection cnx = DaoConnectionSingleton.GetMySqlConnection())
             {
                 cnx.Open();
-                using (MySqlCommand cmd = new MySqlCommand("update Colocataire set nom=@nom,prenom=@prenom,age=@age,numTel=@numTel,adresseMail=@adresseMail", cnx))
+                using (MySqlCommand cmd = new MySqlCommand("update Colocataire set nom=@nom,prenom=@prenom,age=@age,numTel=@numTel,adresseMail=@adresseMail" +
+                    " where id=@id", cnx))
                 {
+                    cmd.Parameters.Add(new MySqlParameter("@id", MySqlDbType.Int32));
+                    cmd.Parameters["@id"].Value = colocataire.Id;
+
                     cmd.Parameters.Add(new MySqlParameter("@nom", MySqlDbType.VarChar));
                     cmd.Parameters["@nom"].Value = colocataire.Nom;
 
@@ -78,6 +82,7 @@ namespace Dao
 
                     cmd.Parameters.Add(new MySqlParameter("@adresseMail", MySqlDbType.VarChar));
                     cmd.Parameters["@adresseMail"].Value = colocataire.AdresseMail;
+
                     cmd.ExecuteNonQuery();
                 }
             }
