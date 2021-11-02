@@ -30,17 +30,26 @@ namespace Model
         {
             lesDepenses.Remove(depense);
         }
-        public decimal AfficherMontant(int montant)
+        public decimal APayer(int idColocataire)
         {
-            decimal s = 0;
+            decimal montantTotal = 0;
             for (int i = 0; i < lesDepenses.Count; i++)
             {
-                if (lesDepenses[i].Id == montant)
+                if (lesDepenses[i].IdColocataire == idColocataire && lesDepenses[i].Reparti == false)
                 {
-                    s = lesDepenses[i].Montant;
+                    montantTotal += lesDepenses[i].Montant;
                 }
             }
-            return s;
+            return montantTotal;
+        }
+        public decimal AuraitDuPayer() {
+            decimal montant = 0;
+            for(int i = 0; i < lesDepenses.Count; i++) {
+                if(lesDepenses[i].Reparti == false) {
+                    montant += lesDepenses[i].Montant;
+                }
+            }
+            return montant / 3;
         }
     }
 }

@@ -58,7 +58,7 @@ namespace View
             {
                 case State.added:
                     items.Add(new Depense(0, Convert.ToDateTime(this.tbDate.Text), this.tbTitre.Text, this.tbJustificatif.Text, 
-                        Convert.ToInt32(this.tbMontant.Text),Convert.ToInt32(cbColocataire.Text),this.state));
+                        Convert.ToDecimal(this.tbMontant.Text),Convert.ToInt32(cbColocataire.Text),this.state));
                     break;
                 case State.modified:
                     Depense depense = (Depense)items[this.position];

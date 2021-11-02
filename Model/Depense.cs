@@ -95,7 +95,7 @@ namespace Model
         
         public override string ToString()
         {
-            string s = string.Format("{0} coûte {1} € réalisé en {2}",this.titre,this.montant,this.date);
+            string s = string.Format("Titre : {0} | Montant : {1} € | Date : {2}", this.titre,this.montant,this.date);
             return s;
         }
 

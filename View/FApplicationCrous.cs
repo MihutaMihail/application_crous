@@ -24,7 +24,7 @@ namespace View
 
         private void btnRepartition_Click(object sender, EventArgs e)
         {
-            FRepartition r = new FRepartition();
+            FMiseEnRepartition r = new FMiseEnRepartition();
             r.Show();
         }
 

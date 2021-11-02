@@ -23,6 +23,9 @@ namespace Dao
                     case State.modified:
                         this.update(depense);
                         break;
+                    case State.solderModified:
+                        this.updateSolder(depense);
+                        break;
                     case State.deleted:
                         this.delete(depense);
                         lesDepenses.SupprimerDepense(depense);
@@ -47,7 +50,7 @@ namespace Dao
                     cmd.Parameters.Add(new MySqlParameter("@justificatif", MySqlDbType.VarChar));
                     cmd.Parameters["@justificatif"].Value = depense.Justificatif;
 
-                    cmd.Parameters.Add(new MySqlParameter("@montant", MySqlDbType.Int32));
+                    cmd.Parameters.Add(new MySqlParameter("@montant", MySqlDbType.Decimal));
                     cmd.Parameters["@montant"].Value = depense.Montant;
 
                     cmd.Parameters.Add(new MySqlParameter("@reparti", MySqlDbType.Bit));
@@ -78,7 +81,7 @@ namespace Dao
                     cmd.Parameters.Add(new MySqlParameter("@justificatif", MySqlDbType.VarChar));
                     cmd.Parameters["@justificatif"].Value = depense.Justificatif;
 
-                    cmd.Parameters.Add(new MySqlParameter("@montant", MySqlDbType.Int32));
+                    cmd.Parameters.Add(new MySqlParameter("@montant", MySqlDbType.Decimal));
                     cmd.Parameters["@montant"].Value = depense.Montant;
 
                     cmd.Parameters.Add(new MySqlParameter("@reparti", MySqlDbType.Bit));
@@ -86,6 +89,24 @@ namespace Dao
 
                     cmd.Parameters.Add(new MySqlParameter("@idColocataire", MySqlDbType.Int32));
                     cmd.Parameters["@idColocataire"].Value = depense.IdColocataire;
+
+                    cmd.Parameters.Add(new MySqlParameter("@id", MySqlDbType.Int32));
+                    cmd.Parameters["@id"].Value = depense.Id;
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            depense.State = State.unChanged;
+        }
+        private void updateSolder(Depense depense)
+        {
+            using (MySqlConnection cnx = DaoConnectionSingleton.GetMySqlConnection())
+            {
+                cnx.Open();
+                using (MySqlCommand cmd = new MySqlCommand("update Depenses set reparti=@reparti where id=@id", cnx))
+                {
+                    cmd.Parameters.Add(new MySqlParameter("@reparti", MySqlDbType.Bit));
+                    cmd.Parameters["@reparti"].Value = depense.Reparti;
 
                     cmd.Parameters.Add(new MySqlParameter("@id", MySqlDbType.Int32));
                     cmd.Parameters["@id"].Value = depense.Id;

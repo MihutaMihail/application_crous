@@ -31,16 +31,15 @@ namespace Model
             lesColocataires.Remove(colocataire);
         }
 
-        public string AfficherNom(int index)
+        public int GetIndex(string nom)
         {
-            string s = "";
             for (int i = 0; i < lesColocataires.Count; i++)
             {
-                if (lesColocataires[i].Id == index) {
-                    s = lesColocataires[i].Nom;
+                if (lesColocataires[i].Nom == nom) {
+                    return lesColocataires[i].Id;
                 }
             }
-            return s;
+            return -333;
         }
     }
 }

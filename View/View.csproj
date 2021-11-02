@@ -64,6 +64,12 @@
     <Compile Include="FApplicationCrous.Designer.cs">
       <DependentUpon>FApplicationCrous.cs</DependentUpon>
     </Compile>
+    <Compile Include="FCalculerRepartition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FCalculerRepartition.Designer.cs">
+      <DependentUpon>FCalculerRepartition.cs</DependentUpon>
+    </Compile>
     <Compile Include="FeditColocataire.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,16 +94,25 @@
     <Compile Include="FGestionDepense.Designer.cs">
       <DependentUpon>FGestionDepense.cs</DependentUpon>
     </Compile>
-    <Compile Include="FRepartition.cs">
+    <Compile Include="FMiseEnRepartition.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FRepartition.Designer.cs">
-      <DependentUpon>FRepartition.cs</DependentUpon>
+    <Compile Include="FMiseEnRepartition.Designer.cs">
+      <DependentUpon>FMiseEnRepartition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FSolderPeriode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FSolderPeriode.Designer.cs">
+      <DependentUpon>FSolderPeriode.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FApplicationCrous.resx">
       <DependentUpon>FApplicationCrous.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FCalculerRepartition.resx">
+      <DependentUpon>FCalculerRepartition.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FeditColocataire.resx">
       <DependentUpon>FeditColocataire.cs</DependentUpon>
@@ -111,8 +126,11 @@
     <EmbeddedResource Include="FGestionDepense.resx">
       <DependentUpon>FGestionDepense.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FRepartition.resx">
-      <DependentUpon>FRepartition.cs</DependentUpon>
+    <EmbeddedResource Include="FMiseEnRepartition.resx">
+      <DependentUpon>FMiseEnRepartition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FSolderPeriode.resx">
+      <DependentUpon>FSolderPeriode.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
