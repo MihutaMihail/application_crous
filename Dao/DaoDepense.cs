@@ -10,9 +10,9 @@ namespace Dao
 {
     public class DaoDepense
     {
-        public void SaveChanges(List<Depense> lesDepenses)
+        public void SaveChanges(Depenses lesDepenses)
         {
-            for (int i = 0; i < lesDepenses.Count; i++)
+            for (int i = 0; i < lesDepenses.Count(); i++)
             {
                 Depense depense = lesDepenses[i];
                 switch (depense.State)
@@ -25,7 +25,7 @@ namespace Dao
                         break;
                     case State.deleted:
                         this.delete(depense);
-                        lesDepenses.Remove(depense);
+                        lesDepenses.SupprimerDepense(depense);
                         break;
                 }
             }
@@ -69,9 +69,6 @@ namespace Dao
                 using (MySqlCommand cmd = new MySqlCommand("update Depenses set dateDepense=@dateDepense,titre=@titre,justificatif=@justificatif," +
                     "montant=@montant,reparti=@reparti,idColocataire=@idColocataire where id=@id", cnx))
                 {
-                    cmd.Parameters.Add(new MySqlParameter("@id", MySqlDbType.Int32));
-                    cmd.Parameters["@id"].Value = depense.Id;
-
                     cmd.Parameters.Add(new MySqlParameter("@dateDepense", MySqlDbType.DateTime));
                     cmd.Parameters["@dateDepense"].Value = depense.Date;
 
@@ -89,6 +86,9 @@ namespace Dao
 
                     cmd.Parameters.Add(new MySqlParameter("@idColocataire", MySqlDbType.Int32));
                     cmd.Parameters["@idColocataire"].Value = depense.IdColocataire;
+
+                    cmd.Parameters.Add(new MySqlParameter("@id", MySqlDbType.Int32));
+                    cmd.Parameters["@id"].Value = depense.Id;
 
                     cmd.ExecuteNonQuery();
                 }
@@ -108,9 +108,9 @@ namespace Dao
                 }
             }
         }
-        public List<Depense> GetAll()
+        public Depenses GetAll()
         {
-            List<Depense> lesDepenses = new List<Depense>();
+            Depenses lesDepenses = new Depenses();
             using (MySqlConnection cnx = DaoConnectionSingleton.GetMySqlConnection())
             {
                 cnx.Open();
@@ -120,7 +120,7 @@ namespace Dao
                     {
                         while (rdr.Read())
                         {
-                            lesDepenses.Add(new Depense(Convert.ToInt32(rdr["id"]), Convert.ToDateTime(rdr["dateDepense"]), Convert.ToString(rdr["titre"]), Convert.ToString(rdr["justificatif"]),
+                            lesDepenses.AjouterDepense(new Depense(Convert.ToInt32(rdr["id"]), Convert.ToDateTime(rdr["dateDepense"]), Convert.ToString(rdr["titre"]), Convert.ToString(rdr["justificatif"]),
                                 Convert.ToInt32(rdr["montant"]), Convert.ToBoolean(rdr["reparti"]), Convert.ToInt32(rdr["idColocataire"]), State.unChanged));
                         }
                     }

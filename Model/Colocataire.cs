@@ -26,7 +26,6 @@ namespace Model
             this.adresseMail = adresseMail;
             this.state = state;
         }
-
         public void Remove()
         {
             this.state = State.deleted;

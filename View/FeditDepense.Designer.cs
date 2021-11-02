@@ -149,7 +149,7 @@
             // lbId
             // 
             this.lbId.AutoSize = true;
-            this.lbId.Location = new System.Drawing.Point(23, 9);
+            this.lbId.Location = new System.Drawing.Point(23, 13);
             this.lbId.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbId.Name = "lbId";
             this.lbId.Size = new System.Drawing.Size(22, 13);
@@ -168,7 +168,7 @@
             // lblColocataire
             // 
             this.lblColocataire.AutoSize = true;
-            this.lblColocataire.Location = new System.Drawing.Point(10, 202);
+            this.lblColocataire.Location = new System.Drawing.Point(9, 205);
             this.lblColocataire.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblColocataire.Name = "lblColocataire";
             this.lblColocataire.Size = new System.Drawing.Size(66, 13);
@@ -178,7 +178,7 @@
             // cbColocataire
             // 
             this.cbColocataire.FormattingEnabled = true;
-            this.cbColocataire.Location = new System.Drawing.Point(81, 199);
+            this.cbColocataire.Location = new System.Drawing.Point(81, 202);
             this.cbColocataire.Name = "cbColocataire";
             this.cbColocataire.Size = new System.Drawing.Size(121, 21);
             this.cbColocataire.TabIndex = 31;

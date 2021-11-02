@@ -33,10 +33,10 @@ namespace View
 
         private void btnSave_Click(object sender, System.EventArgs e)
         {
-            List<Colocataire> lesColocataires = new List<Colocataire>();
+            Colocataires lesColocataires = new Colocataires();
             foreach (object o in lbColocataires.Items)
             {
-                lesColocataires.Add((Colocataire)o);
+                lesColocataires.AjouterColocataire((Colocataire)o);
             }
             new DaoColocataire().SaveChanges(lesColocataires);
             this.load(lesColocataires);
@@ -64,12 +64,11 @@ namespace View
             fEdit.Show();
         }
 
-        private void load(List<Colocataire> lesColocataires)
+        private void load(Colocataires lesColocataires)
         {
             lbColocataires.Items.Clear();
-            foreach (Colocataire c in lesColocataires)
-            {
-                lbColocataires.Items.Add(c);
+            for (int i = 0; i < lesColocataires.Count(); i++) {
+                lbColocataires.Items.Add(lesColocataires[i]);
             }
         }
     }

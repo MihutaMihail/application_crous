@@ -10,9 +10,9 @@ namespace Dao
 {
     public class DaoColocataire
     {
-        public void SaveChanges(List<Colocataire> lesColocataires)
+        public void SaveChanges(Colocataires lesColocataires)
         {
-            for (int i = 0; i < lesColocataires.Count; i++)
+            for (int i = 0; i < lesColocataires.Count(); i++)
             {
                 Colocataire colocataire = lesColocataires[i];
                 switch (colocataire.State)
@@ -25,7 +25,7 @@ namespace Dao
                         break;
                     case State.deleted:
                         this.delete(colocataire);
-                        lesColocataires.Remove(colocataire);
+                        lesColocataires.SupprimerColocataire(colocataire);
                         break;
                 }
             }
@@ -65,9 +65,6 @@ namespace Dao
                 using (MySqlCommand cmd = new MySqlCommand("update Colocataire set nom=@nom,prenom=@prenom,age=@age,numTel=@numTel,adresseMail=@adresseMail" +
                     " where id=@id", cnx))
                 {
-                    cmd.Parameters.Add(new MySqlParameter("@id", MySqlDbType.Int32));
-                    cmd.Parameters["@id"].Value = colocataire.Id;
-
                     cmd.Parameters.Add(new MySqlParameter("@nom", MySqlDbType.VarChar));
                     cmd.Parameters["@nom"].Value = colocataire.Nom;
 
@@ -82,6 +79,9 @@ namespace Dao
 
                     cmd.Parameters.Add(new MySqlParameter("@adresseMail", MySqlDbType.VarChar));
                     cmd.Parameters["@adresseMail"].Value = colocataire.AdresseMail;
+
+                    cmd.Parameters.Add(new MySqlParameter("@id", MySqlDbType.Int32));
+                    cmd.Parameters["@id"].Value = colocataire.Id;
 
                     cmd.ExecuteNonQuery();
                 }
@@ -101,9 +101,9 @@ namespace Dao
                 }
             }
         }
-        public List<Colocataire> GetAll()
+        public Colocataires GetAll()
         {
-            List<Colocataire> lesColocataires = new List<Colocataire>();
+            Colocataires lesColocataires = new Colocataires();
             using (MySqlConnection cnx = DaoConnectionSingleton.GetMySqlConnection())
             {
                 cnx.Open();
@@ -113,7 +113,7 @@ namespace Dao
                     {
                         while (rdr.Read())
                         {
-                            lesColocataires.Add(new Colocataire(Convert.ToInt32(rdr["id"]), (string)rdr["nom"], (string)rdr["prenom"], Convert.ToInt32(rdr["age"]),
+                            lesColocataires.AjouterColocataire(new Colocataire(Convert.ToInt32(rdr["id"]), (string)rdr["nom"], (string)rdr["prenom"], Convert.ToInt32(rdr["age"]),
                                 Convert.ToInt32(rdr["numTel"]), (string)rdr["adresseMail"], State.unChanged));
                         }
                     }

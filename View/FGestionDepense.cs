@@ -26,10 +26,10 @@ namespace View
 
         private void btnSave_Click(object sender, System.EventArgs e)
         {
-            List<Depense> lesDepenses = new List<Depense>();
+            Depenses lesDepenses = new Depenses();
             foreach (object o in lbDepenses.Items)
             {
-                lesDepenses.Add((Depense)o);
+                lesDepenses.AjouterDepense((Depense)o);
             }
             new DaoDepense().SaveChanges(lesDepenses);
             this.load(lesDepenses);
@@ -57,12 +57,12 @@ namespace View
             fEdit.Show();
         }
 
-        private void load(List<Depense> lesDepenses)
+        private void load(Depenses lesDepenses)
         {
             lbDepenses.Items.Clear();
-            foreach (Depense d in lesDepenses)
+            for (int i = 0; i < lesDepenses.Count(); i++)
             {
-                lbDepenses.Items.Add(d);
+                lbDepenses.Items.Add(lesDepenses[i]);
             }
         }
     }

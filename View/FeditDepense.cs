@@ -65,7 +65,7 @@ namespace View
                     depense.Date = Convert.ToDateTime(this.tbDate.Text);
                     depense.Titre = this.tbTitre.Text;
                     depense.Justificatif = this.tbJustificatif.Text;
-                    depense.Montant = Convert.ToInt32(this.tbMontant.Text);
+                    depense.Montant = Convert.ToDecimal(this.tbMontant.Text);
                     depense.Reparti = Convert.ToBoolean(this.tbReparti.Text);
                     depense.IdColocataire = Convert.ToInt32(this.cbColocataire.Text);
                     depense.State = this.state;
@@ -80,11 +80,12 @@ namespace View
             }
             this.Close();
         }
-        private void load(List<Colocataire> lesColocataires)
+        private void load(Colocataires lesColocataires)
         {
-            foreach (Colocataire c in lesColocataires)
+            cbColocataire.Items.Clear();
+            for (int i = 0; i < lesColocataires.Count(); i++)
             {
-                cbColocataire.Items.Add(c.Id);
+                cbColocataire.Items.Add(lesColocataires[i].Id);
             }
         }
     }

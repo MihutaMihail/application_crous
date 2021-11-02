@@ -40,11 +40,13 @@ namespace View
             this.tbMail = new System.Windows.Forms.TextBox();
             this.lblMail = new System.Windows.Forms.Label();
             this.btnValider = new System.Windows.Forms.Button();
+            this.tbIdColocataire = new System.Windows.Forms.TextBox();
+            this.lblId = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // tbPrenom
             // 
-            this.tbPrenom.Location = new System.Drawing.Point(79, 42);
+            this.tbPrenom.Location = new System.Drawing.Point(79, 68);
             this.tbPrenom.Margin = new System.Windows.Forms.Padding(2);
             this.tbPrenom.Name = "tbPrenom";
             this.tbPrenom.Size = new System.Drawing.Size(56, 20);
@@ -52,7 +54,7 @@ namespace View
             // 
             // tbNom
             // 
-            this.tbNom.Location = new System.Drawing.Point(79, 11);
+            this.tbNom.Location = new System.Drawing.Point(79, 37);
             this.tbNom.Margin = new System.Windows.Forms.Padding(2);
             this.tbNom.Name = "tbNom";
             this.tbNom.Size = new System.Drawing.Size(56, 20);
@@ -61,7 +63,7 @@ namespace View
             // lblPrenom
             // 
             this.lblPrenom.AutoSize = true;
-            this.lblPrenom.Location = new System.Drawing.Point(21, 45);
+            this.lblPrenom.Location = new System.Drawing.Point(21, 71);
             this.lblPrenom.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPrenom.Name = "lblPrenom";
             this.lblPrenom.Size = new System.Drawing.Size(52, 13);
@@ -71,7 +73,7 @@ namespace View
             // lblNom
             // 
             this.lblNom.AutoSize = true;
-            this.lblNom.Location = new System.Drawing.Point(21, 13);
+            this.lblNom.Location = new System.Drawing.Point(21, 39);
             this.lblNom.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNom.Name = "lblNom";
             this.lblNom.Size = new System.Drawing.Size(38, 13);
@@ -80,7 +82,7 @@ namespace View
             // 
             // tbAge
             // 
-            this.tbAge.Location = new System.Drawing.Point(79, 76);
+            this.tbAge.Location = new System.Drawing.Point(79, 102);
             this.tbAge.Margin = new System.Windows.Forms.Padding(2);
             this.tbAge.Name = "tbAge";
             this.tbAge.Size = new System.Drawing.Size(56, 20);
@@ -89,7 +91,7 @@ namespace View
             // lblAge
             // 
             this.lblAge.AutoSize = true;
-            this.lblAge.Location = new System.Drawing.Point(21, 79);
+            this.lblAge.Location = new System.Drawing.Point(21, 105);
             this.lblAge.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAge.Name = "lblAge";
             this.lblAge.Size = new System.Drawing.Size(35, 13);
@@ -98,7 +100,7 @@ namespace View
             // 
             // tbTel
             // 
-            this.tbTel.Location = new System.Drawing.Point(79, 109);
+            this.tbTel.Location = new System.Drawing.Point(79, 135);
             this.tbTel.Margin = new System.Windows.Forms.Padding(2);
             this.tbTel.Name = "tbTel";
             this.tbTel.Size = new System.Drawing.Size(56, 20);
@@ -107,7 +109,7 @@ namespace View
             // lblTel
             // 
             this.lblTel.AutoSize = true;
-            this.lblTel.Location = new System.Drawing.Point(21, 112);
+            this.lblTel.Location = new System.Drawing.Point(21, 138);
             this.lblTel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTel.Name = "lblTel";
             this.lblTel.Size = new System.Drawing.Size(28, 13);
@@ -116,7 +118,7 @@ namespace View
             // 
             // tbMail
             // 
-            this.tbMail.Location = new System.Drawing.Point(79, 142);
+            this.tbMail.Location = new System.Drawing.Point(79, 168);
             this.tbMail.Margin = new System.Windows.Forms.Padding(2);
             this.tbMail.Name = "tbMail";
             this.tbMail.Size = new System.Drawing.Size(56, 20);
@@ -125,7 +127,7 @@ namespace View
             // lblMail
             // 
             this.lblMail.AutoSize = true;
-            this.lblMail.Location = new System.Drawing.Point(21, 145);
+            this.lblMail.Location = new System.Drawing.Point(21, 171);
             this.lblMail.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMail.Name = "lblMail";
             this.lblMail.Size = new System.Drawing.Size(32, 13);
@@ -134,7 +136,7 @@ namespace View
             // 
             // btnValider
             // 
-            this.btnValider.Location = new System.Drawing.Point(62, 189);
+            this.btnValider.Location = new System.Drawing.Point(62, 215);
             this.btnValider.Margin = new System.Windows.Forms.Padding(2);
             this.btnValider.Name = "btnValider";
             this.btnValider.Size = new System.Drawing.Size(85, 26);
@@ -142,11 +144,32 @@ namespace View
             this.btnValider.Text = "Valider";
             this.btnValider.UseVisualStyleBackColor = true;
             // 
+            // tbIdColocataire
+            // 
+            this.tbIdColocataire.Location = new System.Drawing.Point(79, 5);
+            this.tbIdColocataire.Margin = new System.Windows.Forms.Padding(2);
+            this.tbIdColocataire.Name = "tbIdColocataire";
+            this.tbIdColocataire.ReadOnly = true;
+            this.tbIdColocataire.Size = new System.Drawing.Size(56, 20);
+            this.tbIdColocataire.TabIndex = 18;
+            // 
+            // lblId
+            // 
+            this.lblId.AutoSize = true;
+            this.lblId.Location = new System.Drawing.Point(21, 7);
+            this.lblId.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblId.Name = "lblId";
+            this.lblId.Size = new System.Drawing.Size(22, 13);
+            this.lblId.TabIndex = 17;
+            this.lblId.Text = "Id :";
+            // 
             // FeditColocataire
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(223, 226);
+            this.ClientSize = new System.Drawing.Size(223, 250);
+            this.Controls.Add(this.tbIdColocataire);
+            this.Controls.Add(this.lblId);
             this.Controls.Add(this.btnValider);
             this.Controls.Add(this.tbMail);
             this.Controls.Add(this.lblMail);
@@ -178,5 +201,7 @@ namespace View
         private System.Windows.Forms.TextBox tbMail;
         private System.Windows.Forms.Label lblMail;
         private System.Windows.Forms.Button btnValider;
+        private System.Windows.Forms.TextBox tbIdColocataire;
+        private System.Windows.Forms.Label lblId;
     }
 }

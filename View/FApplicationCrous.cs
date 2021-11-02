@@ -18,7 +18,14 @@ namespace View
             InitializeComponent();
             this.Text = "ApplicationCrous";
             btnColocataires.Click += btnColocataires_Click;
-            DaoConnectionSingleton.SetStringConnection("root", "siojjr", "localhost", "crous");
+            btnRepartition.Click += btnRepartition_Click;
+            DaoConnectionSingleton.SetStringConnection("root", "Adrian3adrian&", "localhost", "crous");
+        }
+
+        private void btnRepartition_Click(object sender, EventArgs e)
+        {
+            FRepartition r = new FRepartition();
+            r.Show();
         }
 
         private void btnColocataires_Click(object sender, EventArgs e)
