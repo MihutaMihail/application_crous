@@ -16,9 +16,10 @@ namespace View
         public FApplicationCrous()
         {
             InitializeComponent();
-            this.Text = "ApplicationCrous";
+            this.Text = "Application Crous";
             btnColocataires.Click += btnColocataires_Click;
             btnRepartition.Click += btnRepartition_Click;
+            btnDepenses.Click += btnDepenses_Click;
             DaoConnectionSingleton.SetStringConnection("root", "Adrian3adrian&", "localhost", "crous");
         }
 
@@ -32,6 +33,12 @@ namespace View
         {
             FGestionColocataire gc = new FGestionColocataire();
             gc.Show();
+        }
+
+        private void btnDepenses_Click(object sender, EventArgs e)
+        {
+            FGestionDepense gd = new FGestionDepense();
+            gd.Show();
         }
     }
 }

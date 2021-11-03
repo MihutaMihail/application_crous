@@ -17,6 +17,7 @@ namespace View
         public FSolderPeriode()
         {
             InitializeComponent();
+            this.Text = "Solder une période";
             this.load(new DaoColocataire().GetAll(), new DaoDepense().GetAll());
         }
         private void load(Colocataires lesColocataires, Depenses lesDepenses)
@@ -30,17 +31,17 @@ namespace View
             int index1 = lesColocataires.GetIndex("Vincent");
             tbAPayeVincent.Text = lesDepenses.APayer(index1).ToString() + " €";
             tbAuraitPayerVincent.Text = lesDepenses.AuraitDuPayer().ToString() + " €";
-            tbSolderReglerVincent.Text = (lesDepenses.AuraitDuPayer() - lesDepenses.APayer(index1)) + " €";
+            tbSolderReglerVincent.Text = lesDepenses.AuraitDuPayer() - lesDepenses.APayer(index1) + " €";
 
             int index2 = lesColocataires.GetIndex("Lassina");
             tbAPayeLassina.Text = lesDepenses.APayer(index2).ToString() + " €";
             tbAuraitPayerLassina.Text = lesDepenses.AuraitDuPayer().ToString() + " €";
-            tbSolderReglerLassina.Text = (lesDepenses.AuraitDuPayer() - lesDepenses.APayer(index2)) + " €";
+            tbSolderReglerLassina.Text = lesDepenses.AuraitDuPayer() - lesDepenses.APayer(index2) + " €";
 
             int index3 = lesColocataires.GetIndex("Mihail");
             tbAPayeMihail.Text = lesDepenses.APayer(index3).ToString() + " €";
             tbAuraitPayerMihail.Text = lesDepenses.AuraitDuPayer().ToString() + " €";
-            tbSolderReglerMihail.Text = (lesDepenses.AuraitDuPayer() - lesDepenses.APayer(index3)) + " €";
+            tbSolderReglerMihail.Text = lesDepenses.AuraitDuPayer() - lesDepenses.APayer(index3) + " €";
 
         }
     }

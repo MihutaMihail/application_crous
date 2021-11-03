@@ -12,12 +12,12 @@ namespace Model
         private DateTime date;
         private string titre;
         private string justificatif;
-        private decimal montant;
+        private double montant;
         private bool reparti;
         private int idColocataire;
         private State state;
 
-        public Depense(int id,DateTime date, string titre, string justificatif, decimal montant, bool reparti,int idColocataire,State state)
+        public Depense(int id,DateTime date, string titre, string justificatif, double montant, bool reparti,int idColocataire,State state)
         {
             this.id = id;
             this.date = date;
@@ -28,7 +28,7 @@ namespace Model
             this.idColocataire = idColocataire;
             this.state = state;
         }
-        public Depense(int id, DateTime date, string titre, string justificatif, decimal montant,int idColocataire, State state)
+        public Depense(int id, DateTime date, string titre, string justificatif, double montant,int idColocataire, State state)
         {
             this.id = id;
             this.date = date;
@@ -81,9 +81,9 @@ namespace Model
             set { this.justificatif = value; }
         }
 
-        public decimal Montant
+        public double Montant
         {
-            get { return this.montant; }
+            get { return System.Math.Round(this.montant,2); }
             set { this.montant = value; }
         }
 
@@ -95,7 +95,7 @@ namespace Model
         
         public override string ToString()
         {
-            string s = string.Format("Titre : {0} | Montant : {1} € | Date : {2}", this.titre,this.montant,this.date);
+            string s = string.Format("Titre : {0} | Montant : {1} € | Date : {2}", this.titre, System.Math.Round(this.montant, 2),this.date);
             return s;
         }
 

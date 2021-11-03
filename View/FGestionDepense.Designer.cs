@@ -37,58 +37,64 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(309, 190);
+            this.btnSave.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Location = new System.Drawing.Point(489, 187);
             this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(97, 25);
-            this.btnSave.TabIndex = 15;
-            this.btnSave.Text = "Save";
+            this.btnSave.Size = new System.Drawing.Size(156, 40);
+            this.btnSave.TabIndex = 14;
+            this.btnSave.Text = "SAUVEGARDER";
             this.btnSave.UseVisualStyleBackColor = true;
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(208, 190);
+            this.btnDelete.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.Location = new System.Drawing.Point(328, 187);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(2);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(97, 25);
-            this.btnDelete.TabIndex = 14;
-            this.btnDelete.Text = "Delete";
+            this.btnDelete.Size = new System.Drawing.Size(156, 40);
+            this.btnDelete.TabIndex = 13;
+            this.btnDelete.Text = "SUPPRIMER";
             this.btnDelete.UseVisualStyleBackColor = true;
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(107, 190);
+            this.btnEdit.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.Location = new System.Drawing.Point(167, 187);
             this.btnEdit.Margin = new System.Windows.Forms.Padding(2);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(97, 25);
-            this.btnEdit.TabIndex = 13;
-            this.btnEdit.Text = "Edit";
+            this.btnEdit.Size = new System.Drawing.Size(156, 40);
+            this.btnEdit.TabIndex = 12;
+            this.btnEdit.Text = "MODIFIER";
             this.btnEdit.UseVisualStyleBackColor = true;
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(6, 190);
+            this.btnAdd.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Location = new System.Drawing.Point(7, 187);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(97, 25);
-            this.btnAdd.TabIndex = 12;
-            this.btnAdd.Text = "Add";
+            this.btnAdd.Size = new System.Drawing.Size(156, 40);
+            this.btnAdd.TabIndex = 11;
+            this.btnAdd.Text = "AJOUTER";
             this.btnAdd.UseVisualStyleBackColor = true;
             // 
             // lbDepenses
             // 
+            this.lbDepenses.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDepenses.FormattingEnabled = true;
+            this.lbDepenses.ItemHeight = 15;
             this.lbDepenses.Location = new System.Drawing.Point(6, 8);
             this.lbDepenses.Margin = new System.Windows.Forms.Padding(2);
             this.lbDepenses.Name = "lbDepenses";
-            this.lbDepenses.Size = new System.Drawing.Size(400, 173);
-            this.lbDepenses.TabIndex = 11;
+            this.lbDepenses.Size = new System.Drawing.Size(639, 169);
+            this.lbDepenses.TabIndex = 10;
             // 
             // FGestionDepense
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(418, 223);
+            this.ClientSize = new System.Drawing.Size(656, 238);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);

@@ -17,22 +17,39 @@ namespace View
         public FMiseEnRepartition()
         {
             InitializeComponent();
-            btnCalculerRepartition.Click += btnCalculerRepartition_Click;
             btnSolderPeriode.Click += btnSolderPeriode_Click;
-            
+            this.Text = "Calculer la répartition";
+            this.load(new DaoColocataire().GetAll(), new DaoDepense().GetAll());
         }
 
-        private void btnSolderPeriode_Click(object sender, EventArgs e)
+        private void load(Colocataires lesColocataires, Depenses lesDepenses)
         {
-            MessageBox.Show("Cette période a été soldé");
-            FSolderPeriode sp = new FSolderPeriode();
-            sp.ShowDialog();   
+            int index1 = lesColocataires.GetIndex("Vincent");
+            tbAPayeVincent.Text = lesDepenses.APayer(index1).ToString() + " €";
+            tbAuraitPayerVincent.Text = lesDepenses.AuraitDuPayer().ToString() + " €";
+            tbSolderReglerVincent.Text = lesDepenses.AuraitDuPayer() - lesDepenses.APayer(index1) + " €";
+
+            int index2 = lesColocataires.GetIndex("Lassina");
+            tbAPayeLassina.Text = lesDepenses.APayer(index2).ToString() + " €";
+            tbAuraitPayerLassina.Text = lesDepenses.AuraitDuPayer().ToString() + " €";
+            tbSolderReglerLassina.Text = lesDepenses.AuraitDuPayer() - lesDepenses.APayer(index2) + " €";
+
+            int index3 = lesColocataires.GetIndex("Mihail");
+            tbAPayeMihail.Text = lesDepenses.APayer(index3).ToString() + " €";
+            tbAuraitPayerMihail.Text = lesDepenses.AuraitDuPayer().ToString() + " €";
+            tbSolderReglerMihail.Text = lesDepenses.AuraitDuPayer() - lesDepenses.APayer(index3) + " €";
+
         }
 
-        private void btnCalculerRepartition_Click(object sender, EventArgs e)
-        {
-            FCalculerRepartition cr = new FCalculerRepartition();
-            cr.ShowDialog();
+        private void btnSolderPeriode_Click (object sender, EventArgs e) {
+            DialogResult dialogResult = MessageBox.Show("Êtes-vous sûr de vouloir solder une période ?", "ATTENTION", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                this.Hide();
+                MessageBox.Show("Cette période a été soldé !");
+                FSolderPeriode sp = new FSolderPeriode();
+                sp.ShowDialog();
+            }
         }
     }
 }

@@ -17,18 +17,12 @@ namespace View
         public FGestionColocataire()
         {
             InitializeComponent();
+            this.Text = "Gestion Colocataires";
             btnAdd.Click += btnAdd_Click;
             btnEdit.Click += btnEdit_Click;
             btnDelete.Click += btnDelete_Click;
             btnSave.Click += btnSave_Click;
-            btnDepense.Click += btnDepense_Click;
             this.load(new DaoColocataire().GetAll());
-        }
-
-        private void btnDepense_Click(object sender, EventArgs e)
-        {
-            FGestionDepense fEdit = new FGestionDepense();
-            fEdit.Show();
         }
 
         private void btnSave_Click(object sender, System.EventArgs e)
@@ -55,13 +49,13 @@ namespace View
             if (lbColocataires.SelectedIndex == -1) return;
             int position = lbColocataires.SelectedIndex;
             FeditColocataire fEdit = new FeditColocataire(State.modified, lbColocataires.Items, position);
-            fEdit.Show();
+            fEdit.ShowDialog();
         }
 
         private void btnAdd_Click(object sender, System.EventArgs e)
         {
             FeditColocataire fEdit = new FeditColocataire(State.added, lbColocataires.Items, 0);
-            fEdit.Show();
+            fEdit.ShowDialog();
         }
 
         private void load(Colocataires lesColocataires)

@@ -30,9 +30,9 @@ namespace Model
         {
             lesDepenses.Remove(depense);
         }
-        public decimal APayer(int idColocataire)
+        public double APayer(int idColocataire)
         {
-            decimal montantTotal = 0;
+            double montantTotal = 0;
             for (int i = 0; i < lesDepenses.Count; i++)
             {
                 if (lesDepenses[i].IdColocataire == idColocataire && lesDepenses[i].Reparti == false)
@@ -42,14 +42,14 @@ namespace Model
             }
             return montantTotal;
         }
-        public decimal AuraitDuPayer() {
-            decimal montant = 0;
+        public double AuraitDuPayer() {
+            double montant = 0;
             for(int i = 0; i < lesDepenses.Count; i++) {
                 if(lesDepenses[i].Reparti == false) {
                     montant += lesDepenses[i].Montant;
                 }
             }
-            return montant / 3;
+            return System.Math.Round(montant/3, 2);
         }
     }
 }

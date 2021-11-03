@@ -17,6 +17,7 @@ namespace View
         public FGestionDepense()
         {
             InitializeComponent();
+            this.Text = "Gestion Dépenses";
             btnAdd.Click += btnAdd_Click;
             btnEdit.Click += btnEdit_Click;
             btnDelete.Click += btnDelete_Click;
@@ -48,13 +49,13 @@ namespace View
             if (lbDepenses.SelectedIndex == -1) return;
             int position = lbDepenses.SelectedIndex;
             FeditDepense fEdit = new FeditDepense(State.modified, lbDepenses.Items, position);
-            fEdit.Show();
+            fEdit.ShowDialog();
         }
 
         private void btnAdd_Click(object sender, System.EventArgs e)
         {
             FeditDepense fEdit = new FeditDepense(State.added, lbDepenses.Items, 0);
-            fEdit.Show();
+            fEdit.ShowDialog();
         }
 
         private void load(Depenses lesDepenses)

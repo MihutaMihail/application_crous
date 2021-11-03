@@ -22,6 +22,7 @@ namespace View
         {
             InitializeComponent();
             btnValider.Click += btnValider_Click;
+            btnSelectFile.Click += btnSelectFile_Click;
             this.state = state;
             this.items = items;
             this.position = position;
@@ -36,7 +37,7 @@ namespace View
                     this.tbId.Text = depense.Id.ToString();
                     this.tbDate.Text = depense.Date.ToString();
                     this.tbTitre.Text = depense.Titre.ToString();
-                    this.tbJustificatif.Text = depense.Justificatif.ToString();
+                    this.tbSelectFile.Text = depense.Justificatif.ToString();
                     this.tbMontant.Text = depense.Montant.ToString();
                     this.tbReparti.Text = depense.Reparti.ToString();
                     this.cbColocataire.Text = depense.IdColocataire.ToString();
@@ -52,20 +53,31 @@ namespace View
                     break;
             }
         }
+
+        private void btnSelectFile_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            DialogResult result = openFileDialog1.ShowDialog();
+            if (result == DialogResult.OK) {
+                string file = openFileDialog1.FileName;
+                this.tbSelectFile.Text = file;
+            }
+        }
+
         private void btnValider_Click(object sender, EventArgs e)
         {
             switch (this.state)
             {
                 case State.added:
-                    items.Add(new Depense(0, Convert.ToDateTime(this.tbDate.Text), this.tbTitre.Text, this.tbJustificatif.Text, 
-                        Convert.ToDecimal(this.tbMontant.Text),Convert.ToInt32(cbColocataire.Text),this.state));
+                    items.Add(new Depense(0, Convert.ToDateTime(this.tbDate.Text), this.tbTitre.Text, this.tbSelectFile.Text, 
+                        Convert.ToDouble(this.tbMontant.Text),Convert.ToInt32(cbColocataire.Text),this.state));
                     break;
                 case State.modified:
                     Depense depense = (Depense)items[this.position];
                     depense.Date = Convert.ToDateTime(this.tbDate.Text);
                     depense.Titre = this.tbTitre.Text;
-                    depense.Justificatif = this.tbJustificatif.Text;
-                    depense.Montant = Convert.ToDecimal(this.tbMontant.Text);
+                    depense.Justificatif = this.tbSelectFile.Text;
+                    depense.Montant = Convert.ToDouble(this.tbMontant.Text);
                     depense.Reparti = Convert.ToBoolean(this.tbReparti.Text);
                     depense.IdColocataire = Convert.ToInt32(this.cbColocataire.Text);
                     depense.State = this.state;

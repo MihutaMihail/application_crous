@@ -167,7 +167,7 @@ class Depenses {
   dateDepense : DATE
   titre : VARCHAR[20]
   justificatif : VARCHAR[100]
-  montant : DECIMAL[10,2]
+  montant : FLOAT
   reparti : BOOLEAN
   PRIMARY KEY (idDepense)
   FOREIGN KEY (idColocataire) REFERENCES Colocataire(idColocataire)
@@ -209,7 +209,7 @@ CREATE TABLE Depenses (
     dateDepense DATE,
     titre VARCHAR(20),
     justificatif VARCHAR(200),
-    montant DECIMAL(10,2),
+    montant FLOAT,
     reparti BOOLEAN,
     idColocataire INTEGER(10) NOT NULL,
     PRIMARY KEY (id)

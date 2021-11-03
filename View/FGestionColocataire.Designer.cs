@@ -34,74 +34,68 @@ namespace View
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.lbColocataires = new System.Windows.Forms.ListBox();
-            this.btnDepense = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(309, 190);
+            this.btnSave.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Location = new System.Drawing.Point(489, 187);
             this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(97, 25);
+            this.btnSave.Size = new System.Drawing.Size(156, 40);
             this.btnSave.TabIndex = 9;
-            this.btnSave.Text = "Save";
+            this.btnSave.Text = "SAUVEGARDER";
             this.btnSave.UseVisualStyleBackColor = true;
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(208, 190);
+            this.btnDelete.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.Location = new System.Drawing.Point(328, 187);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(2);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(97, 25);
+            this.btnDelete.Size = new System.Drawing.Size(156, 40);
             this.btnDelete.TabIndex = 8;
-            this.btnDelete.Text = "Delete";
+            this.btnDelete.Text = "SUPPRIMER";
             this.btnDelete.UseVisualStyleBackColor = true;
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(107, 190);
+            this.btnEdit.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.Location = new System.Drawing.Point(167, 187);
             this.btnEdit.Margin = new System.Windows.Forms.Padding(2);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(97, 25);
+            this.btnEdit.Size = new System.Drawing.Size(156, 40);
             this.btnEdit.TabIndex = 7;
-            this.btnEdit.Text = "Edit";
+            this.btnEdit.Text = "MODIFIER";
             this.btnEdit.UseVisualStyleBackColor = true;
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(6, 190);
+            this.btnAdd.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Location = new System.Drawing.Point(7, 187);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(97, 25);
+            this.btnAdd.Size = new System.Drawing.Size(156, 40);
             this.btnAdd.TabIndex = 6;
-            this.btnAdd.Text = "Add";
+            this.btnAdd.Text = "AJOUTER";
             this.btnAdd.UseVisualStyleBackColor = true;
             // 
             // lbColocataires
             // 
+            this.lbColocataires.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbColocataires.FormattingEnabled = true;
+            this.lbColocataires.ItemHeight = 15;
             this.lbColocataires.Location = new System.Drawing.Point(6, 8);
             this.lbColocataires.Margin = new System.Windows.Forms.Padding(2);
             this.lbColocataires.Name = "lbColocataires";
-            this.lbColocataires.Size = new System.Drawing.Size(501, 173);
+            this.lbColocataires.Size = new System.Drawing.Size(639, 169);
             this.lbColocataires.TabIndex = 5;
-            // 
-            // btnDepense
-            // 
-            this.btnDepense.Location = new System.Drawing.Point(410, 190);
-            this.btnDepense.Margin = new System.Windows.Forms.Padding(2);
-            this.btnDepense.Name = "btnDepense";
-            this.btnDepense.Size = new System.Drawing.Size(97, 25);
-            this.btnDepense.TabIndex = 10;
-            this.btnDepense.Text = "Dépenses";
-            this.btnDepense.UseVisualStyleBackColor = true;
             // 
             // FGestionColocataire
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(512, 223);
-            this.Controls.Add(this.btnDepense);
+            this.ClientSize = new System.Drawing.Size(656, 238);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
@@ -120,6 +114,5 @@ namespace View
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.ListBox lbColocataires;
-        private System.Windows.Forms.Button btnDepense;
     }
 }
