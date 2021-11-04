@@ -10,7 +10,7 @@ Pour réaliser ce projet on a mis en oeuvre plusiers outils :
 1. Visual Studio 2017 (Windows Form, C#, ado.net)
 2. Visual Studio Code (PlantUML)
 3. Git 
-4. MySQL (MySQL Lite pour la base de données)
+4. MySQL (pour la base de données)
 
 # Composants logiciels à développer
 
@@ -34,24 +34,32 @@ c --> UC3
 @enduml
 ```
 ### Maquette - Gérer les colocataires
-![GLC.PNG](./View/Images_Maquettes/GLC.PNG)
-![GLC_Ajouter.PNG](./View/Images_Maquettes/GLC_Ajouter.PNG)
-![GLC_Modifier.PNG](./View/Images_Maquettes/GLC_Modifier.PNG)
+![Menu.JPG](./View/Images_Maquettes/Menu.JPG)
+![GestionColocataires.JPG](./View/Images_Maquettes/GestionColocataires.JPG)
+![AjouterColocataire.JPG](./View/Images_Maquettes/AjouterColocataire.JPG)
+![ModifierColocataire.JPG](./View/Images_Maquettes/ModifierColocataire.JPG)
 ### Enchaînement Textuel - Gérer les colocataires
+• <i> **Consulter la liste des colocataires** </i> <br>
+    1. On clique sur le bouton **Gestion des Colocataires** pour consulter les colocataires existant. <br>
+<br>
 • <i> **Ajouter un colocataire** </i> <br>
-    1. On clique sur le bouton **Ajouter** pour ajouter un nouveau colocataire. <br>
-    2. On complète les champs (nom, prénom, age, adresse mail, n° tel). <br>
-    3. On cliquer sur le bouton **Ajouter** après pour finir <br>
+    1. On clique sur le bouton **Gestion des Colocataires** pour accéder au gestion des colocataires. <br>
+    2. On clique sur le bouton **AJOUTER** pour ajouter un nouveau colocataire. <br>
+    3. On complète les champs (nom, prénom, age, adresse mail, n° tel). Le champ **Id** est **ReadOnly** (il ne peut pas être modifier) <br>
+    4. On cliquer sur le bouton **Valider** pour ajouter le nouveau colocataire dans la liste <br>
 <br>
 • <i> **Modifier un colocataire** </i> <br>
     1. On clique sur le colocataire qu'on veut modifier. <br>
-    2. On clique sur le bouton **Modifier** pour modifier les données d'un colocataire<br> 
-    3. On modifie les données qu'on a besoin de modifier. <br>
-    4. On clique sur le bouton **Modifier** après avoir fini. <br>
+    2. On clique sur le bouton **MODIFIER**.<br> 
+    3. On modifie les données qu'on a besoin de modifier (sauf **Id**) <br>
+    4. On clique sur le bouton **Valider** pour valider les modifications. <br>
 <br>
 • <i> **Supprimer un colocataire** </i> <br>
     1. On clique sur le colocataire qu'on veut supprimer. <br>
-    2. On clique sur le bouton **Supprimer**.
+    2. On clique sur le bouton **SUPPRIMER**.<br>
+<br>
+• <i> **Sauvegarder les modifications effectué** </i> <br>
+    1. On clique sur le bouton **SAUVEGARDER** pour enregistrer toutes les modifications dans la base de données. <br>
 
 ## 2. Enregistrer les dépenses
 ### Objectif
@@ -78,25 +86,32 @@ JD .> UC2 : <<extends>>
 @enduml
 ```
 ### Maquette - Enregistrer les dépenses
-![ELD.PNG](./View/Images_Maquettes/ELD.PNG)
-![ELD_Ajouter.PNG](./View/Images_Maquettes/ELD_Ajouter.PNG)
-![ELD_Modifier.PNG](./View/Images_Maquettes/ELD_Modifier.PNG)
+![Menu.JPG](./View/Images_Maquettes/Menu.JPG)
+![GestionDepenses.JPG](./View/Images_Maquettes/GestionDepenses.JPG)
+![AjouterDepense.JPG](./View/Images_Maquettes/AjouterDepense.JPG)
+![ModifierDepense.JPG](./View/Images_Maquettes/ModifierDepense.JPG)
 ### Enchaînement Textuel - Enregistrer les dépenses
+• <i> **Consulter la liste des dépenses** </i> <br>
+    1. On clique sur le bouton **Gestion des Dépenses** pour consulter les dépenses existantes. <br>
+<br>
 • <i> **Ajouter une dépense** </i> <br>
-    1. On clique sur le bouton **Ajouter** pour ajouter une nouvelle dépense. <br>
-    2. On complète les champs (titre, montant, date, qui?) (le "qui?" est une liste déroulante où on va choisir le colocataire qui a effectué cette dépense). <br>
-    2B. (Optionnel) On peut justifier la dépense en sélectionnant un fichier (jpg,png,pdf,etc).  <br>
-    3. On clique sur le bouton **Ajouter** après avoir fini. <br>
+    1. On clique sur le bouton **Gestion des Dépenses** pour accéder au gestion des dépenses. <br>
+    2. On clique sur le bouton **AJOUTER** pour ajouter une nouvelle dépense. <br>
+    3. On complète les champs (date,titre,justificatif,montant,colocataire) ("justificatif" nous permet de choisir un fichier image (jpg,png,etc)). <br>
+    4. On clique sur le bouton **Valider** pour ajouter la nouvelle dépense dans la liste. <br>
 
 • <i> **Modifier une dépense** </i> <br>
     1. On clique sur la dépense qu'on veut modifier. <br>
-    2. On clique sur le bouton **Modifier**.<br>
+    2. On clique sur le bouton **MODIFIER**.<br>
     3. On modifie les données qu'on a besoin de modifier. <br>
-    4. On clique sur le bouton **Modifier** après avoir fini. <br>
+    4. On clique sur le bouton **Valider** pour valider les modifications. <br>
 
 • <i> **Supprimer une dépense** </i> <br>
     1. On clique sur la dépense qu'on veut supprimer <br>
-    2. On clique sur le bouton **Supprimer** <br>
+    2. On clique sur le bouton **SUPPRIMER** <br>
+
+• <i> **Sauvegarder les modifications effectué** </i> <br>
+    1. On clique sur le bouton **SAUVEGARDER** pour enregistrer toutes les modifications dans la base de données. <br>
 
 ## 3. Mise en répartition
 ### Objectif
@@ -119,13 +134,12 @@ UC3 <. UC1 : <<include>>
 @enduml
 ```
 ### Maquette - Mise en répartition
-![MER.PNG](./View/Images_Maquettes/MER.PNG)
-![MER_Lancer.PNG](./View/Images_Maquettes/MER_Lancer.PNG)
+![Menu.JPG](./View/Images_Maquettes/Menu.JPG)
+![CalculerRepartition.JPG](./View/Images_Maquettes/CalculerRepartition.JPG)
 ### Enchaînement Textuel - Mise en répartition
-• <i> **Lancer la répartition** </i> <br>
-    1. On clique sur le bouton **Lancer**. <br>
-    2. Ceci va lancer la mise en répartition qui va calculer le montant payé par chaque colocataire, le montant qu'ils aurait dû payer et les soldes à régler. .<br>
-    3. On visualise le tableau avec toutes les données précédentes. <br>
+• <i> **Mise en répartition** </i> <br>
+    1. On clique sur le bouton **Mise en répartition** pour lancer la mise en répartition. <br>
+    2. Ceci va calculer le montant payé par chaque colocataire, le montant qu'ils aurait dû payer et les soldes à régler.<br>
 
 ## 4. Solder une période
 ### Objectif
@@ -149,13 +163,16 @@ UC1 --> UC3
 @enduml
 ```
 ### Maquette - Solder une période
-![.PNG](./View/Images_Maquettes/.PNG)
-![.PNG](./View/Images_Maquettes/.PNG)
+![CalculerRepartition.JPG](./View/Images_Maquettes/CalculerRepartition.JPG)
+![SolderPeriodeAttention.JPG](./View/Images_Maquettes/SolderPeriodeAttention.JPG)
+![PeriodeSolder.JPG](./View/Images_Maquettes/PeriodeSolder.JPG)
+![SolderUnePeriode.JPG](./View/Images_Maquettes/SolderUnePeriode.JPG)
 ### Enchaînement Textuel - Solder une période
 • <i> **Solder une période** </i> <br>
-    1. On clique sur le bouton **Solder une période**. <br>
-    2. Toutes les dépenses précédentes vont être réparti<br>
-    3. Ceci lance la mise en répartition. <br>
+    1. Une fois que la mise en répartition est fini, on clique sur le bouton **Solder une Période**. <br>
+    2. Une fenêtre va apparaître en disant si on est sûr de solder cette période. Dans le cas où on a cliqué sur le bouton **Solder une Période** sans faire exprès, on peut répondre **non** et le soldage de la période va être annuler. Si on veut continuer on clique sur **oui**.<br>
+    3. Un message disant que la période a été soldé va apparaître. <br>
+    4. La mise en répartition va être lancer et si tout s'est bien passé, toutes les valeurs dans le tableau vont être 0€ puisqu'on prend plus en compte ces dépenses. <br>
 
 # Base de données
 ```plantuml
@@ -163,22 +180,23 @@ UC1 --> UC3
 scale 1
 
 class Depenses {
-  idDepense : INTEGER[]
+  id : INT
   dateDepense : DATE
   titre : VARCHAR[20]
-  justificatif : VARCHAR[100]
+  justificatif : VARCHAR[200]
   montant : FLOAT
-  reparti : BOOLEAN
+  reparti : TINYINT[1]
+  idColocataire : INT
   PRIMARY KEY (idDepense)
   FOREIGN KEY (idColocataire) REFERENCES Colocataire(idColocataire)
 }
 
 class Colocataire {
-    idColocataire : INTEGER[10]
+    id : INT
     nom : VARCHAR[50]
     prenom : VARCHAR[50]
-    age : INTEGER[10]
-    numTel : INTEGER[10]
+    age : INT
+    numTel : INT
     adresseMail : VARCHAR[50]
     PRIMARY KEY (idColocataire)
 }
@@ -210,7 +228,7 @@ CREATE TABLE Depenses (
     titre VARCHAR(20),
     justificatif VARCHAR(200),
     montant FLOAT,
-    reparti BOOLEAN,
+    reparti TINYINT,
     idColocataire INTEGER(10) NOT NULL,
     PRIMARY KEY (id)
 ) ENGINE = InnoDB;
