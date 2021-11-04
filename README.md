@@ -245,27 +245,35 @@ scale 1
 
 class Depense {
     - id : int
-    - date : date
+    - date : dateTime
     - titre : string
     - justificatif : string
-    - montant : decimal
+    - montant : double
     - reparti : bool
+    - idColocataire : int
     - state : State
-    + void Remove() : void
-    + State state() : state
+    + int Id() : int
     + DateTime Date() : DateTime
     + string Titre() : string
     + string Justificatif() : string
-    + decimal Montant() : decimal
+    + double Montant() : double
     + bool Reparti() : bool
-    + Depense (DateTime date, string titre, string justificatif, decimal montant, bool reparti)
+    + int IdColocataire() : int
+    + State state() : state
+    + Depense (int id,DateTime date, string titre, string justificatif, double montant, bool reparti,int idColocataire, State state)
+    + Depense (int id,DateTime date, string titre, string justificatif, double montant,int idColocataire, State state)
+    + void Remove() : void
     + string ToString() : string
 
 }
 class Depenses {
     - List<Depense> lesDepenses
-    + AjouterDepense(date date, string titre, string justificatif, decimal montant, bool reparti) : void
-    + SupprimerDepense() : void
+    + int Count() : int
+    + Depense this[(int index)] : Depense
+    + void AjouterDepense(Depense nouvelleDepense) : void
+    + void SupprimerDepense(Depense depense) : void
+    + double Apayer(int idColocataire) : double
+    + double AuraitDuPayer() : double
 }
 
 class Colocataire {
@@ -276,22 +284,24 @@ class Colocataire {
     - numTel : int
     - adresseMail : string
     - state : State
-    + void Remove() : void
-    + State state() : state
+    + int Id() : int
     + string Nom() : string
     + string Prenom() : string
     + int Age() : int
     + int NumTel() : int
     + string AdresseMail() : string
-    + Colocataire(string nom, string prenom, int age, int numTel, string adresseMail) : void
+    + State state() : state
+    + Colocataire(int id, string nom, string prenom, int age, int numTel, string adresseMail, State state) : void
+    + void Remove() : void
     + string ToString() : string
-    + APayer() : decimal
-    + SoldeARegler() : decimal
 }
 class Colocataires {
     - List<Colocataire> lesColocataires
-    + AjouterColocataire(string nom, string prenom, int age, int numTel, string adresseMail) : void
-    + SupprimerColocatire() : void
+    + int Count() : int
+    + Colocataire this[(int index)] : Colocataire
+    + void AjouterColocataire(Colocataire nouveauColocataire) : void
+    + void SupprimerColocataire(Colocataire colocataire) : void
+    + int GetIndex(string nom) : int
 }
 
 Colocataire "1" --> "*" Depenses
