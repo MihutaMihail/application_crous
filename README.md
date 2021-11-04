@@ -259,7 +259,7 @@ class Depense {
     + double Montant() : double
     + bool Reparti() : bool
     + int IdColocataire() : int
-    + State state() : state
+    + State state() : State
     + Depense (int id,DateTime date, string titre, string justificatif, double montant, bool reparti,int idColocataire, State state)
     + Depense (int id,DateTime date, string titre, string justificatif, double montant,int idColocataire, State state)
     + void Remove() : void
@@ -290,7 +290,7 @@ class Colocataire {
     + int Age() : int
     + int NumTel() : int
     + string AdresseMail() : string
-    + State state() : state
+    + State state() : State
     + Colocataire(int id, string nom, string prenom, int age, int numTel, string adresseMail, State state) : void
     + void Remove() : void
     + string ToString() : string
@@ -311,6 +311,49 @@ Depense "*" <-- Depenses
 @enduml
 ```
 
-
-
+# Description des méthodes
+### Colocataire
+• **int Id() : int **.....** State state() : State** <br>
+→ Accésseurs & Mutateurs des données membres privées<br>
+• **Colocataire(int id, string nom, string prenom, int age, int numTel, string adresseMail, State state)** <br> 
+→ Constructeur <br>
+• **void Remove() : void** <br>
+→ Cette fonction change le State d'un élément a **State.deleted**. On peut l'utiliser pour supprimer un élement (colocataire/dépense) <br>
+• **string ToString() : string** <br>
+→ Cette méthode est utiliser pour afficher les données membres d'un colocataire sous forme d'une chaîne de caractères.
+### Colocataires
+• **int Count() : int**<br>
+→ Cette méthode permet de compter le nombre des colocataires dans la collection **lesColocataires**<br>
+• **Colocataire this[int index] : Colocataire**<br>
+→ Cette méthode permet d'avoir l'index d'un élément qu'on spécifie dans la collection<br>
+• **void AjouterColocataire(Colocataire nouveauColocataire) : void**<br>
+→ Cette méthode permet d'ajouter un nouveau colocataire dans la collection **lesColocataires**<br>
+• **void SupprimerColocataire(Colocataire colocataire) : void**<br>
+→ Cette méthode permet de supprimer un colocataire de la collection **lesColocataires**<br>
+• **int GetIndex(string nom) : int**<br>
+→ Cette méthode permet d'avoir le index d'après son nom dans la collection **lesColocataires**
+### Depense
+• **int Id() : int **.....** State state() : State** <br>
+→ Accésseurs & Mutateurs des données membres privées<br>
+• **Depense(int id, DateTime date, string titre, string justificatif, double montant, bool reparti, int IdColocataire, State state)** <br> 
+→ Constructeur <br>
+• **Depense(int id, DateTime date, string titre, string justificatif, double montant, int IdColocataire, State state)** <br> 
+→ Constructeur <br>
+• **void Remove() : void** <br>
+→ Cette fonction change le State d'un élément a **State.deleted**. On peut l'utiliser pour supprimer un élement (colocataire/dépense) <br>
+• **string ToString() : string** <br>
+→ Cette méthode est utiliser pour afficher les données membres d'une dépense sous forme d'une chaîne de caractères.
+### Depenses
+• **int Count() : int**<br>
+→ Cette méthode permet de compter le nombre des dépenses dans la collection **lesDepenses**<br>
+• **Depense this[int index] : Depense**<br>
+→ Cette méthode permet d'avoir l'index d'un élément qu'on spécifie dans la collection<br>
+• **void AjouterDepense(Depense nouvelleDepense) : void**<br>
+→ Cette méthode permet d'ajouter une nouvelle dépense dans la collection **lesDepenses**<br>
+• **void SupprimerDepense(Depense depense) : void**<br>
+→ Cette méthode permet de supprimer une dépense de la collection **lesDepenses**<br>
+• **double APayer(int idColocataire) : double**<br>
+→ Cette méthode permet de trouver le montant total qu'un colocataire a payé dans les dépenses qui sont pas réparti<br>
+• **double AuraitDuPayer() : double** <br>
+→ Cette méthode calcule le montant total des dépenses et le divise par le nombre de colocataires pour trouver combien chaque colocataire devra payer
 
