@@ -24,20 +24,23 @@ namespace View
 
         private void load(Colocataires lesColocataires, Depenses lesDepenses)
         {
-            int index1 = lesColocataires.GetIndex("Vincent");
-            tbAPayeVincent.Text = lesDepenses.APayer(index1).ToString() + " €";
-            tbAuraitPayerVincent.Text = lesDepenses.AuraitDuPayer().ToString() + " €";
-            tbSolderReglerVincent.Text = lesDepenses.AuraitDuPayer() - lesDepenses.APayer(index1) + " €";
+            int index1 = lesColocataires.GetIndex(0);
+            lblColoc1.Text = lesColocataires.GetNom(0);
+            tbAPayeColoc1.Text = lesDepenses.APayer(index1).ToString() + " €";
+            tbAuraitPayerColoc1.Text = lesDepenses.AuraitDuPayer().ToString() + " €";
+            tbSolderReglerColoc1.Text = lesDepenses.AuraitDuPayer() - lesDepenses.APayer(index1) + " €";
 
-            int index2 = lesColocataires.GetIndex("Lassina");
-            tbAPayeLassina.Text = lesDepenses.APayer(index2).ToString() + " €";
-            tbAuraitPayerLassina.Text = lesDepenses.AuraitDuPayer().ToString() + " €";
-            tbSolderReglerLassina.Text = lesDepenses.AuraitDuPayer() - lesDepenses.APayer(index2) + " €";
+            int index2 = lesColocataires.GetIndex(1);
+            lblColoc2.Text = lesColocataires.GetNom(1);
+            tbAPayeColoc2.Text = lesDepenses.APayer(index2).ToString() + " €";
+            tbAuraitPayerColoc2.Text = lesDepenses.AuraitDuPayer().ToString() + " €";
+            tbSolderReglerColoc2.Text = lesDepenses.AuraitDuPayer() - lesDepenses.APayer(index2) + " €";
 
-            int index3 = lesColocataires.GetIndex("Mihail");
-            tbAPayeMihail.Text = lesDepenses.APayer(index3).ToString() + " €";
-            tbAuraitPayerMihail.Text = lesDepenses.AuraitDuPayer().ToString() + " €";
-            tbSolderReglerMihail.Text = lesDepenses.AuraitDuPayer() - lesDepenses.APayer(index3) + " €";
+            int index3 = lesColocataires.GetIndex(2);
+            lblColoc3.Text = lesColocataires.GetNom(2);
+            tbAPayeColoc3.Text = lesDepenses.APayer(index3).ToString() + " €";
+            tbAuraitPayerColoc3.Text = lesDepenses.AuraitDuPayer().ToString() + " €";
+            tbSolderReglerColoc3.Text = lesDepenses.AuraitDuPayer() - lesDepenses.APayer(index3) + " €";
 
         }
 

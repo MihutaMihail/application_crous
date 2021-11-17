@@ -33,13 +33,22 @@ namespace Model
 
         public int GetIndex(string nom)
         {
-            for (int i = 0; i < lesColocataires.Count; i++)
+            for (int i = 0; i < lesColocataires.Count(); i++)
             {
                 if (lesColocataires[i].Nom == nom) {
                     return lesColocataires[i].Id;
                 }
             }
             return -333;
+        }
+        
+        public int GetIndex(int index) {
+            return lesColocataires[index].Id;
+        }
+
+        public string GetNom(int index)
+        {
+            return lesColocataires[index].Nom;
         }
     }
 }

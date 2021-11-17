@@ -28,20 +28,17 @@ namespace View
             }
             new DaoDepense().SaveChanges(lesDepenses);
 
-            int index1 = lesColocataires.GetIndex("Vincent");
-            tbAPayeVincent.Text = lesDepenses.APayer(index1).ToString() + " €";
-            tbAuraitPayerVincent.Text = lesDepenses.AuraitDuPayer().ToString() + " €";
-            tbSolderReglerVincent.Text = lesDepenses.AuraitDuPayer() - lesDepenses.APayer(index1) + " €";
+            tbAPayeColoc1.Text = "0 €";
+            tbAuraitPayerColoc1.Text = "0 €";
+            tbSolderReglerColoc1.Text = "0 €";
 
-            int index2 = lesColocataires.GetIndex("Lassina");
-            tbAPayeLassina.Text = lesDepenses.APayer(index2).ToString() + " €";
-            tbAuraitPayerLassina.Text = lesDepenses.AuraitDuPayer().ToString() + " €";
-            tbSolderReglerLassina.Text = lesDepenses.AuraitDuPayer() - lesDepenses.APayer(index2) + " €";
+            tbAPayeColoc2.Text = "0 €";
+            tbAuraitPayerColoc2.Text = "0 €";
+            tbSolderReglerColoc2.Text = "0 €";
 
-            int index3 = lesColocataires.GetIndex("Mihail");
-            tbAPayeMihail.Text = lesDepenses.APayer(index3).ToString() + " €";
-            tbAuraitPayerMihail.Text = lesDepenses.AuraitDuPayer().ToString() + " €";
-            tbSolderReglerMihail.Text = lesDepenses.AuraitDuPayer() - lesDepenses.APayer(index3) + " €";
+            tbAPayeColoc3.Text = "0 €";
+            tbAuraitPayerColoc3.Text = "0 €";
+            tbSolderReglerColoc3.Text = "0 €";
 
         }
     }

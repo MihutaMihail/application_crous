@@ -20,7 +20,7 @@ namespace View
             btnColocataires.Click += btnColocataires_Click;
             btnRepartition.Click += btnRepartition_Click;
             btnDepenses.Click += btnDepenses_Click;
-            DaoConnectionSingleton.SetStringConnection("root", "crous", "localhost", "crous");
+            DaoConnectionSingleton.SetStringConnection("root", "siojjr", "localhost", "crous");
         }
 
         private void btnRepartition_Click(object sender, EventArgs e)

@@ -29,112 +29,112 @@ namespace View
         /// </summary>
         private void InitializeComponent()
         {
-            this.tbSolderReglerMihail = new System.Windows.Forms.TextBox();
-            this.tbAuraitPayerMihail = new System.Windows.Forms.TextBox();
-            this.tbAPayeMihail = new System.Windows.Forms.TextBox();
-            this.tbSolderReglerLassina = new System.Windows.Forms.TextBox();
-            this.tbAuraitPayerLassina = new System.Windows.Forms.TextBox();
-            this.tbAPayeLassina = new System.Windows.Forms.TextBox();
-            this.tbSolderReglerVincent = new System.Windows.Forms.TextBox();
-            this.tbAuraitPayerVincent = new System.Windows.Forms.TextBox();
-            this.tbAPayeVincent = new System.Windows.Forms.TextBox();
+            this.tbSolderReglerColoc3 = new System.Windows.Forms.TextBox();
+            this.tbAuraitPayerColoc3 = new System.Windows.Forms.TextBox();
+            this.tbAPayeColoc3 = new System.Windows.Forms.TextBox();
+            this.tbSolderReglerColoc2 = new System.Windows.Forms.TextBox();
+            this.tbAuraitPayerColoc2 = new System.Windows.Forms.TextBox();
+            this.tbAPayeColoc2 = new System.Windows.Forms.TextBox();
+            this.tbSolderReglerColoc1 = new System.Windows.Forms.TextBox();
+            this.tbAuraitPayerColoc1 = new System.Windows.Forms.TextBox();
+            this.tbAPayeColoc1 = new System.Windows.Forms.TextBox();
             this.lblSolderARegler = new System.Windows.Forms.Label();
             this.lblAuraitDuPayer = new System.Windows.Forms.Label();
             this.lblAPaye = new System.Windows.Forms.Label();
-            this.lblMihail = new System.Windows.Forms.Label();
-            this.lblLassina = new System.Windows.Forms.Label();
-            this.lblVincent = new System.Windows.Forms.Label();
+            this.lblColoc3 = new System.Windows.Forms.Label();
+            this.lblColoc2 = new System.Windows.Forms.Label();
+            this.lblColoc1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // tbSolderReglerMihail
+            // tbSolderReglerColoc3
             // 
-            this.tbSolderReglerMihail.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbSolderReglerMihail.Location = new System.Drawing.Point(259, 87);
-            this.tbSolderReglerMihail.Name = "tbSolderReglerMihail";
-            this.tbSolderReglerMihail.ReadOnly = true;
-            this.tbSolderReglerMihail.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tbSolderReglerMihail.Size = new System.Drawing.Size(100, 27);
-            this.tbSolderReglerMihail.TabIndex = 42;
+            this.tbSolderReglerColoc3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbSolderReglerColoc3.Location = new System.Drawing.Point(259, 87);
+            this.tbSolderReglerColoc3.Name = "tbSolderReglerColoc3";
+            this.tbSolderReglerColoc3.ReadOnly = true;
+            this.tbSolderReglerColoc3.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.tbSolderReglerColoc3.Size = new System.Drawing.Size(100, 27);
+            this.tbSolderReglerColoc3.TabIndex = 42;
             // 
-            // tbAuraitPayerMihail
+            // tbAuraitPayerColoc3
             // 
-            this.tbAuraitPayerMihail.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbAuraitPayerMihail.Location = new System.Drawing.Point(162, 87);
-            this.tbAuraitPayerMihail.Name = "tbAuraitPayerMihail";
-            this.tbAuraitPayerMihail.ReadOnly = true;
-            this.tbAuraitPayerMihail.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tbAuraitPayerMihail.Size = new System.Drawing.Size(100, 27);
-            this.tbAuraitPayerMihail.TabIndex = 41;
+            this.tbAuraitPayerColoc3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAuraitPayerColoc3.Location = new System.Drawing.Point(162, 87);
+            this.tbAuraitPayerColoc3.Name = "tbAuraitPayerColoc3";
+            this.tbAuraitPayerColoc3.ReadOnly = true;
+            this.tbAuraitPayerColoc3.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.tbAuraitPayerColoc3.Size = new System.Drawing.Size(100, 27);
+            this.tbAuraitPayerColoc3.TabIndex = 41;
             // 
-            // tbAPayeMihail
+            // tbAPayeColoc3
             // 
-            this.tbAPayeMihail.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbAPayeMihail.Location = new System.Drawing.Point(69, 87);
-            this.tbAPayeMihail.Name = "tbAPayeMihail";
-            this.tbAPayeMihail.ReadOnly = true;
-            this.tbAPayeMihail.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tbAPayeMihail.Size = new System.Drawing.Size(100, 27);
-            this.tbAPayeMihail.TabIndex = 40;
+            this.tbAPayeColoc3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAPayeColoc3.Location = new System.Drawing.Point(69, 87);
+            this.tbAPayeColoc3.Name = "tbAPayeColoc3";
+            this.tbAPayeColoc3.ReadOnly = true;
+            this.tbAPayeColoc3.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.tbAPayeColoc3.Size = new System.Drawing.Size(100, 27);
+            this.tbAPayeColoc3.TabIndex = 40;
             // 
-            // tbSolderReglerLassina
+            // tbSolderReglerColoc2
             // 
-            this.tbSolderReglerLassina.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbSolderReglerLassina.Location = new System.Drawing.Point(259, 61);
-            this.tbSolderReglerLassina.Name = "tbSolderReglerLassina";
-            this.tbSolderReglerLassina.ReadOnly = true;
-            this.tbSolderReglerLassina.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tbSolderReglerLassina.Size = new System.Drawing.Size(100, 27);
-            this.tbSolderReglerLassina.TabIndex = 39;
+            this.tbSolderReglerColoc2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbSolderReglerColoc2.Location = new System.Drawing.Point(259, 61);
+            this.tbSolderReglerColoc2.Name = "tbSolderReglerColoc2";
+            this.tbSolderReglerColoc2.ReadOnly = true;
+            this.tbSolderReglerColoc2.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.tbSolderReglerColoc2.Size = new System.Drawing.Size(100, 27);
+            this.tbSolderReglerColoc2.TabIndex = 39;
             // 
-            // tbAuraitPayerLassina
+            // tbAuraitPayerColoc2
             // 
-            this.tbAuraitPayerLassina.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbAuraitPayerLassina.Location = new System.Drawing.Point(162, 61);
-            this.tbAuraitPayerLassina.Name = "tbAuraitPayerLassina";
-            this.tbAuraitPayerLassina.ReadOnly = true;
-            this.tbAuraitPayerLassina.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tbAuraitPayerLassina.Size = new System.Drawing.Size(100, 27);
-            this.tbAuraitPayerLassina.TabIndex = 38;
+            this.tbAuraitPayerColoc2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAuraitPayerColoc2.Location = new System.Drawing.Point(162, 61);
+            this.tbAuraitPayerColoc2.Name = "tbAuraitPayerColoc2";
+            this.tbAuraitPayerColoc2.ReadOnly = true;
+            this.tbAuraitPayerColoc2.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.tbAuraitPayerColoc2.Size = new System.Drawing.Size(100, 27);
+            this.tbAuraitPayerColoc2.TabIndex = 38;
             // 
-            // tbAPayeLassina
+            // tbAPayeColoc2
             // 
-            this.tbAPayeLassina.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbAPayeLassina.Location = new System.Drawing.Point(69, 61);
-            this.tbAPayeLassina.Name = "tbAPayeLassina";
-            this.tbAPayeLassina.ReadOnly = true;
-            this.tbAPayeLassina.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tbAPayeLassina.Size = new System.Drawing.Size(100, 27);
-            this.tbAPayeLassina.TabIndex = 37;
+            this.tbAPayeColoc2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAPayeColoc2.Location = new System.Drawing.Point(69, 61);
+            this.tbAPayeColoc2.Name = "tbAPayeColoc2";
+            this.tbAPayeColoc2.ReadOnly = true;
+            this.tbAPayeColoc2.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.tbAPayeColoc2.Size = new System.Drawing.Size(100, 27);
+            this.tbAPayeColoc2.TabIndex = 37;
             // 
-            // tbSolderReglerVincent
+            // tbSolderReglerColoc1
             // 
-            this.tbSolderReglerVincent.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbSolderReglerVincent.Location = new System.Drawing.Point(259, 35);
-            this.tbSolderReglerVincent.Name = "tbSolderReglerVincent";
-            this.tbSolderReglerVincent.ReadOnly = true;
-            this.tbSolderReglerVincent.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tbSolderReglerVincent.Size = new System.Drawing.Size(100, 27);
-            this.tbSolderReglerVincent.TabIndex = 36;
+            this.tbSolderReglerColoc1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbSolderReglerColoc1.Location = new System.Drawing.Point(259, 35);
+            this.tbSolderReglerColoc1.Name = "tbSolderReglerColoc1";
+            this.tbSolderReglerColoc1.ReadOnly = true;
+            this.tbSolderReglerColoc1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.tbSolderReglerColoc1.Size = new System.Drawing.Size(100, 27);
+            this.tbSolderReglerColoc1.TabIndex = 36;
             // 
-            // tbAuraitPayerVincent
+            // tbAuraitPayerColoc1
             // 
-            this.tbAuraitPayerVincent.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbAuraitPayerVincent.Location = new System.Drawing.Point(162, 35);
-            this.tbAuraitPayerVincent.Name = "tbAuraitPayerVincent";
-            this.tbAuraitPayerVincent.ReadOnly = true;
-            this.tbAuraitPayerVincent.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tbAuraitPayerVincent.Size = new System.Drawing.Size(100, 27);
-            this.tbAuraitPayerVincent.TabIndex = 35;
+            this.tbAuraitPayerColoc1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAuraitPayerColoc1.Location = new System.Drawing.Point(162, 35);
+            this.tbAuraitPayerColoc1.Name = "tbAuraitPayerColoc1";
+            this.tbAuraitPayerColoc1.ReadOnly = true;
+            this.tbAuraitPayerColoc1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.tbAuraitPayerColoc1.Size = new System.Drawing.Size(100, 27);
+            this.tbAuraitPayerColoc1.TabIndex = 35;
             // 
-            // tbAPayeVincent
+            // tbAPayeColoc1
             // 
-            this.tbAPayeVincent.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbAPayeVincent.Location = new System.Drawing.Point(69, 35);
-            this.tbAPayeVincent.Name = "tbAPayeVincent";
-            this.tbAPayeVincent.ReadOnly = true;
-            this.tbAPayeVincent.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tbAPayeVincent.Size = new System.Drawing.Size(100, 27);
-            this.tbAPayeVincent.TabIndex = 34;
+            this.tbAPayeColoc1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAPayeColoc1.Location = new System.Drawing.Point(69, 35);
+            this.tbAPayeColoc1.Name = "tbAPayeColoc1";
+            this.tbAPayeColoc1.ReadOnly = true;
+            this.tbAPayeColoc1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.tbAPayeColoc1.Size = new System.Drawing.Size(100, 27);
+            this.tbAPayeColoc1.TabIndex = 34;
             // 
             // lblSolderARegler
             // 
@@ -166,56 +166,56 @@ namespace View
             this.lblAPaye.TabIndex = 31;
             this.lblAPaye.Text = "A Payé";
             // 
-            // lblMihail
+            // lblColoc3
             // 
-            this.lblMihail.AutoSize = true;
-            this.lblMihail.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMihail.Location = new System.Drawing.Point(11, 91);
-            this.lblMihail.Name = "lblMihail";
-            this.lblMihail.Size = new System.Drawing.Size(56, 19);
-            this.lblMihail.TabIndex = 30;
-            this.lblMihail.Text = "Mihail ";
+            this.lblColoc3.AutoSize = true;
+            this.lblColoc3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblColoc3.Location = new System.Drawing.Point(11, 91);
+            this.lblColoc3.Name = "lblColoc3";
+            this.lblColoc3.Size = new System.Drawing.Size(56, 19);
+            this.lblColoc3.TabIndex = 30;
+            this.lblColoc3.Text = "Mihail ";
             // 
-            // lblLassina
+            // lblColoc2
             // 
-            this.lblLassina.AutoSize = true;
-            this.lblLassina.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLassina.Location = new System.Drawing.Point(10, 65);
-            this.lblLassina.Name = "lblLassina";
-            this.lblLassina.Size = new System.Drawing.Size(57, 19);
-            this.lblLassina.TabIndex = 29;
-            this.lblLassina.Text = "Lassina";
+            this.lblColoc2.AutoSize = true;
+            this.lblColoc2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblColoc2.Location = new System.Drawing.Point(10, 65);
+            this.lblColoc2.Name = "lblColoc2";
+            this.lblColoc2.Size = new System.Drawing.Size(57, 19);
+            this.lblColoc2.TabIndex = 29;
+            this.lblColoc2.Text = "Lassina";
             // 
-            // lblVincent
+            // lblColoc1
             // 
-            this.lblVincent.AutoSize = true;
-            this.lblVincent.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVincent.Location = new System.Drawing.Point(6, 39);
-            this.lblVincent.Name = "lblVincent";
-            this.lblVincent.Size = new System.Drawing.Size(61, 19);
-            this.lblVincent.TabIndex = 28;
-            this.lblVincent.Text = "Vincent";
+            this.lblColoc1.AutoSize = true;
+            this.lblColoc1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblColoc1.Location = new System.Drawing.Point(9, 39);
+            this.lblColoc1.Name = "lblColoc1";
+            this.lblColoc1.Size = new System.Drawing.Size(61, 19);
+            this.lblColoc1.TabIndex = 28;
+            this.lblColoc1.Text = "Vincent";
             // 
             // FSolderPeriode
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(403, 129);
-            this.Controls.Add(this.tbSolderReglerMihail);
-            this.Controls.Add(this.tbAuraitPayerMihail);
-            this.Controls.Add(this.tbAPayeMihail);
-            this.Controls.Add(this.tbSolderReglerLassina);
-            this.Controls.Add(this.tbAuraitPayerLassina);
-            this.Controls.Add(this.tbAPayeLassina);
-            this.Controls.Add(this.tbSolderReglerVincent);
-            this.Controls.Add(this.tbAuraitPayerVincent);
-            this.Controls.Add(this.tbAPayeVincent);
+            this.Controls.Add(this.tbSolderReglerColoc3);
+            this.Controls.Add(this.tbAuraitPayerColoc3);
+            this.Controls.Add(this.tbAPayeColoc3);
+            this.Controls.Add(this.tbSolderReglerColoc2);
+            this.Controls.Add(this.tbAuraitPayerColoc2);
+            this.Controls.Add(this.tbAPayeColoc2);
+            this.Controls.Add(this.tbSolderReglerColoc1);
+            this.Controls.Add(this.tbAuraitPayerColoc1);
+            this.Controls.Add(this.tbAPayeColoc1);
             this.Controls.Add(this.lblSolderARegler);
             this.Controls.Add(this.lblAuraitDuPayer);
             this.Controls.Add(this.lblAPaye);
-            this.Controls.Add(this.lblMihail);
-            this.Controls.Add(this.lblLassina);
-            this.Controls.Add(this.lblVincent);
+            this.Controls.Add(this.lblColoc3);
+            this.Controls.Add(this.lblColoc2);
+            this.Controls.Add(this.lblColoc1);
             this.Name = "FSolderPeriode";
             this.Text = "FSolderPeriode";
             this.ResumeLayout(false);
@@ -225,20 +225,20 @@ namespace View
 
         #endregion
 
-        private System.Windows.Forms.TextBox tbSolderReglerMihail;
-        private System.Windows.Forms.TextBox tbAuraitPayerMihail;
-        private System.Windows.Forms.TextBox tbAPayeMihail;
-        private System.Windows.Forms.TextBox tbSolderReglerLassina;
-        private System.Windows.Forms.TextBox tbAuraitPayerLassina;
-        private System.Windows.Forms.TextBox tbAPayeLassina;
-        private System.Windows.Forms.TextBox tbSolderReglerVincent;
-        private System.Windows.Forms.TextBox tbAuraitPayerVincent;
-        private System.Windows.Forms.TextBox tbAPayeVincent;
+        private System.Windows.Forms.TextBox tbSolderReglerColoc3;
+        private System.Windows.Forms.TextBox tbAuraitPayerColoc3;
+        private System.Windows.Forms.TextBox tbAPayeColoc3;
+        private System.Windows.Forms.TextBox tbSolderReglerColoc2;
+        private System.Windows.Forms.TextBox tbAuraitPayerColoc2;
+        private System.Windows.Forms.TextBox tbAPayeColoc2;
+        private System.Windows.Forms.TextBox tbSolderReglerColoc1;
+        private System.Windows.Forms.TextBox tbAuraitPayerColoc1;
+        private System.Windows.Forms.TextBox tbAPayeColoc1;
         private System.Windows.Forms.Label lblSolderARegler;
         private System.Windows.Forms.Label lblAuraitDuPayer;
         private System.Windows.Forms.Label lblAPaye;
-        private System.Windows.Forms.Label lblMihail;
-        private System.Windows.Forms.Label lblLassina;
-        private System.Windows.Forms.Label lblVincent;
+        private System.Windows.Forms.Label lblColoc3;
+        private System.Windows.Forms.Label lblColoc2;
+        private System.Windows.Forms.Label lblColoc1;
     }
 }

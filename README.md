@@ -314,6 +314,8 @@ class Colocataires {
     + void AjouterColocataire(Colocataire nouveauColocataire) : void
     + void SupprimerColocataire(Colocataire colocataire) : void
     + int GetIndex(string nom) : int
+    + int GetIndex(int index) : int
+    + string GetNom(int index) : string
 }
 
 Colocataire "1" --> "*" Depenses
@@ -343,6 +345,10 @@ Depense "*" <-- Depenses
 **•** **void SupprimerColocataire(Colocataire colocataire) : void**<br>
 → Cette méthode permet de supprimer un colocataire de la collection **lesColocataires**<br>
 **•** **int GetIndex(string nom) : int**<br>
+→ Cette méthode permet d'avoir le index d'après son nom dans la collection **lesColocataires**
+**•** **int GetIndex(int index) : int**<br>
+→ Cette méthode permet d'avoir le index d'après l'index de la collection (ex : l'index dans la collection est 0 mais son id dans la base de données est 8, si on met 8, la méthode ne marche pas à cause d'un dépassement d'index)**lesColocataires**
+**•** **string GetNom(int index) : string**<br>
 → Cette méthode permet d'avoir le index d'après son nom dans la collection **lesColocataires**
 ### Depense
 **•** **int Id() : int **.....** State state() : State** <br>

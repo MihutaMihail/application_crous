@@ -44,12 +44,12 @@ namespace Model
         }
         public double AuraitDuPayer() {
             double montant = 0;
-            for(int i = 0; i < lesDepenses.Count; i++) {
-                if(lesDepenses[i].Reparti == false) {
+            for (int i = 0; i < lesDepenses.Count(); i++) {
+                if (lesDepenses[i].Reparti == false) {
                     montant += lesDepenses[i].Montant;
                 }
             }
-            return System.Math.Round(montant/3, 2);
+            return montant;
         }
     }
 }
