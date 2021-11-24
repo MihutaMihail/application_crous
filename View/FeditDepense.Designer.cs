@@ -44,6 +44,7 @@
             this.btnValider = new System.Windows.Forms.Button();
             this.btnSelectFile = new System.Windows.Forms.Button();
             this.tbSelectFile = new System.Windows.Forms.TextBox();
+            this.tbColocataireId = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // tbReparti
@@ -176,7 +177,7 @@
             this.cbColocataire.FormattingEnabled = true;
             this.cbColocataire.Location = new System.Drawing.Point(119, 202);
             this.cbColocataire.Name = "cbColocataire";
-            this.cbColocataire.Size = new System.Drawing.Size(121, 23);
+            this.cbColocataire.Size = new System.Drawing.Size(166, 23);
             this.cbColocataire.TabIndex = 31;
             // 
             // btnValider
@@ -207,11 +208,22 @@
             this.tbSelectFile.Size = new System.Drawing.Size(168, 20);
             this.tbSelectFile.TabIndex = 34;
             // 
+            // tbColocataireId
+            // 
+            this.tbColocataireId.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbColocataireId.Location = new System.Drawing.Point(290, 202);
+            this.tbColocataireId.Margin = new System.Windows.Forms.Padding(2);
+            this.tbColocataireId.Name = "tbColocataireId";
+            this.tbColocataireId.ReadOnly = true;
+            this.tbColocataireId.Size = new System.Drawing.Size(56, 23);
+            this.tbColocataireId.TabIndex = 35;
+            // 
             // FeditDepense
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(362, 296);
+            this.Controls.Add(this.tbColocataireId);
             this.Controls.Add(this.tbSelectFile);
             this.Controls.Add(this.btnSelectFile);
             this.Controls.Add(this.btnValider);
@@ -252,5 +264,6 @@
         private System.Windows.Forms.Button btnValider;
         private System.Windows.Forms.Button btnSelectFile;
         private System.Windows.Forms.TextBox tbSelectFile;
+        private System.Windows.Forms.TextBox tbColocataireId;
     }
 }

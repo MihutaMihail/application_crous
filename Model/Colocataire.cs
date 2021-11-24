@@ -26,6 +26,9 @@ namespace Model
             this.adresseMail = adresseMail;
             this.state = state;
         }
+        public Colocataire() { 
+        }
+
         public void Remove()
         {
             this.state = State.deleted;

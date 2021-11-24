@@ -49,7 +49,7 @@ namespace Model
                     montant += lesDepenses[i].Montant;
                 }
             }
-            return montant;
+            return montant/6;
         }
     }
 }

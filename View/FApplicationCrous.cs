@@ -27,6 +27,8 @@ namespace View
         {
             FMiseEnRepartition r = new FMiseEnRepartition();
             r.Show();
+            DataGridView d = new DataGridView();
+            d.Show();
         }
 
         private void btnColocataires_Click(object sender, EventArgs e)

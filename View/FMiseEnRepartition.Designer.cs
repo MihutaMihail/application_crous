@@ -103,9 +103,9 @@ namespace View
             this.lblSolderARegler.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSolderARegler.Location = new System.Drawing.Point(260, 10);
             this.lblSolderARegler.Name = "lblSolderARegler";
-            this.lblSolderARegler.Size = new System.Drawing.Size(107, 19);
+            this.lblSolderARegler.Size = new System.Drawing.Size(108, 19);
             this.lblSolderARegler.TabIndex = 14;
-            this.lblSolderARegler.Text = "Solder à Régler";
+            this.lblSolderARegler.Text = "Soldes à Régler";
             // 
             // tbAPayeColoc1
             // 
