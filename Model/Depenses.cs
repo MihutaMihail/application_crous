@@ -42,6 +42,10 @@ namespace Model
             }
             return montantTotal;
         }
+
+        // Cette fonction calcule le montant total payé par tous les colocataires
+        // Le montant va être divisé par le nombre de colocataire qui sont compris dans le calcul
+        // Si 3 colocataires ont payé sauf 1, le montant va être divisé par 3 et pas par 4
         public double AuraitDuPayer() {
             double montant = 0;
             List<int> nombres = new List<int>();
