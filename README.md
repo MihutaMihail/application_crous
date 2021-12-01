@@ -373,5 +373,5 @@ Depense "*" <-- Depenses
 **•** **double APayer(int idColocataire) : double**<br>
 → Cette méthode permet de trouver le montant total qu'un colocataire a payé dans les dépenses qui sont pas réparti<br>
 **•** **double AuraitDuPayer() : double** <br>
-→ Cette méthode calcule le montant total des dépenses et le divise par le nombre de colocataires pour trouver combien chaque colocataire devra payer
+→ Cette méthode calcule le montant total des dépenses mais le divise pas par le nombre de colocataires. Ceci est fait dans un autre endroit.
 
