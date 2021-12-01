@@ -44,12 +44,17 @@ namespace Model
         }
         public double AuraitDuPayer() {
             double montant = 0;
-            for (int i = 0; i < lesDepenses.Count(); i++) {
-                if (lesDepenses[i].Reparti == false) {
-                    montant += lesDepenses[i].Montant;
+            List<int> nombres = new List<int>();
+            int nbColoc = 0;
+
+            foreach (Depense d in lesDepenses) {         
+                if (d.Reparti == false) {
+                    montant += d.Montant;
+                    nombres.Add(d.IdColocataire);
                 }
             }
-            return montant/6;
+            nbColoc = nombres.Distinct().Count();
+            return montant/nbColoc;
         }
     }
 }

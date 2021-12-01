@@ -25,9 +25,7 @@ namespace View
 
         private void btnRepartition_Click(object sender, EventArgs e)
         {
-            FMiseEnRepartition r = new FMiseEnRepartition();
-            r.Show();
-            DataGridView d = new DataGridView();
+            FMiseEnRepartition d = new FMiseEnRepartition();
             d.Show();
         }
 

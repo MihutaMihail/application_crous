@@ -58,23 +58,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataGridView.cs">
+    <Compile Include="FMiseEnRepartition.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DataGridView.Designer.cs">
-      <DependentUpon>DataGridView.cs</DependentUpon>
+    <Compile Include="FMiseEnRepartition.Designer.cs">
+      <DependentUpon>FMiseEnRepartition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FSolderUnePeriode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FSolderUnePeriode.Designer.cs">
+      <DependentUpon>FSolderUnePeriode.cs</DependentUpon>
     </Compile>
     <Compile Include="FApplicationCrous.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FApplicationCrous.Designer.cs">
       <DependentUpon>FApplicationCrous.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FMiseEnRepartition.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FMiseEnRepartition.Designer.cs">
-      <DependentUpon>FMiseEnRepartition.cs</DependentUpon>
     </Compile>
     <Compile Include="FeditColocataire.cs">
       <SubType>Form</SubType>
@@ -100,22 +100,16 @@
     <Compile Include="FGestionDepense.Designer.cs">
       <DependentUpon>FGestionDepense.cs</DependentUpon>
     </Compile>
-    <Compile Include="FSolderPeriode.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FSolderPeriode.Designer.cs">
-      <DependentUpon>FSolderPeriode.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="DataGridView.resx">
-      <DependentUpon>DataGridView.cs</DependentUpon>
+    <EmbeddedResource Include="FMiseEnRepartition.resx">
+      <DependentUpon>FMiseEnRepartition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FSolderUnePeriode.resx">
+      <DependentUpon>FSolderUnePeriode.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FApplicationCrous.resx">
       <DependentUpon>FApplicationCrous.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FMiseEnRepartition.resx">
-      <DependentUpon>FMiseEnRepartition.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FeditColocataire.resx">
       <DependentUpon>FeditColocataire.cs</DependentUpon>
@@ -128,9 +122,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FGestionDepense.resx">
       <DependentUpon>FGestionDepense.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FSolderPeriode.resx">
-      <DependentUpon>FSolderPeriode.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

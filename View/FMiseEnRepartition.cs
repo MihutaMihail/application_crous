@@ -7,8 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Model;
 using Dao;
+using Model;
 
 namespace View
 {
@@ -18,40 +18,50 @@ namespace View
         {
             InitializeComponent();
             btnSolderPeriode.Click += btnSolderPeriode_Click;
-            this.Text = "Calculer la répartition";
             this.load(new DaoColocataire().GetAll(), new DaoDepense().GetAll());
+            this.dataGridView1.Columns["Nom"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridView1.Columns["APaye"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridView1.Columns["AuraitDuPayer"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridView1.Columns["SoldesARegler"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            foreach(DataGridViewColumn col in dataGridView1.Columns) {
+                col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                col.HeaderCell.Style.Font = new Font("Calibri", 15F, FontStyle.Bold, GraphicsUnit.Pixel);
+            }
         }
 
         private void load(Colocataires lesColocataires, Depenses lesDepenses)
         {
-            int index1 = lesColocataires.GetIndex(0);
-            lblColoc1.Text = lesColocataires.GetNom(0);
-            tbAPayeColoc1.Text = lesDepenses.APayer(index1).ToString() + " €";
-            tbAuraitPayerColoc1.Text = lesDepenses.AuraitDuPayer().ToString() + " €";
-            tbSolderReglerColoc1.Text = lesDepenses.AuraitDuPayer() - lesDepenses.APayer(index1) + " €";
-
-            int index2 = lesColocataires.GetIndex(1);
-            lblColoc2.Text = lesColocataires.GetNom(1);
-            tbAPayeColoc2.Text = lesDepenses.APayer(index2).ToString() + " €";
-            tbAuraitPayerColoc2.Text = lesDepenses.AuraitDuPayer().ToString() + " €";
-            tbSolderReglerColoc2.Text = lesDepenses.AuraitDuPayer() - lesDepenses.APayer(index2) + " €";
-
-            int index3 = lesColocataires.GetIndex(2);
-            lblColoc3.Text = lesColocataires.GetNom(2);
-            tbAPayeColoc3.Text = lesDepenses.APayer(index3).ToString() + " €";
-            tbAuraitPayerColoc3.Text = lesDepenses.AuraitDuPayer().ToString() + " €";
-            tbSolderReglerColoc3.Text = lesDepenses.AuraitDuPayer() - lesDepenses.APayer(index3) + " €";
-
+            for (int i = 0; i < lesColocataires.Count(); i++)
+            {
+                DataGridViewRow row = (DataGridViewRow)dataGridView1.Rows[0].Clone();
+                dataGridView1.Rows.Add(row);
+                dataGridView1.Rows[i].Cells[0].Value = lesColocataires[i].Nom;
+            }
+            for (int i = 0; i < lesColocataires.Count(); i++)
+            {
+                int index = lesColocataires.GetIndex(i);
+                dataGridView1.Rows[i].Cells[1].Value = lesDepenses.APayer(index).ToString();
+            }
+            for (int i = 0; i < lesColocataires.Count(); i++)
+            {
+                dataGridView1.Rows[i].Cells[2].Value = lesDepenses.AuraitDuPayer().ToString();
+            }
+            for (int i = 0; i < lesColocataires.Count(); i++)
+            {
+                int index = lesColocataires.GetIndex(i);
+                dataGridView1.Rows[i].Cells[3].Value = lesDepenses.AuraitDuPayer() - lesDepenses.APayer(index);
+            }
         }
 
-        private void btnSolderPeriode_Click (object sender, EventArgs e) {
+        private void btnSolderPeriode_Click(object sender, EventArgs e)
+        {
             DialogResult dialogResult = MessageBox.Show("Êtes-vous sûr de vouloir solder une période ?", "ATTENTION", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
                 this.Hide();
                 MessageBox.Show("Cette période a été soldé !");
-                FSolderPeriode sp = new FSolderPeriode();
-                sp.ShowDialog();
+                FSolderUnePeriode s = new FSolderUnePeriode();
+                s.ShowDialog();
             }
         }
     }
