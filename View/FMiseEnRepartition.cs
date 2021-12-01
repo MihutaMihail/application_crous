@@ -18,6 +18,7 @@ namespace View
         {
             InitializeComponent();
             btnSolderPeriode.Click += btnSolderPeriode_Click;
+            this.Text = "Mise en répartition"; 
             this.load(new DaoColocataire().GetAll(), new DaoDepense().GetAll());
             this.dataGridView1.Columns["Nom"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.dataGridView1.Columns["APaye"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -31,6 +32,7 @@ namespace View
 
         private void load(Colocataires lesColocataires, Depenses lesDepenses)
         {
+            int nombreColocataires = lesColocataires.Count();
             for (int i = 0; i < lesColocataires.Count(); i++)
             {
                 DataGridViewRow row = (DataGridViewRow)dataGridView1.Rows[0].Clone();
@@ -44,7 +46,8 @@ namespace View
             }
             for (int i = 0; i < lesColocataires.Count(); i++)
             {
-                dataGridView1.Rows[i].Cells[2].Value = lesDepenses.AuraitDuPayer().ToString();
+                int valeur = Convert.ToInt32(lesDepenses.AuraitDuPayer()) / nombreColocataires;
+                dataGridView1.Rows[i].Cells[2].Value = valeur.ToString();
             }
             for (int i = 0; i < lesColocataires.Count(); i++)
             {
