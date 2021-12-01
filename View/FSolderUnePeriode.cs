@@ -36,6 +36,7 @@ namespace View
                 lesDepenses[i].Reparti = true;
                 lesDepenses[i].State = State.solderModified;
             }
+
             new DaoDepense().SaveChanges(lesDepenses);
 
             for (int i = 0; i < lesColocataires.Count(); i++)
