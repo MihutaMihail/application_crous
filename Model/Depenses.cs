@@ -30,9 +30,9 @@ namespace Model
         {
             lesDepenses.Remove(depense);
         }
-        public double APayer(int idColocataire)
+        public decimal APayer(int idColocataire)
         {
-            double montantTotal = 0;
+            decimal montantTotal = 0;
             for (int i = 0; i < lesDepenses.Count; i++)
             {
                 if (lesDepenses[i].IdColocataire == idColocataire && lesDepenses[i].Reparti == false)
@@ -45,8 +45,8 @@ namespace Model
 
         // Cette fonction calcule le montant total payé par tous les colocataires
         // Le montant n'est pas divisé par le nombre de colocataires. Ceci est fait dans FMiseEnRepartition.
-        public double AuraitDuPayer() {
-            double montant = 0;
+        public decimal AuraitDuPayer() {
+            decimal montant = 0;
             foreach (Depense d in lesDepenses) {         
                 if (d.Reparti == false) {
                     montant += d.Montant;

@@ -24,7 +24,7 @@ namespace View
             this.dataGridView1.Columns["APaye"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.dataGridView1.Columns["AuraitDuPayer"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.dataGridView1.Columns["SoldesARegler"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            foreach(DataGridViewColumn col in dataGridView1.Columns) {
+            foreach (DataGridViewColumn col in dataGridView1.Columns) {
                 col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
                 col.HeaderCell.Style.Font = new Font("Calibri", 15F, FontStyle.Bold, GraphicsUnit.Pixel);
             }
@@ -46,12 +46,12 @@ namespace View
             }
             for (int i = 0; i < lesColocataires.Count(); i++)
             {
-                int valeur = Convert.ToInt32(lesDepenses.AuraitDuPayer()) / nombreColocataires;
+                decimal valeur = Convert.ToInt32(lesDepenses.AuraitDuPayer()) / nombreColocataires;
                 dataGridView1.Rows[i].Cells[2].Value = valeur.ToString();
             }
             for (int i = 0; i < lesColocataires.Count(); i++)
             {
-                int valeur = Convert.ToInt32(lesDepenses.AuraitDuPayer()) / nombreColocataires;
+                decimal valeur = Convert.ToDecimal(lesDepenses.AuraitDuPayer()) / nombreColocataires;
                 int index = lesColocataires.GetIndex(i);
                 dataGridView1.Rows[i].Cells[3].Value = valeur - lesDepenses.APayer(index);
             }

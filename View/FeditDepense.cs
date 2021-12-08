@@ -87,14 +87,14 @@ namespace View
             {
                 case State.added:
                     items.Add(new Depense(0, Convert.ToDateTime(this.tbDate.Text), this.tbTitre.Text, this.tbSelectFile.Text, 
-                        Convert.ToDouble(this.tbMontant.Text),Convert.ToInt32(tbColocataireId.Text),this.state));
+                        Convert.ToDecimal(this.tbMontant.Text),Convert.ToInt32(tbColocataireId.Text),this.state));
                     break;
                 case State.modified:
                     Depense depense = (Depense)items[this.position];
                     depense.Date = Convert.ToDateTime(this.tbDate.Text);
                     depense.Titre = this.tbTitre.Text;
                     depense.Justificatif = this.tbSelectFile.Text;
-                    depense.Montant = Convert.ToDouble(this.tbMontant.Text);
+                    depense.Montant = Convert.ToDecimal(this.tbMontant.Text);
                     depense.Reparti = Convert.ToBoolean(this.tbReparti.Text);
                     depense.IdColocataire = Convert.ToInt32(this.tbColocataireId.Text);
                     depense.State = this.state;

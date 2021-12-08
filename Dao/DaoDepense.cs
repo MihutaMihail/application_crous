@@ -81,7 +81,7 @@ namespace Dao
                     cmd.Parameters.Add(new MySqlParameter("@justificatif", MySqlDbType.VarChar));
                     cmd.Parameters["@justificatif"].Value = depense.Justificatif;
 
-                    cmd.Parameters.Add(new MySqlParameter("@montant", MySqlDbType.Float));
+                    cmd.Parameters.Add(new MySqlParameter("@montant", MySqlDbType.Float)); 
                     cmd.Parameters["@montant"].Value = depense.Montant;
 
                     cmd.Parameters.Add(new MySqlParameter("@reparti", MySqlDbType.Bit));
@@ -142,7 +142,7 @@ namespace Dao
                         while (rdr.Read())
                         {
                             lesDepenses.AjouterDepense(new Depense(Convert.ToInt32(rdr["id"]), Convert.ToDateTime(rdr["dateDepense"]), Convert.ToString(rdr["titre"]), Convert.ToString(rdr["justificatif"]),
-                                Convert.ToDouble(rdr["montant"]), Convert.ToBoolean(rdr["reparti"]), Convert.ToInt32(rdr["idColocataire"]), State.unChanged));
+                                Convert.ToDecimal(rdr["montant"]), Convert.ToBoolean(rdr["reparti"]), Convert.ToInt32(rdr["idColocataire"]), State.unChanged));
                         }
                     }
                 }

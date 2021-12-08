@@ -12,12 +12,12 @@ namespace Model
         private DateTime date;
         private string titre;
         private string justificatif;
-        private double montant;
+        private decimal montant;
         private bool reparti;
         private int idColocataire;
         private State state;
 
-        public Depense(int id,DateTime date, string titre, string justificatif, double montant, bool reparti,int idColocataire,State state)
+        public Depense(int id,DateTime date, string titre, string justificatif, decimal montant, bool reparti,int idColocataire,State state)
         {
             this.id = id;
             this.date = date;
@@ -28,7 +28,7 @@ namespace Model
             this.idColocataire = idColocataire;
             this.state = state;
         }
-        public Depense(int id, DateTime date, string titre, string justificatif, double montant,int idColocataire, State state)
+        public Depense(int id, DateTime date, string titre, string justificatif, decimal montant,int idColocataire, State state)
         {
             this.id = id;
             this.date = date;
@@ -81,9 +81,9 @@ namespace Model
             set { this.justificatif = value; }
         }
 
-        public double Montant
+        public decimal Montant
         {
-            get { return System.Math.Round(this.montant,2); }
+            get { return this.montant; }
             set { this.montant = value; }
         }
 
