@@ -78,10 +78,8 @@ namespace Model
 
         public override string ToString()
         {
-            string s = string.Format("Nom : {0} | Prénom : {1} | Age : {2} | Num° Tel : {3} | Mail : {4}", 
-                this.nom, this.prenom, this.age,this.numTel,this.adresseMail);
+            string s = string.Format("Nom : {0} | Prénom : {1} | Age : {2} | Num° Tel : {3} | Mail : {4}", this.nom, this.prenom, this.age, this.numTel, this.adresseMail);
             return s;
         }
-
     }
 }

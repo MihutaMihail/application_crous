@@ -95,8 +95,15 @@ namespace Model
         
         public override string ToString()
         {
-            string s = string.Format("Titre : {0} | Montant : {1} € | Date : {2}", this.titre, System.Math.Round(this.montant, 2),this.date);
-            return s;
+            if (this.Reparti == false)
+            {
+                string s1 = string.Format("Titre : {0} | Montant : {1} € | Date : {2} | Reparti : non", this.titre, System.Math.Round(this.montant, 2), this.date);
+                return s1;
+            }
+            else {
+                string s2 = string.Format("Titre : {0} | Montant : {1} € | Date : {2} | Reparti : oui", this.titre, System.Math.Round(this.montant, 2), this.date);
+                return s2;
+            }
         }
 
     }

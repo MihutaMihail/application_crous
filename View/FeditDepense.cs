@@ -23,7 +23,9 @@ namespace View
             InitializeComponent();
             btnValider.Click += btnValider_Click;
             btnSelectFile.Click += btnSelectFile_Click;
+            btnAfficherImage.Click += btnAfficherImage_Click;
             cbColocataire.TextChanged += cbColocataire_TextChanged;
+            tbMontant.KeyPress += tbMontant_KeyPress;
             this.state = state;
             this.items = items;
             this.position = position;
@@ -35,22 +37,18 @@ namespace View
                     break;
                 case State.modified:
                     Depense depense = (Depense)items[position];
-                    this.tbId.Text = depense.Id.ToString();
                     this.tbDate.Text = depense.Date.ToString();
                     this.tbTitre.Text = depense.Titre.ToString();
                     this.tbSelectFile.Text = depense.Justificatif.ToString();
                     this.tbMontant.Text = depense.Montant.ToString();
-                    this.tbReparti.Text = depense.Reparti.ToString();
-                    this.tbColocataireId.Text = depense.IdColocataire.ToString();
+                    this.cbColocataire.SelectedIndex = depense.IdColocataire - 1;
                     this.Text = "Modification d'une dépense";
                     if (depense.Reparti == true) {
-                        this.tbId.ReadOnly = true;
                         this.tbDate.ReadOnly = true;
                         this.tbTitre.ReadOnly = true;
-                        this.tbSelectFile.ReadOnly = true;
                         this.tbMontant.ReadOnly = true;
-                        this.tbReparti.ReadOnly = true;
-                        this.tbColocataireId.ReadOnly = true;
+                        this.btnSelectFile.Visible = false;
+                        this.cbColocataire.Enabled = false;
                     }
                     break;
                 case State.deleted:
@@ -64,6 +62,19 @@ namespace View
             }
         }
 
+        private void tbMontant_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar.Equals('.') || e.KeyChar.Equals(',')) {
+                e.KeyChar = ((System.Globalization.CultureInfo)System.Globalization.CultureInfo.CurrentCulture).NumberFormat.NumberDecimalSeparator.ToCharArray()[0];
+            }
+        }
+
+        private void btnAfficherImage_Click(object sender, EventArgs e)
+        {
+            FImage image = new FImage(this.tbSelectFile.Text);
+            image.ShowDialog();
+        }
+
         private void cbColocataire_TextChanged(object sender, EventArgs e)
         {
             Colocataire colocataire = new Colocataire();
@@ -73,11 +84,15 @@ namespace View
 
         private void btnSelectFile_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog1 = new OpenFileDialog();
-            DialogResult result = openFileDialog1.ShowDialog();
-            if (result == DialogResult.OK) {
-                string file = openFileDialog1.FileName;
-                this.tbSelectFile.Text = file;
+            using (OpenFileDialog openFileDialog1 = new OpenFileDialog())
+            {
+                DialogResult result = openFileDialog1.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    string file = openFileDialog1.FileName;
+                    this.tbSelectFile.Text = file;
+
+                }
             }
         }
 
@@ -95,7 +110,6 @@ namespace View
                     depense.Titre = this.tbTitre.Text;
                     depense.Justificatif = this.tbSelectFile.Text;
                     depense.Montant = Convert.ToDecimal(this.tbMontant.Text);
-                    depense.Reparti = Convert.ToBoolean(this.tbReparti.Text);
                     depense.IdColocataire = Convert.ToInt32(this.tbColocataireId.Text);
                     depense.State = this.state;
                     items[this.position] = depense;

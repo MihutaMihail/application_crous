@@ -31,7 +31,6 @@ namespace View
                     break;
                 case State.modified:
                     Colocataire colocataire = (Colocataire)items[position];
-                    this.tbIdColocataire.Text = colocataire.Id.ToString();
                     this.tbNom.Text = colocataire.Nom.ToString();
                     this.tbPrenom.Text = colocataire.Prenom.ToString();
                     this.tbAge.Text = colocataire.Age.ToString();
@@ -61,7 +60,6 @@ namespace View
                     break;
                 case State.modified:
                     Colocataire colocataire = (Colocataire)items[this.position];
-                    colocataire.Id = Convert.ToInt32(this.tbIdColocataire.Text);
                     colocataire.Nom = this.tbNom.Text;
                     colocataire.Prenom = this.tbPrenom.Text;
                     colocataire.Age = Convert.ToInt32(this.tbAge.Text);

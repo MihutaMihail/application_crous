@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Apaye = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,9 +46,17 @@
             this.Apaye,
             this.AuraitDuPayer,
             this.SoldesARegler});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Location = new System.Drawing.Point(4, 5);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(443, 207);
+            this.dataGridView1.Size = new System.Drawing.Size(443, 145);
             this.dataGridView1.TabIndex = 0;
             // 
             // Nom
@@ -76,22 +85,22 @@
             // 
             // btnSolderPeriode
             // 
-            this.btnSolderPeriode.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSolderPeriode.Location = new System.Drawing.Point(4, 218);
+            this.btnSolderPeriode.Font = new System.Drawing.Font("Calibri", 13F, System.Drawing.FontStyle.Bold);
+            this.btnSolderPeriode.Location = new System.Drawing.Point(4, 156);
             this.btnSolderPeriode.Name = "btnSolderPeriode";
             this.btnSolderPeriode.Size = new System.Drawing.Size(443, 32);
             this.btnSolderPeriode.TabIndex = 29;
             this.btnSolderPeriode.Text = "Solder une Période";
             this.btnSolderPeriode.UseVisualStyleBackColor = true;
             // 
-            // DataGridView
+            // FMiseEnRepartition
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(451, 254);
+            this.ClientSize = new System.Drawing.Size(451, 193);
             this.Controls.Add(this.btnSolderPeriode);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "DataGridView";
+            this.Name = "FMiseEnRepartition";
             this.Text = "DataGridView";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
