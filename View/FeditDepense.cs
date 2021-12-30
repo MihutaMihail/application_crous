@@ -91,7 +91,6 @@ namespace View
                 {
                     string file = openFileDialog1.FileName;
                     this.tbSelectFile.Text = file;
-
                 }
             }
         }

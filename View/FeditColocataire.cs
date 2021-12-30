@@ -36,6 +36,7 @@ namespace View
                     this.tbAge.Text = colocataire.Age.ToString();
                     this.tbTel.Text = colocataire.NumTel.ToString();
                     this.tbMail.Text = colocataire.AdresseMail.ToString();
+                    this.tbAppartement.Text = colocataire.Appartement.ToString();
                     this.Text = "Modification d'un colocataire";
                     break;
                 case State.deleted:
@@ -55,7 +56,7 @@ namespace View
             {
                 case State.added:
                     Colocataire nouveauColocataire = new Colocataire(0, this.tbNom.Text, this.tbPrenom.Text, Convert.ToInt32(this.tbAge.Text),
-                    Convert.ToInt32(this.tbTel.Text), this.tbMail.Text, this.state);
+                    Convert.ToInt32(this.tbTel.Text), this.tbMail.Text, Convert.ToInt32(this.tbAppartement.Text) ,this.state);
                     items.Add(nouveauColocataire);
                     break;
                 case State.modified:
@@ -65,6 +66,7 @@ namespace View
                     colocataire.Age = Convert.ToInt32(this.tbAge.Text);
                     colocataire.NumTel = Convert.ToInt32(this.tbTel.Text);
                     colocataire.AdresseMail = this.tbMail.Text;
+                    colocataire.Appartement = Convert.ToInt32(this.tbAppartement.Text);
                     colocataire.State = this.state;
                     items[this.position] = colocataire;
                     break;

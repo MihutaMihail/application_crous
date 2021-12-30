@@ -35,7 +35,7 @@ namespace Dao
             using (MySqlConnection cnx = DaoConnectionSingleton.GetMySqlConnection())
             {
                 cnx.Open();
-                using (MySqlCommand cmd = new MySqlCommand("insert into Colocataire(nom,prenom,age,numTel,adresseMail) values(@nom,@prenom,@age,@numTel,@adresseMail)", cnx))
+                using (MySqlCommand cmd = new MySqlCommand("insert into Colocataire(nom,prenom,age,numTel,adresseMail,appartement) values(@nom,@prenom,@age,@numTel,@adresseMail,@appartement)", cnx))
                 {
                     cmd.Parameters.Add(new MySqlParameter("@nom", MySqlDbType.VarChar));
                     cmd.Parameters["@nom"].Value = colocataire.Nom;
@@ -52,6 +52,9 @@ namespace Dao
                     cmd.Parameters.Add(new MySqlParameter("@adresseMail", MySqlDbType.VarChar));
                     cmd.Parameters["@adresseMail"].Value = colocataire.AdresseMail;
 
+                    cmd.Parameters.Add(new MySqlParameter("@appartement", MySqlDbType.Int32));
+                    cmd.Parameters["@appartement"].Value = colocataire.Appartement;
+
                     cmd.ExecuteNonQuery();
                 }
             }
@@ -62,7 +65,7 @@ namespace Dao
             using (MySqlConnection cnx = DaoConnectionSingleton.GetMySqlConnection())
             {
                 cnx.Open();
-                using (MySqlCommand cmd = new MySqlCommand("update Colocataire set nom=@nom,prenom=@prenom,age=@age,numTel=@numTel,adresseMail=@adresseMail" +
+                using (MySqlCommand cmd = new MySqlCommand("update Colocataire set nom=@nom,prenom=@prenom,age=@age,numTel=@numTel,adresseMail=@adresseMail,appartement=@appartement" +
                     " where id=@id", cnx))
                 {
                     cmd.Parameters.Add(new MySqlParameter("@nom", MySqlDbType.VarChar));
@@ -79,6 +82,9 @@ namespace Dao
 
                     cmd.Parameters.Add(new MySqlParameter("@adresseMail", MySqlDbType.VarChar));
                     cmd.Parameters["@adresseMail"].Value = colocataire.AdresseMail;
+
+                    cmd.Parameters.Add(new MySqlParameter("@appartement", MySqlDbType.Int32));
+                    cmd.Parameters["@appartement"].Value = colocataire.Appartement;
 
                     cmd.Parameters.Add(new MySqlParameter("@id", MySqlDbType.Int32));
                     cmd.Parameters["@id"].Value = colocataire.Id;
@@ -107,14 +113,14 @@ namespace Dao
             using (MySqlConnection cnx = DaoConnectionSingleton.GetMySqlConnection())
             {
                 cnx.Open();
-                using (MySqlCommand cmd = new MySqlCommand("select id,nom,prenom,age,numTel,adresseMail from colocataire", cnx))
+                using (MySqlCommand cmd = new MySqlCommand("select id,nom,prenom,age,numTel,adresseMail,appartement from colocataire", cnx))
                 {
                     using (MySqlDataReader rdr = cmd.ExecuteReader())
                     {
                         while (rdr.Read())
                         {
                             lesColocataires.AjouterColocataire(new Colocataire(Convert.ToInt32(rdr["id"]), (string)rdr["nom"], (string)rdr["prenom"], Convert.ToInt32(rdr["age"]),
-                                Convert.ToInt32(rdr["numTel"]), (string)rdr["adresseMail"], State.unChanged));
+                                Convert.ToInt32(rdr["numTel"]), (string)rdr["adresseMail"], Convert.ToInt32(rdr["appartement"]), State.unChanged));
                         }
                     }
                 }

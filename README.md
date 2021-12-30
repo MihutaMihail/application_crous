@@ -109,7 +109,8 @@ JD .> UC2 : <<extends>>
 **•** <i> **Ajouter une dépense** </i> <br>
     1. On clique sur le bouton **Gestion des Dépenses** pour accéder au gestion des dépenses. <br>
     2. On clique sur le bouton **AJOUTER** pour ajouter une nouvelle dépense. <br>
-    3. On complète les champs (date,titre,justificatif,montant,colocataire) ("justificatif" nous permet de choisir un fichier image (jpg,png,etc)). <br>
+    3. On complète les champs (date,titre,justificatif,montant,colocataire) ("justificatif" nous permet de choisir un fichier image (jpg,png,etc))<br>
+    3a. Le bouton "Afficher" permet de visualer l'image qui a été ajouté par le bouton "Select". <br>
     4. On clique sur le bouton **Valider** pour ajouter la nouvelle dépense dans la liste. <br>
 
 **•** <i> **Modifier une dépense** </i> <br>
@@ -117,6 +118,7 @@ JD .> UC2 : <<extends>>
     2. On clique sur le bouton **MODIFIER**.<br>
     3. On modifie les données qu'on a besoin de modifier. <br>
     4. On clique sur le bouton **Valider** pour valider les modifications. <br>
+    *. (les dépenses réparti ne sont plus modifiables)
 
 **•** <i> **Supprimer une dépense** </i> <br>
     1. On clique sur la dépense qu'on veut supprimer <br>
@@ -195,7 +197,7 @@ class Depenses {
   id : INT
   dateDepense : DATE
   titre : VARCHAR[20]
-  justificatif : VARCHAR[200]
+  justificatif : VARCHAR[100]
   montant : FLOAT
   reparti : TINYINT[1]
   idColocataire : INT
@@ -205,11 +207,12 @@ class Depenses {
 
 class Colocataire {
     id : INT
-    nom : VARCHAR[50]
-    prenom : VARCHAR[50]
+    nom : VARCHAR[20]
+    prenom : VARCHAR[20]
     age : INT
     numTel : INT
     adresseMail : VARCHAR[50]
+    appartement : TINYINT[1]
     PRIMARY KEY (idColocataire)
 }
 
@@ -226,11 +229,12 @@ USE crous;
 
  CREATE TABLE Colocataire (
     id INTEGER(10) NOT NULL AUTO_INCREMENT,
-    nom VARCHAR(50),
-    prenom VARCHAR(50),
-    age INTEGER(10),
+    nom VARCHAR(20),
+    prenom VARCHAR(20),
+    age INTEGER(3),
     numTel INTEGER(10),
     adresseMail VARCHAR(50),
+    appartement TINYINT,
     PRIMARY KEY (id)
 ) ENGINE = InnoDB;
 
@@ -238,7 +242,7 @@ CREATE TABLE Depenses (
     id INTEGER(10) NOT NULL AUTO_INCREMENT,
     dateDepense DATE,
     titre VARCHAR(20),
-    justificatif VARCHAR(200),
+    justificatif VARCHAR(100),
     montant FLOAT,
     reparti TINYINT,
     idColocataire INTEGER(10) NOT NULL,
@@ -295,6 +299,7 @@ class Colocataire {
     - age : int
     - numTel : int
     - adresseMail : string
+    - appartement : int
     - state : State
     + int Id() : int
     + string Nom() : string
@@ -302,6 +307,7 @@ class Colocataire {
     + int Age() : int
     + int NumTel() : int
     + string AdresseMail() : string
+    + int Appartement() : int
     + State state() : State
     + Colocataire(int id, string nom, string prenom, int age, int numTel, string adresseMail, State state) : void
     + void Remove() : void

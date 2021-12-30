@@ -37,7 +37,7 @@ namespace View
             // 
             this.btnPb.Location = new System.Drawing.Point(12, 13);
             this.btnPb.Name = "btnPb";
-            this.btnPb.Size = new System.Drawing.Size(579, 570);
+            this.btnPb.Size = new System.Drawing.Size(579, 630);
             this.btnPb.TabIndex = 0;
             this.btnPb.TabStop = false;
             // 
@@ -45,7 +45,7 @@ namespace View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(605, 595);
+            this.ClientSize = new System.Drawing.Size(604, 655);
             this.Controls.Add(this.btnPb);
             this.Name = "FImage";
             this.Text = "FImage";

@@ -16,7 +16,7 @@ namespace View
         {
             InitializeComponent();
             this.Text = fileName;
-            btnPb.SizeMode = PictureBoxSizeMode.AutoSize;
+            btnPb.SizeMode = PictureBoxSizeMode.StretchImage;
             btnPb.Image = new Bitmap(fileName);
         }
     }

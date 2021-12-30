@@ -14,9 +14,10 @@ namespace Model
         private int age;
         private int numTel;
         private string adresseMail;
+        private int appartement;
         private State state;
 
-        public Colocataire(int id, string nom, string prenom, int age, int numTel, string adresseMail, State state)
+        public Colocataire(int id, string nom, string prenom, int age, int numTel, string adresseMail, int appartement, State state)
         {
             this.id = id;
             this.nom = nom;
@@ -24,6 +25,7 @@ namespace Model
             this.age = age;
             this.numTel = numTel;
             this.adresseMail = adresseMail;
+            this.appartement = appartement;
             this.state = state;
         }
         public Colocataire() { 
@@ -38,6 +40,12 @@ namespace Model
         {
             get { return this.id; }
             set { this.id = value; }
+        }
+
+        public int Appartement
+        {
+            get { return this.appartement; }
+            set { this.appartement = value; }
         }
 
         public State State
@@ -78,7 +86,8 @@ namespace Model
 
         public override string ToString()
         {
-            string s = string.Format("Nom : {0} | Prénom : {1} | Age : {2} | Num° Tel : {3} | Mail : {4}", this.nom, this.prenom, this.age, this.numTel, this.adresseMail);
+            string s = string.Format("Nom : {0} | Prénom : {1} | Age : {2} | Num° Tel : {3} | Mail : {4} | Appartement n° : {5}", this.nom, this.prenom, this.age,
+                this.numTel, this.adresseMail, this.appartement);
             return s;
         }
     }

@@ -40,12 +40,14 @@ namespace View
             this.tbMail = new System.Windows.Forms.TextBox();
             this.lblMail = new System.Windows.Forms.Label();
             this.btnValider = new System.Windows.Forms.Button();
+            this.tbAppartement = new System.Windows.Forms.TextBox();
+            this.lbAppartement = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // tbPrenom
             // 
             this.tbPrenom.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbPrenom.Location = new System.Drawing.Point(105, 42);
+            this.tbPrenom.Location = new System.Drawing.Point(143, 44);
             this.tbPrenom.Margin = new System.Windows.Forms.Padding(2);
             this.tbPrenom.Name = "tbPrenom";
             this.tbPrenom.Size = new System.Drawing.Size(246, 26);
@@ -54,7 +56,7 @@ namespace View
             // tbNom
             // 
             this.tbNom.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbNom.Location = new System.Drawing.Point(105, 11);
+            this.tbNom.Location = new System.Drawing.Point(143, 12);
             this.tbNom.Margin = new System.Windows.Forms.Padding(2);
             this.tbNom.Name = "tbNom";
             this.tbNom.Size = new System.Drawing.Size(246, 26);
@@ -85,7 +87,7 @@ namespace View
             // tbAge
             // 
             this.tbAge.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbAge.Location = new System.Drawing.Point(105, 75);
+            this.tbAge.Location = new System.Drawing.Point(143, 76);
             this.tbAge.Margin = new System.Windows.Forms.Padding(2);
             this.tbAge.Name = "tbAge";
             this.tbAge.Size = new System.Drawing.Size(246, 26);
@@ -105,7 +107,7 @@ namespace View
             // tbTel
             // 
             this.tbTel.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbTel.Location = new System.Drawing.Point(105, 108);
+            this.tbTel.Location = new System.Drawing.Point(143, 108);
             this.tbTel.Margin = new System.Windows.Forms.Padding(2);
             this.tbTel.Name = "tbTel";
             this.tbTel.Size = new System.Drawing.Size(246, 26);
@@ -125,7 +127,7 @@ namespace View
             // tbMail
             // 
             this.tbMail.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbMail.Location = new System.Drawing.Point(105, 141);
+            this.tbMail.Location = new System.Drawing.Point(143, 138);
             this.tbMail.Margin = new System.Windows.Forms.Padding(2);
             this.tbMail.Name = "tbMail";
             this.tbMail.Size = new System.Drawing.Size(246, 26);
@@ -145,19 +147,41 @@ namespace View
             // btnValider
             // 
             this.btnValider.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnValider.Location = new System.Drawing.Point(20, 175);
+            this.btnValider.Location = new System.Drawing.Point(20, 210);
             this.btnValider.Margin = new System.Windows.Forms.Padding(2);
             this.btnValider.Name = "btnValider";
-            this.btnValider.Size = new System.Drawing.Size(331, 34);
+            this.btnValider.Size = new System.Drawing.Size(369, 34);
             this.btnValider.TabIndex = 16;
             this.btnValider.Text = "Valider";
             this.btnValider.UseVisualStyleBackColor = true;
+            // 
+            // tbAppartement
+            // 
+            this.tbAppartement.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAppartement.Location = new System.Drawing.Point(143, 174);
+            this.tbAppartement.Margin = new System.Windows.Forms.Padding(2);
+            this.tbAppartement.Name = "tbAppartement";
+            this.tbAppartement.Size = new System.Drawing.Size(246, 26);
+            this.tbAppartement.TabIndex = 18;
+            // 
+            // lbAppartement
+            // 
+            this.lbAppartement.AutoSize = true;
+            this.lbAppartement.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbAppartement.Location = new System.Drawing.Point(16, 175);
+            this.lbAppartement.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbAppartement.Name = "lbAppartement";
+            this.lbAppartement.Size = new System.Drawing.Size(130, 23);
+            this.lbAppartement.TabIndex = 17;
+            this.lbAppartement.Text = "Appartement : ";
             // 
             // FeditColocataire
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(373, 221);
+            this.ClientSize = new System.Drawing.Size(414, 254);
+            this.Controls.Add(this.tbAppartement);
+            this.Controls.Add(this.lbAppartement);
             this.Controls.Add(this.btnValider);
             this.Controls.Add(this.tbMail);
             this.Controls.Add(this.lblMail);
@@ -189,5 +213,7 @@ namespace View
         private System.Windows.Forms.TextBox tbMail;
         private System.Windows.Forms.Label lblMail;
         private System.Windows.Forms.Button btnValider;
+        private System.Windows.Forms.TextBox tbAppartement;
+        private System.Windows.Forms.Label lbAppartement;
     }
 }
