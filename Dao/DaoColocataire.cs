@@ -30,6 +30,7 @@ namespace Dao
                 }
             }
         }
+
         private void insert(Colocataire colocataire)
         {
             using (MySqlConnection cnx = DaoConnectionSingleton.GetMySqlConnection())

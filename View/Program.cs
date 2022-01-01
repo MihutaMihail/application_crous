@@ -16,7 +16,7 @@ namespace View
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FApplicationCrous());
+            Application.Run(new FApplicationCrous(Model.StateConnection.disconnected));
         }
     }
 }

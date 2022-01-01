@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DaoColocataire.cs" />
+    <Compile Include="DaoCompte.cs" />
     <Compile Include="DaoConnectionSingleton.cs" />
     <Compile Include="DaoDepense.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

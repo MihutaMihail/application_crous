@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    public enum State
+    public enum StateConnection
     {
-        added, modified, deleted, unChanged, solderModified, compteCreation
+        connectedUser, connectedAdmin, disconnected, error
     }
 }

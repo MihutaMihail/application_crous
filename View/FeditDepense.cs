@@ -41,7 +41,6 @@ namespace View
                     this.tbTitre.Text = depense.Titre.ToString();
                     this.tbSelectFile.Text = depense.Justificatif.ToString();
                     this.tbMontant.Text = depense.Montant.ToString();
-                    this.cbColocataire.SelectedIndex = depense.IdColocataire - 1;
                     this.Text = "Modification d'une dépense";
                     if (depense.Reparti == true) {
                         this.tbDate.ReadOnly = true;

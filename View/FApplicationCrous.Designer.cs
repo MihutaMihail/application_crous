@@ -32,6 +32,8 @@
             this.btnRepartition = new System.Windows.Forms.Button();
             this.btnDepenses = new System.Windows.Forms.Button();
             this.lblApplicationCrous = new System.Windows.Forms.Label();
+            this.lbConnexion = new System.Windows.Forms.Label();
+            this.btnConnexion = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnColocataires
@@ -77,11 +79,31 @@
             this.lblApplicationCrous.TabIndex = 0;
             this.lblApplicationCrous.Text = "Application CROUS";
             // 
+            // lbConnexion
+            // 
+            this.lbConnexion.AutoSize = true;
+            this.lbConnexion.Location = new System.Drawing.Point(1, 5);
+            this.lbConnexion.Name = "lbConnexion";
+            this.lbConnexion.Size = new System.Drawing.Size(56, 13);
+            this.lbConnexion.TabIndex = 4;
+            this.lbConnexion.Text = "connexion";
+            // 
+            // btnConnexion
+            // 
+            this.btnConnexion.Location = new System.Drawing.Point(241, 1);
+            this.btnConnexion.Name = "btnConnexion";
+            this.btnConnexion.Size = new System.Drawing.Size(75, 23);
+            this.btnConnexion.TabIndex = 5;
+            this.btnConnexion.Text = "Connexion";
+            this.btnConnexion.UseVisualStyleBackColor = true;
+            // 
             // FApplicationCrous
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(317, 307);
+            this.Controls.Add(this.btnConnexion);
+            this.Controls.Add(this.lbConnexion);
             this.Controls.Add(this.lblApplicationCrous);
             this.Controls.Add(this.btnDepenses);
             this.Controls.Add(this.btnRepartition);
@@ -99,6 +121,8 @@
         private System.Windows.Forms.Button btnRepartition;
         private System.Windows.Forms.Button btnDepenses;
         private System.Windows.Forms.Label lblApplicationCrous;
+        private System.Windows.Forms.Label lbConnexion;
+        private System.Windows.Forms.Button btnConnexion;
     }
 }
 

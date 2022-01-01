@@ -49,6 +49,9 @@ namespace View
             FeditColocataire fEdit = new FeditColocataire(State.added, lbColocataires.Items, 0);
             fEdit.ShowDialog();
 
+            FCreationCompteColoc ccc = new FCreationCompteColoc();
+            ccc.ShowDialog();
+
             saveDatabase();
         }
 

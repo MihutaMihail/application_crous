@@ -51,7 +51,7 @@ namespace View
             this.tbPrenom.Margin = new System.Windows.Forms.Padding(2);
             this.tbPrenom.Name = "tbPrenom";
             this.tbPrenom.Size = new System.Drawing.Size(246, 26);
-            this.tbPrenom.TabIndex = 9;
+            this.tbPrenom.TabIndex = 2;
             // 
             // tbNom
             // 
@@ -60,7 +60,7 @@ namespace View
             this.tbNom.Margin = new System.Windows.Forms.Padding(2);
             this.tbNom.Name = "tbNom";
             this.tbNom.Size = new System.Drawing.Size(246, 26);
-            this.tbNom.TabIndex = 8;
+            this.tbNom.TabIndex = 1;
             // 
             // lblPrenom
             // 
@@ -91,7 +91,7 @@ namespace View
             this.tbAge.Margin = new System.Windows.Forms.Padding(2);
             this.tbAge.Name = "tbAge";
             this.tbAge.Size = new System.Drawing.Size(246, 26);
-            this.tbAge.TabIndex = 11;
+            this.tbAge.TabIndex = 3;
             // 
             // lblAge
             // 
@@ -111,7 +111,7 @@ namespace View
             this.tbTel.Margin = new System.Windows.Forms.Padding(2);
             this.tbTel.Name = "tbTel";
             this.tbTel.Size = new System.Drawing.Size(246, 26);
-            this.tbTel.TabIndex = 13;
+            this.tbTel.TabIndex = 4;
             // 
             // lblTel
             // 
@@ -131,7 +131,7 @@ namespace View
             this.tbMail.Margin = new System.Windows.Forms.Padding(2);
             this.tbMail.Name = "tbMail";
             this.tbMail.Size = new System.Drawing.Size(246, 26);
-            this.tbMail.TabIndex = 15;
+            this.tbMail.TabIndex = 5;
             // 
             // lblMail
             // 
@@ -162,7 +162,7 @@ namespace View
             this.tbAppartement.Margin = new System.Windows.Forms.Padding(2);
             this.tbAppartement.Name = "tbAppartement";
             this.tbAppartement.Size = new System.Drawing.Size(246, 26);
-            this.tbAppartement.TabIndex = 18;
+            this.tbAppartement.TabIndex = 6;
             // 
             // lbAppartement
             // 

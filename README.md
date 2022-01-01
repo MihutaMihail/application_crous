@@ -57,21 +57,19 @@ c --> UC3
 **•** <i> **Ajouter un colocataire** </i> <br>
     1. On clique sur le bouton **Gestion des Colocataires** pour accéder au gestion des colocataires. <br>
     2. On clique sur le bouton **AJOUTER** pour ajouter un nouveau colocataire. <br>
-    3. On complète les champs (nom, prénom, age, adresse mail, n° tel). Le champ **Id** est **ReadOnly** (il ne peut pas être modifier) <br>
+    3. On complète les champs (nom, prénom, age, adresse mail, n° tel,n° appartement).<br>
     4. On cliquer sur le bouton **Valider** pour ajouter le nouveau colocataire dans la liste <br>
 <br>
 **•** <i> **Modifier un colocataire** </i> <br>
     1. On clique sur le colocataire qu'on veut modifier. <br>
     2. On clique sur le bouton **MODIFIER**.<br> 
-    3. On modifie les données qu'on a besoin de modifier (sauf **Id**) <br>
+    3. On modifie les données qu'on a besoin de modifier <br>
     4. On clique sur le bouton **Valider** pour valider les modifications. <br>
 <br>
 **•** <i> **Supprimer un colocataire** </i> <br>
     1. On clique sur le colocataire qu'on veut supprimer. <br>
     2. On clique sur le bouton **SUPPRIMER**.<br>
 <br>
-**•** <i> **Sauvegarder les modifications effectué** </i> <br>
-    1. On clique sur le bouton **SAUVEGARDER** pour enregistrer toutes les modifications dans la base de données. <br>
 
 ## 2. Enregistrer les dépenses
 ### Objectif
@@ -247,6 +245,12 @@ CREATE TABLE Depenses (
     reparti TINYINT,
     idColocataire INTEGER(10) NOT NULL,
     PRIMARY KEY (id)
+) ENGINE = InnoDB;
+
+CREATE TABLE compte (
+    login VARCHAR(15) NOT NULL,
+    password VARCHAR(15) NOT NULL,
+    PRIMARY KEY (login)
 ) ENGINE = InnoDB;
 
 ALTER TABLE Depenses ADD CONSTRAINT fk_Colocataire_A_Depenses FOREIGN KEY (idColocataire) REFERENCES Colocataire(id);
