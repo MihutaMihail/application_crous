@@ -50,6 +50,8 @@ c --> UC3
 ![GestionColocataires.JPG](./View/Images_Maquettes/GestionColocataires.JPG)
 ![AjouterColocataire.JPG](./View/Images_Maquettes/AjouterColocataire.JPG)
 ![ModifierColocataire.JPG](./View/Images_Maquettes/ModifierColocataire.JPG)
+![creationCompte.JPG](./View/Images_Maquettes/creationCompte.JPG)
+
 ### Enchaînement Textuel - Gérer les colocataires
 **•** <i> **Consulter la liste des colocataires** </i> <br>
     1. On clique sur le bouton **Gestion des Colocataires** pour consulter les colocataires existant. <br>
@@ -59,6 +61,7 @@ c --> UC3
     2. On clique sur le bouton **AJOUTER** pour ajouter un nouveau colocataire. <br>
     3. On complète les champs (nom, prénom, age, adresse mail, n° tel , n° appartement).<br>
     4. On cliquer sur le bouton **Valider** pour ajouter le nouveau colocataire dans la liste <br>
+    5. Une fenêtre va apparaître qui va nous demander de saisir un identifiant et un mot de passe pour le colocataire ajouté pour lui créer un compte et donc pouvoir se connecter. <br>
 <br>
 **•** <i> **Modifier un colocataire** </i> <br>
     1. On clique sur le colocataire qu'on veut modifier. <br>
@@ -183,6 +186,43 @@ UC1 --> UC3
     2. Une fenêtre va apparaître en disant si on est sûr de solder cette période. Dans le cas où on a cliqué sur le bouton **Solder une Période** sans faire exprès, on peut répondre **non** et le soldage de la période va être annuler. Si on veut continuer on clique sur **oui**.<br>
     3. Un message disant que la période a été soldé va apparaître. <br>
     4. La mise en répartition va être lancer et si tout s'est bien passé, toutes les valeurs dans le tableau vont être 0€ puisqu'on prend plus en compte ces dépenses. <br>
+
+## 5. Connexion
+### Objectif
+→ L'objectif est de pouvoir se connecter en tant que admin ou un colocataire pour prévenir les colocataires d'ajouter de nouveaux colocataires ou d'ajouter/modifier des dépenses qui ne leur appartient pas
+### Cas Utilisation - Solder une période
+```plantuml
+@startuml model1
+scale 1
+left to right direction
+actor Colocataire as c
+actor Admin as a
+
+package Connexion {
+    usecase "Connecter" as UC1
+    usecase "Accèder à la gestion des dépenses (Colocataire : que dans son appartement)" as UC2
+    usecase "Accèder à la mise en répartition (Colocataire : que dans son appartement)" as UC3
+    usecase "Accèder à la gestion des colocataires" as UC4
+}
+c --> UC1
+UC1 --> UC2 : peut
+UC1 --> UC3 : peut
+a --|> c
+a --> UC4 : peut
+
+@enduml
+```
+### Maquette - Connexion
+![Menu.JPG](./View/Images_Maquettes/Menu.JPG)
+![connexion.JPG](./View/Images_Maquettes/connexion.JPG)
+![MenuConnecterAdmin.JPG](./View/Images_Maquettes/MenuConnecterAdmin.JPG)
+![MenuConnecterColocataire.JPG](./View/Images_Maquettes/MenuConnecterColocataire.JPG)
+
+### Enchaînement Textuel - Connexion
+**•** <i> **Connexion** </i> <br>
+    1. On clique sur le bouton **Connexion** pour se connecter. <br>
+    2. Une fenêtre va apparaître qui va nous permettre a mettre nos identifiants pour se connecter en tant que admin ou colocataire. <br>
+    3. Une fois connecté, on peut accèder à la gestion des colocataires (admin) ou à la gestion des dépenses/mise en répartition (admin,colocataire) <br>
 
 # Base de données
 ```plantuml
@@ -326,9 +366,26 @@ class Colocataires {
     + string GetNom(int index) : string
 }
 
+class Compte {
+    - login : string
+    - password : string
+    + Compte(string login, string password) : void
+    + string Login() : string
+    + string Password() : string
+}
+
+class Comptes {
+    - List<Compte> lesComptes
+    + int Count() : int
+    + Compte this[(int index)] : Compte
+    + void AjouterCompte(Compte nouveauCompte) : void
+}
+
 Colocataire "1" --> "*" Depenses
 Colocataire "*" <-- Colocataires
 Depense "*" <-- Depenses
+Colocataire "1" .> "1" Compte : <<include>>
+Comptes --> "*" Compte
 
 @enduml
 ```
@@ -382,4 +439,15 @@ Depense "*" <-- Depenses
 → Cette méthode permet de trouver le montant total qu'un colocataire a payé dans les dépenses qui sont pas réparti<br>
 **•** **double AuraitDuPayer() : double** <br>
 → Cette méthode calcule le montant total des dépenses mais le divise pas par le nombre de colocataires. Ceci est fait dans un autre endroit.
-
+### Compte
+**•** **string Login() : string & string Password() : string** <br>
+→ Accésseurs & Mutateurs des données membres privées<br>
+**•** **Compte(string login, string password)** <br>
+→ Constructeur <br>
+### Comptes
+**•** **int Count() : int**<br>
+→ Cette méthode permet de compter le nombre des dépenses dans la collection **lesComptes**<br>
+**•** **Compte this[int index] : Compte**<br>
+→ Cette méthode permet d'avoir l'index d'un élément qu'on spécifie dans la collection<br>
+**•** **void AjouterCompte(Compte nouveauCompte) : void**<br>
+→ Cette méthode permet d'ajouter une nouvelle dépense dans la collection **lesComptes**<br>
