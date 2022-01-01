@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.SoldesARegler = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AuraitDuPayer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Apaye = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,18 +69,26 @@
             this.Apaye,
             this.AuraitDuPayer,
             this.SoldesARegler});
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.Location = new System.Drawing.Point(4, 5);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(443, 207);
             this.dataGridView1.TabIndex = 30;
             // 
-            // DataGridViewSolder
+            // FSolderUnePeriode
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(451, 216);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "DataGridViewSolder";
+            this.Name = "FSolderUnePeriode";
             this.Text = "DataGridViewSolder";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
