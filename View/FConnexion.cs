@@ -36,14 +36,21 @@ namespace View
             this.password = tbMdp.Text;
             bool admin = false;
 
-            if (this.identifiant == "siojjr" && this.password == "siojjr")
+            bool caracteresDangereux = CaracteresDangereux(this.identifiant, this.password);
+
+            if (caracteresDangereux == true)
+            {
+                MessageBox.Show("Les caractères spéciales sont interdites!","ATTENTION");
+            }
+
+            if (this.identifiant == "siojjr" && this.password == "siojjr" && caracteresDangereux == false)
             {
                 stateConnection = StateConnection.connectedAdmin;
                 admin = true;
                 this.Close();
             } 
 
-            if (admin == false)
+            if (admin == false && caracteresDangereux == false)
             {
                 bool result = this.load(new DaoCompte().GetAll());
 
@@ -58,6 +65,19 @@ namespace View
                     this.Close();
                 }
             }
+        }
+
+        private bool CaracteresDangereux(string loginVerify, string passwordVerify)
+        {
+            bool loginCheck = loginVerify.Any(ch => !Char.IsLetterOrDigit(ch));
+            bool passwordCheck = passwordVerify.Any(ch => !Char.IsLetterOrDigit(ch));
+
+            if (loginCheck == true || passwordCheck == true)
+            {
+                return true;
+            }
+
+            return false;
         }
 
         private bool load(Comptes lesComptes)

@@ -89,9 +89,28 @@ namespace View
                 if (result == DialogResult.OK)
                 {
                     string file = openFileDialog1.FileName;
-                    this.tbSelectFile.Text = file;
+
+                    bool badExtension = CheckExtensionFile(file);
+
+                    if (badExtension == false)
+                    {
+                        this.tbSelectFile.Text = file;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Le fichier choisi contient une extension qui est peut être dangereux!","ATTENTION");
+                    }
                 }
             }
+        }
+
+        private bool CheckExtensionFile(string fileName)
+        {
+            if (!fileName.Contains(".png") || !fileName.Contains(".jpg") || !fileName.Contains(".jpeg"))
+            {
+                return true;
+            }
+            return false;
         }
 
         private void btnValider_Click(object sender, EventArgs e)

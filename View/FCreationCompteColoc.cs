@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using System.Security.AccessControl;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -26,12 +28,32 @@ namespace View
             string login = tbIdentifiant.Text;
             string password = tbMdp.Text;
 
-            new DaoCompte().CreationCompte(login, password, State.compteCreation);
+            bool resultat = CaracteresDangereux(login, password);
 
-            Comptes lesComptes = new Comptes();
-            lesComptes.AjouterCompte(new Compte(login,password));
+            if (resultat == true)
+            {
+                new DaoCompte().CreationCompte(login, password, State.compteCreation);
 
-            this.Close();
+                this.Close();
+            } else
+            {
+                MessageBox.Show("Les caractères spéciales sont interdites!","ATTENTION");
+            }
+
         }
+
+        private bool CaracteresDangereux(string loginVerify, string passwordVerify)
+        {
+            bool loginCheck = loginVerify.Any(ch => !Char.IsLetterOrDigit(ch));
+            bool passwordCheck = passwordVerify.Any(ch => !Char.IsLetterOrDigit(ch));
+
+            if (loginCheck == true || passwordCheck == true)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
     }
 }

@@ -26,7 +26,7 @@ namespace View
             btnRepartition.Click += btnRepartition_Click;
             btnDepenses.Click += btnDepenses_Click;
             btnConnexion.Click += btnConnexion_Click;
-            DaoConnectionSingleton.SetStringConnection("root", "siojjr", "localhost", "crous");
+            DaoConnectionSingleton.SetStringConnection("root", "Adrian3adrian&", "localhost", "crous");
         }
 
         private void btnConnexion_Click(object sender, EventArgs e)
