@@ -252,7 +252,14 @@ class Colocataire {
     PRIMARY KEY (idColocataire)
 }
 
+class Compte {
+    login : VARCHAR[15]
+    password : VARCHAR[15]
+    PRIMARY KEY (login)
+}
+
 Colocataire -> Depenses : "1"   effectue   "*"
+Colocataire -d-> Compte : "1" possède "1"
 @enduml
 ```
 
@@ -369,9 +376,9 @@ class Colocataires {
 class Compte {
     - login : string
     - password : string
-    + Compte(string login, string password) : void
     + string Login() : string
     + string Password() : string
+    + Compte(string login, string password) : void
 }
 
 class Comptes {
