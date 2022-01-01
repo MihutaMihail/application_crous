@@ -57,7 +57,7 @@ c --> UC3
 **•** <i> **Ajouter un colocataire** </i> <br>
     1. On clique sur le bouton **Gestion des Colocataires** pour accéder au gestion des colocataires. <br>
     2. On clique sur le bouton **AJOUTER** pour ajouter un nouveau colocataire. <br>
-    3. On complète les champs (nom, prénom, age, adresse mail, n° tel,n° appartement).<br>
+    3. On complète les champs (nom, prénom, age, adresse mail, n° tel , n° appartement).<br>
     4. On cliquer sur le bouton **Valider** pour ajouter le nouveau colocataire dans la liste <br>
 <br>
 **•** <i> **Modifier un colocataire** </i> <br>
@@ -100,6 +100,7 @@ JD .> UC2 : <<extends>>
 ![GestionDepenses.JPG](./View/Images_Maquettes/GestionDepenses.JPG)
 ![AjouterDepense.JPG](./View/Images_Maquettes/AjouterDepense.JPG)
 ![ModifierDepense.JPG](./View/Images_Maquettes/ModifierDepense.JPG)
+![justificatif.JPG](./View/Images_Maquettes/justificatif.JPG)
 ### Enchaînement Textuel - Enregistrer les dépenses
 **•** <i> **Consulter la liste des dépenses** </i> <br>
     1. On clique sur le bouton **Gestion des Dépenses** pour consulter les dépenses existantes. <br>
@@ -121,9 +122,6 @@ JD .> UC2 : <<extends>>
 **•** <i> **Supprimer une dépense** </i> <br>
     1. On clique sur la dépense qu'on veut supprimer <br>
     2. On clique sur le bouton **SUPPRIMER** <br>
-
-**•** <i> **Sauvegarder les modifications effectué** </i> <br>
-    1. On clique sur le bouton **SAUVEGARDER** pour enregistrer toutes les modifications dans la base de données. <br>
 
 ## 3. Mise en répartition
 ### Objectif
