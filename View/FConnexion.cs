@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -47,6 +48,7 @@ namespace View
             {
                 stateConnection = StateConnection.connectedAdmin;
                 admin = true;
+
                 this.Close();
             } 
 
@@ -57,6 +59,15 @@ namespace View
                 if (result == true)
                 {
                     stateConnection = StateConnection.connectedUser;
+                    using (StreamWriter w = File.AppendText("log.txt"))
+                    {
+                        Logs.Log(this.identifiant, this.password, stateConnection, w);
+                    }
+
+                    using (StreamReader r = File.OpenText("log.txt"))
+                    {
+                        Logs.DumpLog(r);
+                    }
                     this.Close();
                 }
                 else
