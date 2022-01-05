@@ -102,9 +102,16 @@ namespace Dao
                 cnx.Open();
                 using (MySqlCommand cmd = new MySqlCommand("delete from Colocataire where id=@id", cnx))
                 {
-                    cmd.Parameters.Add(new MySqlParameter("@id", MySqlDbType.Int32));
-                    cmd.Parameters["@id"].Value = colocataire.Id;
-                    cmd.ExecuteNonQuery();
+                    try
+                    {
+                        cmd.Parameters.Add(new MySqlParameter("@id", MySqlDbType.Int32));
+                        cmd.Parameters["@id"].Value = colocataire.Id;
+                        cmd.ExecuteNonQuery();
+                    }
+                    catch (MySql.Data.MySqlClient.MySqlException e)
+                    {
+                        
+                    }
                 }
             }
         }

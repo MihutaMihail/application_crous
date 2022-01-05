@@ -86,9 +86,20 @@ namespace View
             switch (this.state)
             {
                 case State.added:
-                    Colocataire nouveauColocataire = new Colocataire(0, this.tbNom.Text, this.tbPrenom.Text, Convert.ToInt32(this.tbAge.Text),
-                    Convert.ToInt32(this.tbTel.Text), this.tbMail.Text, Convert.ToInt32(this.tbAppartement.Text) ,this.state);
-                    items.Add(nouveauColocataire);
+                    bool nomDangereux = CaracteresDangereux(this.tbNom.Text);
+                    bool prenomDangereux = CaracteresDangereux(this.tbPrenom.Text);
+                    bool mailDangereux = CaracteresDangereux(this.tbMail.Text);
+
+                    if (nomDangereux == true || prenomDangereux == true || mailDangereux == true)
+                    {
+                        MessageBox.Show("Les caractères spéciaux sont interdites","ATTENTION");
+                    }
+                    else
+                    {
+                        Colocataire nouveauColocataire = new Colocataire(0, this.tbNom.Text, this.tbPrenom.Text, Convert.ToInt32(this.tbAge.Text),
+                        Convert.ToInt32(this.tbTel.Text), this.tbMail.Text, Convert.ToInt32(this.tbAppartement.Text), this.state);
+                        items.Add(nouveauColocataire);
+                    }
                     break;
                 case State.modified:
                     Colocataire colocataire = (Colocataire)items[this.position];
@@ -110,5 +121,17 @@ namespace View
             }
             this.Close();
         }
+
+        private bool CaracteresDangereux(string champVerifier)
+        {
+            bool champDangereux = champVerifier.Any(ch => !Char.IsLetterOrDigit(ch));
+
+            if (champDangereux == true)
+            {
+                return true;
+            }
+            return false;
+        }
+
     }
 }
