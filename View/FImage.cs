@@ -12,7 +12,8 @@ namespace View
 {
     public partial class FImage : Form
     {
-        public FImage(String fileName)
+
+        public FImage(string fileName)
         {
             InitializeComponent();
             this.Text = fileName;

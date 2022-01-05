@@ -42,6 +42,7 @@
             this.tbSelectFile = new System.Windows.Forms.TextBox();
             this.tbColocataireId = new System.Windows.Forms.TextBox();
             this.btnAfficherImage = new System.Windows.Forms.Button();
+            this.lblDepenseReparti = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // tbMontant
@@ -51,7 +52,7 @@
             this.tbMontant.Margin = new System.Windows.Forms.Padding(2);
             this.tbMontant.Name = "tbMontant";
             this.tbMontant.Size = new System.Drawing.Size(228, 26);
-            this.tbMontant.TabIndex = 4;
+            this.tbMontant.TabIndex = 5;
             // 
             // lblMontant
             // 
@@ -133,7 +134,7 @@
             this.cbColocataire.Location = new System.Drawing.Point(135, 144);
             this.cbColocataire.Name = "cbColocataire";
             this.cbColocataire.Size = new System.Drawing.Size(228, 26);
-            this.cbColocataire.TabIndex = 5;
+            this.cbColocataire.TabIndex = 6;
             // 
             // btnValider
             // 
@@ -149,7 +150,7 @@
             // btnSelectFile
             // 
             this.btnSelectFile.Font = new System.Drawing.Font("Calibri", 13F);
-            this.btnSelectFile.Location = new System.Drawing.Point(210, 76);
+            this.btnSelectFile.Location = new System.Drawing.Point(134, 76);
             this.btnSelectFile.Name = "btnSelectFile";
             this.btnSelectFile.Size = new System.Drawing.Size(153, 31);
             this.btnSelectFile.TabIndex = 3;
@@ -179,18 +180,31 @@
             // btnAfficherImage
             // 
             this.btnAfficherImage.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAfficherImage.Location = new System.Drawing.Point(135, 77);
+            this.btnAfficherImage.Location = new System.Drawing.Point(294, 77);
             this.btnAfficherImage.Name = "btnAfficherImage";
             this.btnAfficherImage.Size = new System.Drawing.Size(69, 31);
-            this.btnAfficherImage.TabIndex = 36;
+            this.btnAfficherImage.TabIndex = 4;
             this.btnAfficherImage.Text = "Afficher";
             this.btnAfficherImage.UseVisualStyleBackColor = true;
+            // 
+            // lblDepenseReparti
+            // 
+            this.lblDepenseReparti.AutoSize = true;
+            this.lblDepenseReparti.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDepenseReparti.ForeColor = System.Drawing.Color.Red;
+            this.lblDepenseReparti.Location = new System.Drawing.Point(-1, 219);
+            this.lblDepenseReparti.Name = "lblDepenseReparti";
+            this.lblDepenseReparti.Size = new System.Drawing.Size(395, 26);
+            this.lblDepenseReparti.TabIndex = 36;
+            this.lblDepenseReparti.Text = "Vous ne pouvez plus modifier cette dépense";
+            this.lblDepenseReparti.Visible = false;
             // 
             // FeditDepense
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(392, 231);
+            this.ClientSize = new System.Drawing.Size(392, 226);
+            this.Controls.Add(this.lblDepenseReparti);
             this.Controls.Add(this.btnAfficherImage);
             this.Controls.Add(this.tbColocataireId);
             this.Controls.Add(this.tbSelectFile);
@@ -227,5 +241,6 @@
         private System.Windows.Forms.TextBox tbSelectFile;
         private System.Windows.Forms.TextBox tbColocataireId;
         private System.Windows.Forms.Button btnAfficherImage;
+        private System.Windows.Forms.Label lblDepenseReparti;
     }
 }

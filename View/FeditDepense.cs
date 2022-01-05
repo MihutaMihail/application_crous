@@ -29,6 +29,7 @@ namespace View
             this.tbDate.MaxLength = 20;
             this.tbTitre.MaxLength = 20;
             this.tbMontant.MaxLength = 7;
+            this.btnAfficherImage.Visible = false;
             this.state = state;
             this.items = items;
             this.position = position;
@@ -49,8 +50,13 @@ namespace View
                         this.tbDate.ReadOnly = true;
                         this.tbTitre.ReadOnly = true;
                         this.tbMontant.ReadOnly = true;
-                        this.btnSelectFile.Visible = false;
+                        this.btnSelectFile.Text = "Afficher Image";
+                        this.btnSelectFile.Click += btnAfficherImage_Click;
+                        this.btnSelectFile.Click -= btnSelectFile_Click;
+                        this.btnAfficherImage.Visible = false;
                         this.cbColocataire.Enabled = false;
+                        this.lblDepenseReparti.Visible = true;
+                        this.Size = new Size(408, 290);
                     }
                     break;
                 case State.deleted:
@@ -98,10 +104,12 @@ namespace View
                     if (badExtension == false)
                     {
                         this.tbSelectFile.Text = file;
+                        this.btnAfficherImage.Visible = true;
                     }
                     else
                     {
-                        MessageBox.Show("Le fichier choisi contient une extension qui est peut être dangereux!","ATTENTION");
+                        MessageBox.Show("Vous ne pouvez pas mettre un fichier qui n'est pas une " +
+                            "image (.png, .jgp, .jpeg)","Mauvais Format");
                     }
                 }
             }
@@ -109,11 +117,13 @@ namespace View
 
         private bool CheckExtensionFile(string fileName)
         {
-            if (!fileName.Contains(".png") || !fileName.Contains(".jpg") || !fileName.Contains(".jpeg"))
+            var exclure = new[] {".php",".PHP",".exe",".EXE",".html",".HTML",".zip",".ZIP",".rar",".RAR",".pdf",".PDF"};
+
+            if (exclure.Any(x => fileName.Contains(x)))
             {
-                return false;
+                return true;
             }
-            return true;
+            return false;
         }
 
         private void btnValider_Click(object sender, EventArgs e)
