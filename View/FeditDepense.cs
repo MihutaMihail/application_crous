@@ -25,7 +25,10 @@ namespace View
             btnSelectFile.Click += btnSelectFile_Click;
             btnAfficherImage.Click += btnAfficherImage_Click;
             cbColocataire.TextChanged += cbColocataire_TextChanged;
-            tbMontant.KeyPress += tbMontant_KeyPress;
+            tbMontant.KeyPress += tbMontant_KeyPressDecimalPoint;
+            this.tbDate.MaxLength = 20;
+            this.tbTitre.MaxLength = 20;
+            this.tbMontant.MaxLength = 7;
             this.state = state;
             this.items = items;
             this.position = position;
@@ -61,7 +64,7 @@ namespace View
             }
         }
 
-        private void tbMontant_KeyPress(object sender, KeyPressEventArgs e)
+        private void tbMontant_KeyPressDecimalPoint(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar.Equals('.') || e.KeyChar.Equals(',')) {
                 e.KeyChar = ((System.Globalization.CultureInfo)System.Globalization.CultureInfo.CurrentCulture).NumberFormat.NumberDecimalSeparator.ToCharArray()[0];
@@ -108,9 +111,9 @@ namespace View
         {
             if (!fileName.Contains(".png") || !fileName.Contains(".jpg") || !fileName.Contains(".jpeg"))
             {
-                return true;
+                return false;
             }
-            return false;
+            return true;
         }
 
         private void btnValider_Click(object sender, EventArgs e)

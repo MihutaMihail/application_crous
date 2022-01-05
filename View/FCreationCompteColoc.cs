@@ -16,23 +16,31 @@ namespace View
 {
     public partial class FCreationCompteColoc : Form
     {
+        string login;
+        string password;
+
         public FCreationCompteColoc()
         {
             InitializeComponent();
             this.Text = "Compte colocataire";
+            this.tbIdentifiant.MaxLength = 15;
+            this.tbMdp.MaxLength = 15;
             btnValider.Click += btnValider_Click;
         }
 
         private void btnValider_Click(object sender, EventArgs e)
         {
-            string login = tbIdentifiant.Text;
-            string password = tbMdp.Text;
+            this.login = tbIdentifiant.Text;
+            this.password = tbMdp.Text;
 
             bool resultat = CaracteresDangereux(login, password);
 
             if (resultat == true)
             {
-                new DaoCompte().CreationCompte(login, password, State.compteCreation);
+                string loginChiffrer = Chiffrement.ChiffrerBase64(this.login);
+                string passwordChiffrer =Chiffrement.ChiffrerBase64(this.password);
+
+                new DaoCompte().CreationCompte(loginChiffrer, passwordChiffrer, State.compteCreation);
 
                 this.Close();
             } else

@@ -9,7 +9,7 @@ namespace Model
 {
     public class Logs
     {
-        public static void Log(string login, string password, StateConnection stateConnection, TextWriter w)
+        public static void LogConnection(string login, string password, StateConnection stateConnection, TextWriter w)
         {
             w.Write("\r\nLog Entry : ");
             w.WriteLine($"{DateTime.Now.ToLongTimeString()} {DateTime.Now.ToLongDateString()}");

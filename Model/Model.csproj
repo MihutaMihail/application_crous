@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Chiffrement.cs" />
     <Compile Include="Colocataire.cs" />
     <Compile Include="Colocataires.cs" />
     <Compile Include="Compte.cs" />

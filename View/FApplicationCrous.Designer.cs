@@ -43,7 +43,7 @@
             this.btnColocataires.Margin = new System.Windows.Forms.Padding(2);
             this.btnColocataires.Name = "btnColocataires";
             this.btnColocataires.Size = new System.Drawing.Size(275, 63);
-            this.btnColocataires.TabIndex = 1;
+            this.btnColocataires.TabIndex = 2;
             this.btnColocataires.Text = "Gestion des Colocataires";
             this.btnColocataires.UseVisualStyleBackColor = true;
             // 
@@ -54,7 +54,7 @@
             this.btnRepartition.Margin = new System.Windows.Forms.Padding(2);
             this.btnRepartition.Name = "btnRepartition";
             this.btnRepartition.Size = new System.Drawing.Size(275, 63);
-            this.btnRepartition.TabIndex = 3;
+            this.btnRepartition.TabIndex = 4;
             this.btnRepartition.Text = "Mise en Répartition";
             this.btnRepartition.UseVisualStyleBackColor = true;
             // 
@@ -65,7 +65,7 @@
             this.btnDepenses.Margin = new System.Windows.Forms.Padding(2);
             this.btnDepenses.Name = "btnDepenses";
             this.btnDepenses.Size = new System.Drawing.Size(275, 63);
-            this.btnDepenses.TabIndex = 2;
+            this.btnDepenses.TabIndex = 3;
             this.btnDepenses.Text = "Gestion des Dépenses";
             this.btnDepenses.UseVisualStyleBackColor = true;
             // 
@@ -93,7 +93,7 @@
             this.btnConnexion.Location = new System.Drawing.Point(241, 1);
             this.btnConnexion.Name = "btnConnexion";
             this.btnConnexion.Size = new System.Drawing.Size(75, 23);
-            this.btnConnexion.TabIndex = 5;
+            this.btnConnexion.TabIndex = 1;
             this.btnConnexion.Text = "Connexion";
             this.btnConnexion.UseVisualStyleBackColor = true;
             // 

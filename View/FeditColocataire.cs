@@ -21,6 +21,15 @@ namespace View
         {
             InitializeComponent();
             btnValider.Click += btnValider_Click;
+            tbAge.KeyPress += tbAge_KeyPressOnlyNumbers;
+            tbTel.KeyPress += tbTel_KeyPressOnlyNumbers;
+            tbAppartement.KeyPress += tbAppartement_KeyPressOnlyNumbers;
+            this.tbNom.MaxLength = 20;
+            this.tbPrenom.MaxLength = 20;
+            this.tbAge.MaxLength = 3;
+            this.tbTel.MaxLength = 10;
+            this.tbMail.MaxLength = 50;
+            this.tbAppartement.MaxLength = 1;
             this.state = state;
             this.items = items;
             this.position = position;
@@ -47,6 +56,28 @@ namespace View
                     break;
                 default:
                     break;        
+            }
+        }
+
+        private void tbAge_KeyPressOnlyNumbers(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+        private void tbTel_KeyPressOnlyNumbers(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+        private void tbAppartement_KeyPressOnlyNumbers(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
             }
         }
 

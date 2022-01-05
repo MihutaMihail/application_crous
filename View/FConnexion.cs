@@ -24,6 +24,8 @@ namespace View
             InitializeComponent();
             this.Text = "Connexion";
             this.stateConnection = StateConnection.disconnected;
+            this.tbIdentifiant.MaxLength = 15;
+            this.tbMdp.MaxLength = 15;
             btnValider.Click += btnValider_Click;
         }
 
@@ -61,7 +63,7 @@ namespace View
                     stateConnection = StateConnection.connectedUser;
                     using (StreamWriter w = File.AppendText("log.txt"))
                     {
-                        Logs.Log(this.identifiant, this.password, stateConnection, w);
+                        Logs.LogConnection(this.identifiant, this.password, stateConnection, w);
                     }
 
                     using (StreamReader r = File.OpenText("log.txt"))
@@ -95,10 +97,10 @@ namespace View
         {
             for (int i = 0; i < lesComptes.Count(); i++)
             {
-                string login = lesComptes[i].Login;
-                string password = lesComptes[i].Password;
+                string login = Chiffrement.DechiffrerBase64(lesComptes[i].Login);
+                string password = Chiffrement.DechiffrerBase64(lesComptes[i].Password);
 
-                if (this.identifiant == lesComptes[i].Login && this.password == lesComptes[i].Password)
+                if (this.identifiant == login && this.password == password)
                 {
                     return true;
                 }
