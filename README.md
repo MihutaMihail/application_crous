@@ -302,7 +302,7 @@ CREATE TABLE logs (
     id INTEGER(10) NOT NULL AUTO_INCREMENT,
     identifiant VARCHAR(20),
     adresseIp VARCHAR(30),
-    dateLog DATE,
+    dateLog DATETIME,
     actionLog VARCHAR(100),
     typeLog VARCHAR(100),
     PRIMARY Key (id)
