@@ -298,6 +298,16 @@ CREATE TABLE compte (
     PRIMARY KEY (login)
 ) ENGINE = InnoDB;
 
+CREATE TABLE logs (
+    id INTEGER(10) NOT NULL AUTO_INCREMENT,
+    identifiant VARCHAR(20),
+    adresseIp VARCHAR(30),
+    dateLog DATE,
+    actionLog VARCHAR(100),
+    typeLog VARCHAR(100),
+    PRIMARY Key (id)
+) ENGINE = InnoDB;
+
 ALTER TABLE Depenses ADD CONSTRAINT fk_Colocataire_A_Depenses FOREIGN KEY (idColocataire) REFERENCES Colocataire(id);
 
 ```
