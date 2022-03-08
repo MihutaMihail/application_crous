@@ -62,16 +62,6 @@ namespace View
                 if (result == true)
                 {
                     stateConnection = StateConnection.connectedUser;
-                    using (StreamWriter w = File.AppendText("log.txt"))
-                    {
-                        Logs.LogConnection(this.identifiant, this.password, stateConnection, w);
-                    }
-
-                    using (StreamReader r = File.OpenText("log.txt"))
-                    {
-                        Logs.DumpLog(r);
-                    }
-                    this.Close();
                 }
                 else
                 {

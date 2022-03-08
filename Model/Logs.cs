@@ -9,23 +9,17 @@ namespace Model
 {
     public class Logs
     {
-        public static void LogConnection(string login, string password, StateConnection stateConnection, TextWriter w)
-        {
-            w.Write("\r\nLog Entry : ");
-            w.WriteLine($"{DateTime.Now.ToLongTimeString()} {DateTime.Now.ToLongDateString()}");
-            w.WriteLine($" Login : {login} ");
-            w.WriteLine($" Password : {password} ");
-            w.WriteLine($" Status : {stateConnection} ");
-            w.WriteLine("-------------------------------");
-        }
+        private int id;
+        private string identifiant;
+        private DateTime dateLog;
+        private string action;
 
-        public static void DumpLog(StreamReader r)
+        public Logs(int id, string identifiant, DateTime dateLog, string action)
         {
-            string line;
-            while ((line = r.ReadLine()) != null)
-            {
-                Console.WriteLine(line);
-            }
+            this.id = id;
+            this.identifiant = identifiant;
+            this.dateLog = dateLog;
+            this.action = action;
         }
     }
 }
