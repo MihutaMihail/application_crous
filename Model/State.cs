@@ -8,6 +8,6 @@ namespace Model
 {
     public enum State
     {
-        added, modified, deleted, unChanged, solderModified, compteCreation
+        added, modified, deleted, unChanged, solderModified, compteCreation, logCreation
     }
 }

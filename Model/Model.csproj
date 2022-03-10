@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Chiffrement.cs" />
+    <Compile Include="CollectionLogs.cs" />
     <Compile Include="Colocataire.cs" />
     <Compile Include="Colocataires.cs" />
     <Compile Include="Compte.cs" />

@@ -21,5 +21,25 @@ namespace Model
             this.dateLog = dateLog;
             this.action = action;
         }
+        public int Id
+        {
+            get { return this.id; }
+            set { this.id = value; }
+        }
+        public string Identifiant
+        {
+            get { return this.identifiant; }
+            set { this.identifiant = value; }
+        }
+        public DateTime DateLog
+        {
+            get { return this.dateLog; }
+            set { this.dateLog = value; }
+        }
+        public string Action
+        {
+            get { return this.action; }
+            set { this.action = value; }
+        }
     }
 }

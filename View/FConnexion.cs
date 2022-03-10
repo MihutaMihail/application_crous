@@ -33,6 +33,10 @@ namespace View
         public StateConnection StateConnection { 
             get { return this.stateConnection; }
         }
+        public string identifiantLogs
+        {
+            get { return this.identifiant; }
+        }
 
         private void btnValider_Click(object sender, EventArgs e)
         {
@@ -62,6 +66,7 @@ namespace View
                 if (result == true)
                 {
                     stateConnection = StateConnection.connectedUser;
+                    this.Close();
                 }
                 else
                 {

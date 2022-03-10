@@ -16,6 +16,7 @@ namespace View
     public partial class FApplicationCrous : Form
     {
         StateConnection stateConnection;
+        string identifiantLogs;
 
         public FApplicationCrous(StateConnection stateConnection)
         {
@@ -28,6 +29,7 @@ namespace View
             btnDepenses.Click += btnDepenses_Click;
             btnConnexion.Click += btnConnexion_Click;
             DaoConnectionSingleton.SetStringConnection("root", "siojjr", "localhost", "crous");
+
         }
 
         private void btnConnexion_Click(object sender, EventArgs e)
@@ -35,14 +37,17 @@ namespace View
             FConnexion c = new FConnexion();
             c.ShowDialog();
             stateConnection = c.StateConnection;
+            identifiantLogs = c.identifiantLogs;
 
             if (this.stateConnection == StateConnection.connectedAdmin)
             {
                 lbConnexion.Text = "Mode Admin";
+                new DaoLogs().CreationLog(identifiantLogs, DateTime.Now, "Connecter en tant que admin", State.logCreation);
             }
             else if (this.stateConnection == StateConnection.connectedUser)
             {
-                lbConnexion.Text = "Bonjour, Colocataire";
+                lbConnexion.Text = "Bonjour," + identifiantLogs;
+                new DaoLogs().CreationLog(identifiantLogs, DateTime.Now, "Connecter en tant que colocataire", State.logCreation);
             }
             else if (this.stateConnection == StateConnection.error)
             {
