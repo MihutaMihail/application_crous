@@ -300,7 +300,8 @@ CREATE TABLE compte (
 
 CREATE TABLE logs (
     id INTEGER(10) NOT NULL AUTO_INCREMENT,
-    identifiant VARCHAR(20),
+    identifiant VARCHAR(50),
+    adresseIp VARCHAR(50),
     dateLog DATETIME,
     action VARCHAR(100),
     PRIMARY Key (id)
