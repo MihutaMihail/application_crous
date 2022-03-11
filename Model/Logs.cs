@@ -11,13 +11,15 @@ namespace Model
     {
         private int id;
         private string identifiant;
+        private string adresseIp;
         private DateTime dateLog;
         private string action;
 
-        public Logs(int id, string identifiant, DateTime dateLog, string action)
+        public Logs(int id, string identifiant, string adresseIp, DateTime dateLog, string action)
         {
             this.id = id;
             this.identifiant = identifiant;
+            this.adresseIp = adresseIp;
             this.dateLog = dateLog;
             this.action = action;
         }
@@ -30,6 +32,11 @@ namespace Model
         {
             get { return this.identifiant; }
             set { this.identifiant = value; }
+        }
+        public string AdresseIp
+        {
+            get { return this.adresseIp; }
+            set { this.adresseIp = value; }
         }
         public DateTime DateLog
         {

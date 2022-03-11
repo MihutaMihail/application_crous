@@ -17,6 +17,7 @@ namespace View
     {
         StateConnection stateConnection;
         string identifiantLogs;
+        string identifiantAfficher;
 
         public FApplicationCrous(StateConnection stateConnection)
         {
@@ -37,21 +38,24 @@ namespace View
             FConnexion c = new FConnexion();
             c.ShowDialog();
             stateConnection = c.StateConnection;
-            identifiantLogs = c.identifiantLogs;
+            identifiantAfficher = c.identifiantLogs;
+            identifiantLogs = Chiffrement.ChiffrerBase64(c.identifiantLogs);
+            string adresseIp = IpAddress.GetLocalIPAddress();
 
             if (this.stateConnection == StateConnection.connectedAdmin)
             {
                 lbConnexion.Text = "Mode Admin";
-                new DaoLogs().CreationLog(identifiantLogs, DateTime.Now, "Connecter en tant que admin", State.logCreation);
+                new DaoLogs().CreationLog(identifiantLogs, adresseIp, DateTime.Now, "Connexion Admin", State.logCreation);
             }
             else if (this.stateConnection == StateConnection.connectedUser)
             {
-                lbConnexion.Text = "Bonjour," + identifiantLogs;
-                new DaoLogs().CreationLog(identifiantLogs, DateTime.Now, "Connecter en tant que colocataire", State.logCreation);
+                lbConnexion.Text = "Bonjour, " + identifiantAfficher;
+                new DaoLogs().CreationLog(identifiantLogs, adresseIp, DateTime.Now, "Connexion Colocataire", State.logCreation);
             }
             else if (this.stateConnection == StateConnection.error)
             {
                 MessageBox.Show("L'un de vos identifiants est incorrecte","ATTENTION");
+
             }
         }
 

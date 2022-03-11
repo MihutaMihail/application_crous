@@ -10,25 +10,28 @@ namespace Dao
 {
     public class DaoLogs
     {
-        public void CreationLog(string identifiant, DateTime dateLog, string action, State state)
+        public void CreationLog(string identifiant, string adresseIp, DateTime dateLog, string action, State state)
         {
             switch (state)
             {
                 case State.logCreation:
-                    this.logCreation(identifiant,dateLog,action);
+                    this.logCreation(identifiant,adresseIp,dateLog,action);
                     break;
             }
         }
 
-        private void logCreation(string identifiant, DateTime dateLog, string action)
+        private void logCreation(string identifiant, string adresseIp, DateTime dateLog, string action)
         {
             using (MySqlConnection cnx = DaoConnectionSingleton.GetMySqlConnection())
             {
                 cnx.Open();
-                using (MySqlCommand cmd = new MySqlCommand("insert into logs(identifiant, dateLog, action) values(@identifiant, @dateLog, @action)", cnx))
+                using (MySqlCommand cmd = new MySqlCommand("insert into logs(identifiant, adresseIp, dateLog, action) values(@identifiant, @adresseIp, @dateLog, @action)", cnx))
                 {
                     cmd.Parameters.Add(new MySqlParameter("@identifiant", MySqlDbType.VarChar));
                     cmd.Parameters["@identifiant"].Value = identifiant;
+
+                    cmd.Parameters.Add(new MySqlParameter("@adresseIp", MySqlDbType.VarChar));
+                    cmd.Parameters["@adresseIp"].Value = adresseIp;
 
                     cmd.Parameters.Add(new MySqlParameter("@dateLog", MySqlDbType.DateTime));
                     cmd.Parameters["@dateLog"].Value = dateLog;
@@ -53,7 +56,7 @@ namespace Dao
                     {
                         while (rdr.Read())
                         {
-                            lesLogs.AjouterLog(new Logs(Convert.ToInt32(rdr["id"]), (string)rdr["identifiant"], (DateTime)rdr["dateLog"], (string)rdr["action"]));
+                            lesLogs.AjouterLog(new Logs(Convert.ToInt32(rdr["id"]), (string)rdr["identifiant"],(string)rdr["adresseIp"],(DateTime)rdr["dateLog"], (string)rdr["action"]));
                         }
                     }
                 }
