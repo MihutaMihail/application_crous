@@ -18,6 +18,7 @@ namespace View
         StateConnection stateConnection;
         string identifiantLogs;
         string identifiantAfficher;
+        string adresseIp;
 
         public FApplicationCrous(StateConnection stateConnection)
         {
@@ -40,7 +41,7 @@ namespace View
             stateConnection = c.StateConnection;
             identifiantAfficher = c.identifiantLogs;
             identifiantLogs = Chiffrement.ChiffrerBase64(c.identifiantLogs);
-            string adresseIp = IpAddress.GetLocalIPAddress();
+            adresseIp = IpAddress.AdresseIp();
 
             if (this.stateConnection == StateConnection.connectedAdmin)
             {
@@ -54,16 +55,18 @@ namespace View
             }
             else if (this.stateConnection == StateConnection.error)
             {
+                new DaoLogs().CreationLog(identifiantLogs, adresseIp, DateTime.Now, "Erreur Connexion", State.logCreation);
                 MessageBox.Show("L'un de vos identifiants est incorrecte","ATTENTION");
-
             }
         }
 
         private void btnColocataires_Click(object sender, EventArgs e)
         {
+            adresseIp = IpAddress.AdresseIp();
             if (stateConnection == StateConnection.connectedAdmin)
             {
-                FGestionColocataire gc = new FGestionColocataire();
+                FGestionColocataire gc = new FGestionColocataire(identifiantLogs,adresseIp);
+                new DaoLogs().CreationLog(identifiantLogs, adresseIp, DateTime.Now, "Clique sur 'Gestion des colocataires'", State.logCreation);
                 gc.Show();
             } else {
                 MessageBox.Show("Il faut être connecter en tant que ADMIN pour y accèder","ATTENTION");
@@ -72,9 +75,11 @@ namespace View
 
         private void btnDepenses_Click(object sender, EventArgs e)
         {
+            adresseIp = IpAddress.AdresseIp();
             if (stateConnection == StateConnection.connectedAdmin || stateConnection == StateConnection.connectedUser)
             {
                 FGestionDepense gd = new FGestionDepense();
+                new DaoLogs().CreationLog(identifiantLogs, adresseIp, DateTime.Now, "Clique sur 'Gestion des dépenses'", State.logCreation);
                 gd.Show();
             }
             else
@@ -85,9 +90,11 @@ namespace View
 
         private void btnRepartition_Click(object sender, EventArgs e)
         {
+            adresseIp = IpAddress.AdresseIp();
             if (stateConnection == StateConnection.connectedAdmin || stateConnection == StateConnection.connectedUser)
             {
                 FMiseEnRepartition d = new FMiseEnRepartition();
+                new DaoLogs().CreationLog(identifiantLogs, adresseIp, DateTime.Now, "Clique sur 'Mise en répartition'", State.logCreation);
                 d.Show();
             }
             else

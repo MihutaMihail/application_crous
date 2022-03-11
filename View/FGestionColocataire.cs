@@ -14,7 +14,10 @@ namespace View
 {
     public partial class FGestionColocataire : Form
     {
-        public FGestionColocataire()
+        string identifiantLogs;
+        string adresseIp;
+
+        public FGestionColocataire(string identifiantLogs, string adresseIp)
         {
             InitializeComponent();
             this.Text = "Gestion Colocataires";
@@ -22,6 +25,8 @@ namespace View
             btnEdit.Click += btnEdit_Click;
             btnDelete.Click += btnDelete_Click;
             this.load(new DaoColocataire().GetAll());
+            this.identifiantLogs = identifiantLogs;
+            this.adresseIp = adresseIp;
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
