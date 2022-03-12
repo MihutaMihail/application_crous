@@ -14,10 +14,15 @@ namespace View
 {
     public partial class FMiseEnRepartition : Form
     {
-        public FMiseEnRepartition()
+        string identifiantLogs;
+        string adresseIp;
+
+        public FMiseEnRepartition(string identifiantLogs, string adresseIp)
         {
             InitializeComponent();
             btnSolderPeriode.Click += btnSolderPeriode_Click;
+            this.identifiantLogs = identifiantLogs;
+            this.adresseIp = adresseIp;
             this.Text = "Calculer la répartition"; 
             this.load(new DaoColocataire().GetAll(), new DaoDepense().GetAll());
             this.dataGridView1.Columns["Nom"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -62,6 +67,7 @@ namespace View
             DialogResult dialogResult = MessageBox.Show("Êtes-vous sûr de vouloir solder une période ?", "ATTENTION", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
+                new DaoLogs().CreationLog(identifiantLogs, adresseIp, DateTime.Now, "Solder une période", State.logCreation);
                 this.Hide();
                 MessageBox.Show("Cette période a été soldé !");
                 FSolderUnePeriode s = new FSolderUnePeriode();

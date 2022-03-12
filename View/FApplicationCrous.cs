@@ -78,7 +78,7 @@ namespace View
             adresseIp = IpAddress.AdresseIp();
             if (stateConnection == StateConnection.connectedAdmin || stateConnection == StateConnection.connectedUser)
             {
-                FGestionDepense gd = new FGestionDepense();
+                FGestionDepense gd = new FGestionDepense(identifiantLogs, adresseIp);
                 new DaoLogs().CreationLog(identifiantLogs, adresseIp, DateTime.Now, "Clique sur 'Gestion des dépenses'", State.logCreation);
                 gd.Show();
             }
@@ -93,7 +93,7 @@ namespace View
             adresseIp = IpAddress.AdresseIp();
             if (stateConnection == StateConnection.connectedAdmin || stateConnection == StateConnection.connectedUser)
             {
-                FMiseEnRepartition d = new FMiseEnRepartition();
+                FMiseEnRepartition d = new FMiseEnRepartition(identifiantLogs, adresseIp);
                 new DaoLogs().CreationLog(identifiantLogs, adresseIp, DateTime.Now, "Clique sur 'Mise en répartition'", State.logCreation);
                 d.Show();
             }

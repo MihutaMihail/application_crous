@@ -14,31 +14,39 @@ namespace View
 {
     public partial class FGestionDepense : Form
     {
-        public FGestionDepense()
+        string identifiantLogs;
+        string adresseIp;
+
+        public FGestionDepense(string identifiantLogs, string adresseIp)
         {
             InitializeComponent();
             this.Text = "Gestion Dépenses";
             btnAdd.Click += btnAdd_Click;
             btnEdit.Click += btnEdit_Click;
             btnDelete.Click += btnDelete_Click;
+            this.identifiantLogs = identifiantLogs;
+            this.adresseIp = adresseIp;
             this.load(new DaoDepense().GetAll());
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (lbDepenses.SelectedIndex == -1) return;
-            int position = lbDepenses.SelectedIndex;
-            ((Depense)lbDepenses.Items[position]).Remove();
-            lbDepenses.Items[position] = lbDepenses.Items[position];
+            if (lbDepenses.SelectedIndex != -1)
+            {
+                int position = lbDepenses.SelectedIndex;
+                ((Depense)lbDepenses.Items[position]).Remove();
+                lbDepenses.Items[position] = lbDepenses.Items[position];
 
-            saveDatabase();
+                saveDatabase();
+                new DaoLogs().CreationLog(identifiantLogs, adresseIp, DateTime.Now, "Dépense Supprimer", State.logCreation);
+            }
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
             if (lbDepenses.SelectedIndex == -1) return;
             int position = lbDepenses.SelectedIndex;
-            FeditDepense fEdit = new FeditDepense(State.modified, lbDepenses.Items, position);
+            FeditDepense fEdit = new FeditDepense(State.modified, lbDepenses.Items, position, identifiantLogs, adresseIp);
             fEdit.ShowDialog();
 
             saveDatabase();
@@ -46,7 +54,7 @@ namespace View
 
         private void btnAdd_Click(object sender, System.EventArgs e)
         {
-            FeditDepense fEdit = new FeditDepense(State.added, lbDepenses.Items, 0);
+            FeditDepense fEdit = new FeditDepense(State.added, lbDepenses.Items, 0, identifiantLogs, adresseIp);
             fEdit.ShowDialog();
 
             saveDatabase();

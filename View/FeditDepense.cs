@@ -17,8 +17,10 @@ namespace View
         State state;
         ListBox.ObjectCollection items;
         int position;
+        string identifiantLogs;
+        string adresseIp;
 
-        public FeditDepense(State state, ListBox.ObjectCollection items, int position)
+        public FeditDepense(State state, ListBox.ObjectCollection items, int position, string identifiantLogs, string adresseIp)
         {
             InitializeComponent();
             btnValider.Click += btnValider_Click;
@@ -33,6 +35,8 @@ namespace View
             this.state = state;
             this.items = items;
             this.position = position;
+            this.identifiantLogs = identifiantLogs;
+            this.adresseIp = adresseIp;
             this.load(new DaoColocataire().GetAll());
             switch (state)
             {
@@ -133,6 +137,7 @@ namespace View
                 case State.added:
                     items.Add(new Depense(0, Convert.ToDateTime(this.tbDate.Text), this.tbTitre.Text, this.tbSelectFile.Text, 
                         Convert.ToDecimal(this.tbMontant.Text),Convert.ToInt32(tbColocataireId.Text),this.state));
+                    new DaoLogs().CreationLog(identifiantLogs, adresseIp, DateTime.Now, "Ajout Nouvelle Dépense", State.logCreation);
                     break;
                 case State.modified:
                     Depense depense = (Depense)items[this.position];
@@ -143,6 +148,7 @@ namespace View
                     depense.IdColocataire = Convert.ToInt32(this.tbColocataireId.Text);
                     depense.State = this.state;
                     items[this.position] = depense;
+                    new DaoLogs().CreationLog(identifiantLogs, adresseIp, DateTime.Now, "Modifier Dépense", State.logCreation);
                     break;
                 case State.deleted:
                     break;

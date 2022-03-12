@@ -31,19 +31,22 @@ namespace View
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (lbColocataires.SelectedIndex == -1) return;
-            int position = lbColocataires.SelectedIndex;
-            ((Colocataire)lbColocataires.Items[position]).Remove();
-            lbColocataires.Items[position] = lbColocataires.Items[position];
+            if (lbColocataires.SelectedIndex != -1)
+            {
+                int position = lbColocataires.SelectedIndex;
+                ((Colocataire)lbColocataires.Items[position]).Remove();
+                lbColocataires.Items[position] = lbColocataires.Items[position];
 
-            saveDatabase();
+                saveDatabase();
+                new DaoLogs().CreationLog(identifiantLogs, adresseIp, DateTime.Now, "Colocataire Supprimer", State.logCreation);
+            }
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
             if (lbColocataires.SelectedIndex == -1) return;
             int position = lbColocataires.SelectedIndex;
-            FeditColocataire fEdit = new FeditColocataire(State.modified, lbColocataires.Items, position);
+            FeditColocataire fEdit = new FeditColocataire(State.modified, lbColocataires.Items, position, identifiantLogs, adresseIp);
             fEdit.ShowDialog();
 
             saveDatabase();
@@ -51,7 +54,7 @@ namespace View
 
         private void btnAdd_Click(object sender, System.EventArgs e)
         {
-            FeditColocataire fEdit = new FeditColocataire(State.added, lbColocataires.Items, 0);
+            FeditColocataire fEdit = new FeditColocataire(State.added, lbColocataires.Items, 0, identifiantLogs, adresseIp);
             fEdit.ShowDialog();
 
             FCreationCompteColoc ccc = new FCreationCompteColoc();

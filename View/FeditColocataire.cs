@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Model;
+using Dao;
 
 namespace View
 {
@@ -16,8 +17,10 @@ namespace View
         State state;
         ListBox.ObjectCollection items;
         int position;
+        string identifiantLogs;
+        string adresseIp;
 
-        public FeditColocataire(State state, ListBox.ObjectCollection items, int position)
+        public FeditColocataire(State state, ListBox.ObjectCollection items, int position, string identifiantLogs, string adresseIp)
         {
             InitializeComponent();
             btnValider.Click += btnValider_Click;
@@ -33,6 +36,8 @@ namespace View
             this.state = state;
             this.items = items;
             this.position = position;
+            this.identifiantLogs = identifiantLogs;
+            this.adresseIp = adresseIp;
             switch (state)
             {
                 case State.added:
@@ -99,6 +104,7 @@ namespace View
                         Colocataire nouveauColocataire = new Colocataire(0, this.tbNom.Text, this.tbPrenom.Text, Convert.ToInt32(this.tbAge.Text),
                         Convert.ToInt32(this.tbTel.Text), this.tbMail.Text, Convert.ToInt32(this.tbAppartement.Text), this.state);
                         items.Add(nouveauColocataire);
+                        new DaoLogs().CreationLog(identifiantLogs, adresseIp, DateTime.Now, "Ajout Nouveau Colocataire", State.logCreation);
                     }
                     break;
                 case State.modified:
@@ -111,6 +117,7 @@ namespace View
                     colocataire.Appartement = Convert.ToInt32(this.tbAppartement.Text);
                     colocataire.State = this.state;
                     items[this.position] = colocataire;
+                    new DaoLogs().CreationLog(identifiantLogs, adresseIp, DateTime.Now, "Modification Colocataire", State.logCreation);
                     break;
                 case State.deleted:
                     break;
