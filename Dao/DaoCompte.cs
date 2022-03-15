@@ -10,28 +10,31 @@ namespace Dao
 {
     public class DaoCompte
     {
-        public void CreationCompte(string login, string password, State state)
+        public void CreationCompte(string login, string password, string nomColocataire, State state)
         {
             switch (state)
             {
                 case State.compteCreation:
-                    this.compteCreation(login, password);
+                    this.compteCreation(login, password, nomColocataire);
                     break;
             }
         }
 
-        private void compteCreation(string login, string password)
+        private void compteCreation(string login, string password, string nomColocataire)
         {
             using (MySqlConnection cnx = DaoConnectionSingleton.GetMySqlConnection())
             {
                 cnx.Open();
-                using (MySqlCommand cmd = new MySqlCommand("insert into compte(login,password) values(@login,@password)", cnx))
+                using (MySqlCommand cmd = new MySqlCommand("insert into compte(login,password,nomColocataire) values(@login,@password,@nomColocataire)", cnx))
                 {
                     cmd.Parameters.Add(new MySqlParameter("@login", MySqlDbType.VarChar));
                     cmd.Parameters["@login"].Value = login;
 
                     cmd.Parameters.Add(new MySqlParameter("@password", MySqlDbType.VarChar));
                     cmd.Parameters["@password"].Value = password;
+
+                    cmd.Parameters.Add(new MySqlParameter("@nomColocataire", MySqlDbType.VarChar));
+                    cmd.Parameters["@nomColocataire"].Value = nomColocataire;
 
                     cmd.ExecuteNonQuery();
                 }
@@ -44,13 +47,13 @@ namespace Dao
             using (MySqlConnection cnx = DaoConnectionSingleton.GetMySqlConnection())
             {
                 cnx.Open();
-                using (MySqlCommand cmd = new MySqlCommand("select login,password from compte", cnx))
+                using (MySqlCommand cmd = new MySqlCommand("select login,nomColocataire from compte", cnx))
                 {
                     using (MySqlDataReader rdr = cmd.ExecuteReader())
                     {
                         while (rdr.Read())
                         {
-                            lesComptes.AjouterCompte(new Compte((string)rdr["login"], (string)rdr["password"]));
+                            lesComptes.AjouterCompte(new Compte((string)rdr["login"], (string)rdr["password"], (string)rdr["nomColocataire"]));
                         }
                     }
                 }

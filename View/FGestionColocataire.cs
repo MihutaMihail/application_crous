@@ -56,8 +56,9 @@ namespace View
         {
             FeditColocataire fEdit = new FeditColocataire(State.added, lbColocataires.Items, 0, identifiantLogs, adresseIp);
             fEdit.ShowDialog();
+            string nomColocataire = fEdit.TbNom;
 
-            FCreationCompteColoc ccc = new FCreationCompteColoc();
+            FCreationCompteColoc ccc = new FCreationCompteColoc(nomColocataire);
             ccc.ShowDialog();
 
             saveDatabase();

@@ -20,6 +20,11 @@ namespace View
         string identifiantLogs;
         string adresseIp;
 
+        public string TbNom
+        {
+            get { return this.tbNom.Text; }
+        }
+
         public FeditColocataire(State state, ListBox.ObjectCollection items, int position, string identifiantLogs, string adresseIp)
         {
             InitializeComponent();

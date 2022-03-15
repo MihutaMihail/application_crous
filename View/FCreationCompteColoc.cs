@@ -18,13 +18,15 @@ namespace View
     {
         string login;
         string password;
+        string nomColocataire;
 
-        public FCreationCompteColoc()
+        public FCreationCompteColoc(string nomColocataire)
         {
             InitializeComponent();
             this.Text = "Compte colocataire";
             this.tbIdentifiant.MaxLength = 15;
             this.tbMdp.MaxLength = 15;
+            this.nomColocataire = nomColocataire;
             btnValider.Click += btnValider_Click;
         }
 
@@ -40,7 +42,7 @@ namespace View
                 string loginChiffrer = Chiffrement.ChiffrerBase64(this.login);
                 string passwordChiffrer =Chiffrement.ChiffrerBase64(this.password);
 
-                new DaoCompte().CreationCompte(loginChiffrer, passwordChiffrer, State.compteCreation);
+                new DaoCompte().CreationCompte(loginChiffrer, passwordChiffrer, nomColocataire, State.compteCreation);
 
                 this.Close();
             } else

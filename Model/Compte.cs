@@ -10,11 +10,13 @@ namespace Model
     {
         private string login;
         private string password;
+        private string nomColocataire;
 
-        public Compte(string login, string password)
+        public Compte(string login, string password, string nomColocataire)
         {
             this.login = login;
             this.password = password;
+            this.nomColocataire = nomColocataire;
         }
 
         public string Login
@@ -27,6 +29,12 @@ namespace Model
         {
             get { return this.password; }
             set { this.password = value; }
+        }
+
+        public string NomColocataire
+        {
+            get { return this.nomColocataire; }
+            set { this.nomColocataire = value; }
         }
     }
 }
