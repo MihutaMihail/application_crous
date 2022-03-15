@@ -304,14 +304,11 @@ CREATE TABLE logs (
     adresseIp VARCHAR(50),
     dateLog DATETIME,
     action VARCHAR(100),
-    nomColocataire VARCHAR(100),
+    nomColocataire VARCHAR(20) NOT NULL,
     PRIMARY Key (id)
 ) ENGINE = InnoDB;
 
 ALTER TABLE Depenses ADD CONSTRAINT fk_Colocataire_A_Depenses FOREIGN KEY (idColocataire) REFERENCES Colocataire(id);
-
-ALTER TABLE logs ADD CONSTRAINT fk_Logs_A_Colocataire FOREIGN KEY (nomColocataire) REFERENCES Colocataire(nom);
-
 ```
 
 
