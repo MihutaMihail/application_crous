@@ -295,6 +295,7 @@ CREATE TABLE Depenses (
 CREATE TABLE compte (
     login VARCHAR(15) NOT NULL,
     password VARCHAR(15) NOT NULL,
+    nomColocataire VARCHAR(20) NOT NULL,
     PRIMARY KEY (login)
 ) ENGINE = InnoDB;
 
@@ -304,7 +305,6 @@ CREATE TABLE logs (
     adresseIp VARCHAR(50),
     dateLog DATETIME,
     action VARCHAR(100),
-    nomColocataire VARCHAR(20) NOT NULL,
     PRIMARY Key (id)
 ) ENGINE = InnoDB;
 
