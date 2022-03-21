@@ -73,12 +73,13 @@ namespace View
 
         private void load(Depenses lesDepenses, Colocataires lesColocataires)
         {
-            string nomColocataireActuel;
+            string nomColocataireActuel = null;
+            int idColocataire = -333;
 
 
             Comptes lesComptes = new DaoCompte().GetAll();
             for (int i = 0; i < lesComptes.Count(); i++){
-                if (Chiffrement.DechiffrerBase64(lesComptes[i].Login) == identifiantLogs)
+                if (lesComptes[i].Login == identifiantLogs)
                 {
                     nomColocataireActuel = lesComptes[i].NomColocataire;
                 }
@@ -87,14 +88,17 @@ namespace View
             {
                 if (nomColocataireActuel == lesColocataires[i].Nom)
                 {
-
+                    idColocataire = lesColocataires[i].Id;
                 }
             }
 
             lbDepenses.Items.Clear();
             for (int i = 0; i < lesDepenses.Count(); i++)
             {
-                lbDepenses.Items.Add(lesDepenses[i]);
+                if (lesDepenses[i].IdColocataire == idColocataire)
+                {
+                    lbDepenses.Items.Add(lesDepenses[i]);
+                }
             }
         }
     }

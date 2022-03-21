@@ -47,7 +47,7 @@ namespace Dao
             using (MySqlConnection cnx = DaoConnectionSingleton.GetMySqlConnection())
             {
                 cnx.Open();
-                using (MySqlCommand cmd = new MySqlCommand("select login,nomColocataire from compte", cnx))
+                using (MySqlCommand cmd = new MySqlCommand("select login,password,nomColocataire from compte", cnx))
                 {
                     using (MySqlDataReader rdr = cmd.ExecuteReader())
                     {

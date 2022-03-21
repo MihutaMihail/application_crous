@@ -98,9 +98,9 @@ namespace View
                 case State.added:
                     bool nomDangereux = CaracteresDangereux(this.tbNom.Text);
                     bool prenomDangereux = CaracteresDangereux(this.tbPrenom.Text);
-                    bool mailDangereux = CaracteresDangereux(this.tbMail.Text);
+                    //bool mailDangereux = CaracteresDangereux(this.tbMail.Text);
 
-                    if (nomDangereux == true || prenomDangereux == true || mailDangereux == true)
+                    if (nomDangereux == true || prenomDangereux == true)
                     {
                         MessageBox.Show("Les caractères spéciaux sont interdites","ATTENTION");
                     }
