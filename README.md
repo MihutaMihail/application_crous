@@ -225,6 +225,34 @@ a --> UC4 : peut
     2a. Pour se connecter en tant que colocataire, il faut que l'admin créer un compte pour ce colocataire. (identifiant : siojjr / password : siojjr) <br> 
     3. Une fois connecté, on peut accèder à la gestion des colocataires (admin) ou à la gestion des dépenses/mise en répartition (admin,colocataire) <br>
 
+## 5. Les logs
+### Objectif
+→ L'objectif des logs est de sauvergarder chaque action faite par chaque utilisateur pour savoir qu'est-ce qu'ils ont fait, a quel heure, etc.
+### Cas Utilisation - Connexion
+```plantuml
+@startuml model1
+scale 1
+left to right direction
+actor Colocataire as c
+actor Admin as a
+
+package Connexion {
+    usecase "Connecter" as UC1
+    usecase "Accèder à la gestion des dépenses (chaque colocataire voit que ses propres dépenses)" as UC2
+    usecase "Accèder à la mise en répartition (Colocataire : que dans son appartement)" as UC3
+    usecase "Accèder à la gestion des colocataires" as UC4
+}
+c --> UC1
+UC1 --> UC2 : peut
+UC1 --> UC3 : peut
+a --|> c
+a --> UC4 : peut
+
+@enduml
+```
+### Maquette - Connexion
+![Logs.JPG](./View/Images_Maquettes/Logs.JPG)
+
 # Base de données
 ```plantuml
 @startuml model1
