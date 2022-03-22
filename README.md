@@ -120,7 +120,7 @@ JD .> UC2 : <<extends>>
     2. On clique sur le bouton **MODIFIER**.<br>
     3. On modifie les données qu'on a besoin de modifier. <br>
     4. On clique sur le bouton **Valider** pour valider les modifications. <br>
-    *. (les dépenses réparti ne sont plus modifiables)
+    *. (les dépenses réparti ne sont plus modifiables) <br>
     ATTENTION. Quand on clique sur "MODIFIER" pour une dépense, le colocataire ne s'affiche plus. Pour être capable de modifier la dépenses, il faut rechoisir le colocataire <br>
 
 **•** <i> **Supprimer une dépense** </i> <br>
