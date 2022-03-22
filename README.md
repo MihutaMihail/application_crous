@@ -225,7 +225,7 @@ a --> UC4 : peut
     2a. Pour se connecter en tant que colocataire, il faut que l'admin créer un compte pour ce colocataire. (identifiant : siojjr / password : siojjr) <br> 
     3. Une fois connecté, on peut accèder à la gestion des colocataires (admin) ou à la gestion des dépenses/mise en répartition (admin,colocataire) <br>
 
-## 5. Gérer les logs
+## 6. Gérer les logs
 ### Objectif
 → L'objectif des logs est de sauvergarder chaque action faite par chaque utilisateur pour savoir qu'est-ce qu'ils ont fait, a quel heure, etc.
 ### Cas Utilisation - Gérer les logs
