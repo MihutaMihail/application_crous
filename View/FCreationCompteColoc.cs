@@ -28,6 +28,7 @@ namespace View
             this.tbMdp.MaxLength = 15;
             this.nomColocataire = nomColocataire;
             btnValider.Click += btnValider_Click;
+            this.AcceptButton = btnValider;
         }
 
         private void btnValider_Click(object sender, EventArgs e)

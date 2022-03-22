@@ -28,6 +28,7 @@ namespace View
             this.tbIdentifiant.MaxLength = 15;
             this.tbMdp.MaxLength = 15;
             btnValider.Click += btnValider_Click;
+            this.AcceptButton = btnValider;
         }
 
         public StateConnection StateConnection { 

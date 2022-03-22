@@ -50,7 +50,16 @@ namespace View
             }
             else if (this.stateConnection == StateConnection.connectedUser)
             {
-                lbConnexion.Text = "Bonjour, " + identifiantAfficher;
+                string nomColocataireAfficher = null;
+                Comptes lesComptes = new DaoCompte().GetAll();
+                for (int i = 0; i < lesComptes.Count(); i++)
+                {
+                    if (identifiantAfficher == Chiffrement.DechiffrerBase64(lesComptes[i].Login))
+                    {
+                        nomColocataireAfficher = Chiffrement.DechiffrerBase64(lesComptes[i].NomColocataire);
+                    }
+                }
+                lbConnexion.Text = "Bonjour, " + nomColocataireAfficher;
                 new DaoLogs().CreationLog(identifiantLogs, adresseIp, DateTime.Now, "Connexion Colocataire", State.logCreation);
             }
             else if (this.stateConnection == StateConnection.error)

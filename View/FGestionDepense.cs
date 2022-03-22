@@ -26,7 +26,7 @@ namespace View
             btnDelete.Click += btnDelete_Click;
             this.identifiantLogs = identifiantLogs;
             this.adresseIp = adresseIp;
-            this.load(new DaoDepense().GetAll(),new DaoColocataire().GetAll());
+            this.load(new DaoDepense().GetAll());
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -62,26 +62,27 @@ namespace View
 
         private void saveDatabase()
         {
+            Colocataires lesColocataires = new Colocataires();
             Depenses lesDepenses = new Depenses();
             foreach (object o in lbDepenses.Items)
             {
                 lesDepenses.AjouterDepense((Depense)o);
             }
             new DaoDepense().SaveChanges(lesDepenses);
-            //this.load(lesDepenses);
+            this.load(lesDepenses);
         }
 
-        private void load(Depenses lesDepenses, Colocataires lesColocataires)
+        private void load(Depenses lesDepenses)
         {
             string nomColocataireActuel = null;
             int idColocataire = -333;
 
-
+            Colocataires lesColocataires = new DaoColocataire().GetAll();
             Comptes lesComptes = new DaoCompte().GetAll();
             for (int i = 0; i < lesComptes.Count(); i++){
                 if (lesComptes[i].Login == identifiantLogs)
                 {
-                    nomColocataireActuel = lesComptes[i].NomColocataire;
+                    nomColocataireActuel = Chiffrement.DechiffrerBase64(lesComptes[i].NomColocataire);
                 }
             }
             for (int i = 0; i < lesColocataires.Count(); i++)

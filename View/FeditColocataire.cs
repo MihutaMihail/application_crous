@@ -43,6 +43,7 @@ namespace View
             this.position = position;
             this.identifiantLogs = identifiantLogs;
             this.adresseIp = adresseIp;
+            this.AcceptButton = btnValider;
             switch (state)
             {
                 case State.added:

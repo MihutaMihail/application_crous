@@ -37,6 +37,7 @@ namespace View
             this.position = position;
             this.identifiantLogs = identifiantLogs;
             this.adresseIp = adresseIp;
+            this.AcceptButton = btnValider;
             this.load(new DaoColocataire().GetAll());
             switch (state)
             {
@@ -49,6 +50,7 @@ namespace View
                     this.tbTitre.Text = depense.Titre.ToString();
                     this.tbSelectFile.Text = depense.Justificatif.ToString();
                     this.tbMontant.Text = depense.Montant.ToString();
+                    this.btnAfficherImage.Visible = true;
                     this.Text = "Modification d'une dépense";
                     if (depense.Reparti == true) {
                         this.tbDate.ReadOnly = true;
