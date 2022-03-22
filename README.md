@@ -437,6 +437,7 @@ class CollectionLogs {
 
 Colocataire "1" --> "*" Depenses
 Colocataire "*" <-- Colocataires
+Colocataire "1" --> "*" Logs
 Depense "*" <-- Depenses
 Colocataire "1" .> "1" Compte : <<include>>
 Comptes --> "*" Compte
