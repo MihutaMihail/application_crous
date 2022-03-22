@@ -189,8 +189,8 @@ UC1 --> UC3
 
 ## 5. Connexion
 ### Objectif
-→ L'objectif est de pouvoir se connecter en tant que admin ou un colocataire pour prévenir les colocataires d'ajouter de nouveaux colocataires ou d'ajouter/modifier des dépenses qui ne leur appartient pas
-### Cas Utilisation - Solder une période
+→ L'objectif est de pouvoir se connecter en tant que admin ou un colocataire pour prévenir les colocataires d'ajouter de nouveaux colocataires ou d'ajouter/modifier/supprimer des dépenses qui ne leur appartient pas
+### Cas Utilisation - Connexion
 ```plantuml
 @startuml model1
 scale 1
@@ -200,7 +200,7 @@ actor Admin as a
 
 package Connexion {
     usecase "Connecter" as UC1
-    usecase "Accèder à la gestion des dépenses (Colocataire : que dans son appartement)" as UC2
+    usecase "Accèder à la gestion des dépenses (chaque colocataire voit que ses propres dépenses)" as UC2
     usecase "Accèder à la mise en répartition (Colocataire : que dans son appartement)" as UC3
     usecase "Accèder à la gestion des colocataires" as UC4
 }
@@ -222,6 +222,7 @@ a --> UC4 : peut
 **•** <i> **Connexion** </i> <br>
     1. On clique sur le bouton **Connexion** pour se connecter. <br>
     2. Une fenêtre va apparaître qui va nous permettre a mettre nos identifiants pour se connecter en tant que admin ou colocataire. <br>
+    2a. Pour se connecter en tant que colocataire, il faut que l'admin créer un compte pour ce colocataire. (identifiant : siojjr / password : siojjr) <br> 
     3. Une fois connecté, on peut accèder à la gestion des colocataires (admin) ou à la gestion des dépenses/mise en répartition (admin,colocataire) <br>
 
 # Base de données
@@ -255,11 +256,23 @@ class Colocataire {
 class Compte {
     login : VARCHAR[15]
     password : VARCHAR[15]
+    nomColocatare : VARCHAR[20]
     PRIMARY KEY (login)
+    UNIQUE KEY (login, password);
+}
+
+class Logs {
+    id : INT
+    identifiant : VARCHAR[50]
+    adresseIp : VARCHAR[50]
+    dateLog : DateTime
+    action : VARCHAR[100]
+    PRIMARY KEY (id)
 }
 
 Colocataire -> Depenses : "1"   effectue   "*"
 Colocataire -d-> Compte : "1" possède "1"
+Colocataire -l-> Logs : "1" possède "*"
 @enduml
 ```
 
@@ -292,14 +305,14 @@ CREATE TABLE Depenses (
     PRIMARY KEY (id)
 ) ENGINE = InnoDB;
 
-CREATE TABLE compte (
+CREATE TABLE Compte (
     login VARCHAR(15) NOT NULL,
     password VARCHAR(15) NOT NULL,
     nomColocataire VARCHAR(20) NOT NULL,
     PRIMARY KEY (login)
 ) ENGINE = InnoDB;
 
-CREATE TABLE logs (
+CREATE TABLE Logs (
     id INTEGER(10) NOT NULL AUTO_INCREMENT,
     identifiant VARCHAR(50),
     adresseIp VARCHAR(50),
@@ -309,6 +322,8 @@ CREATE TABLE logs (
 ) ENGINE = InnoDB;
 
 ALTER TABLE Depenses ADD CONSTRAINT fk_Colocataire_A_Depenses FOREIGN KEY (idColocataire) REFERENCES Colocataire(id);
+ALTER TABLE Compte ADD CONSTRAINT login UNIQUE(login);
+ALTER TABLE Compte ADD CONSTRAINT password_unique UNIQUE(password);
 ```
 
 
@@ -385,9 +400,11 @@ class Colocataires {
 class Compte {
     - login : string
     - password : string
+    - nomColocataire : string
     + string Login() : string
     + string Password() : string
-    + Compte(string login, string password) : void
+    + string NomColocataire() : string
+    + Compte(string login, string password, string nomColocataire) : void
 }
 
 class Comptes {
@@ -397,11 +414,33 @@ class Comptes {
     + void AjouterCompte(Compte nouveauCompte) : void
 }
 
+class Logs {
+    - id : int
+    - identifiant : string
+    - adresseIp : string
+    - dateLog : DateTime
+    - action : string
+    + Logs(int id, string identifiant, string adresseIp, DateTime dateLog, string action)
+    + int Id() : int
+    + string Identifiant() : string
+    + string AdresseIp() : string
+    + DateTime DateLog() : DateTime
+    + string Action() : string
+}
+
+class CollectionLogs {
+    - List<Logs> leslogs
+    + int Count() : int
+    + Logs this[(int index)] : Logs
+    + void AjouterLog(Logs nouveauLogs) : void
+}
+
 Colocataire "1" --> "*" Depenses
 Colocataire "*" <-- Colocataires
 Depense "*" <-- Depenses
 Colocataire "1" .> "1" Compte : <<include>>
 Comptes --> "*" Compte
+CollectionLogs "*" <-- Logs
 
 @enduml
 ```
@@ -467,3 +506,16 @@ Comptes --> "*" Compte
 → Cette méthode permet d'avoir l'index d'un élément qu'on spécifie dans la collection<br>
 **•** **void AjouterCompte(Compte nouveauCompte) : void**<br>
 → Cette méthode permet d'ajouter une nouvelle dépense dans la collection **lesComptes**<br>
+### Logs
+**•** **int Id() : string ... string Action() : string** <br>
+→ Accésseurs & Mutateurs des données membres privées<br>
+**•** **Logs(int id, string identifiant, string adresseIp, DateTime dateLog, string action)** <br>
+→ Constructeur <br>
+### CollectionLogs
+**•** **int Count() : int**<br>
+→ Cette méthode permet de compter le nombre des dépenses dans la collection **lesLogs**<br>
+**•** **Logs this[int index] : Logs**<br>
+→ Cette méthode permet d'avoir l'index d'un élément qu'on spécifie dans la collection<br>
+**•** **void AjouterLogs(Logs nouveauLogs) : void**<br>
+→ Cette méthode permet d'ajouter une nouvelle dépense dans la collection **lesLogs**<br>
+

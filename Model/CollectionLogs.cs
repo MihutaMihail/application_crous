@@ -26,9 +26,5 @@ namespace Model
             lesLogs.Add(nouveauLog);
         }
 
-        public void SupprimerLog(Logs log)
-        {
-            lesLogs.Remove(log);
-        }
     }
 }

@@ -110,6 +110,10 @@ namespace View
                         Convert.ToInt32(this.tbTel.Text), this.tbMail.Text, Convert.ToInt32(this.tbAppartement.Text), this.state);
                         items.Add(nouveauColocataire);
                         new DaoLogs().CreationLog(identifiantLogs, adresseIp, DateTime.Now, "Ajout Nouveau Colocataire", State.logCreation);
+
+                        string nomColocataire = TbNom;
+                        FCreationCompteColoc ccc = new FCreationCompteColoc(nomColocataire);
+                        ccc.ShowDialog();
                     }
                     break;
                 case State.modified:

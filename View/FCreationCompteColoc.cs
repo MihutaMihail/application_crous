@@ -40,7 +40,8 @@ namespace View
             if (resultat == true)
             {
                 string loginChiffrer = Chiffrement.ChiffrerBase64(this.login);
-                string passwordChiffrer =Chiffrement.ChiffrerBase64(this.password);
+                string passwordChiffrer = Chiffrement.ChiffrerBase64(this.password);
+                string nomColocataire = Chiffrement.ChiffrerBase64(this.nomColocataire);
 
                 new DaoCompte().CreationCompte(loginChiffrer, passwordChiffrer, nomColocataire, State.compteCreation);
 
