@@ -28,13 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Apaye = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AuraitDuPayer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoldesARegler = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSolderPeriode = new System.Windows.Forms.Button();
+            this.lbAppartement = new System.Windows.Forms.Label();
+            this.txtAppartement = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,14 +48,14 @@
             this.Apaye,
             this.AuraitDuPayer,
             this.SoldesARegler});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Location = new System.Drawing.Point(4, 5);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(443, 157);
@@ -93,17 +95,38 @@
             this.btnSolderPeriode.Text = "Solder une Période";
             this.btnSolderPeriode.UseVisualStyleBackColor = true;
             // 
+            // lbAppartement
+            // 
+            this.lbAppartement.AutoSize = true;
+            this.lbAppartement.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbAppartement.Location = new System.Drawing.Point(116, 206);
+            this.lbAppartement.Name = "lbAppartement";
+            this.lbAppartement.Size = new System.Drawing.Size(173, 18);
+            this.lbAppartement.TabIndex = 30;
+            this.lbAppartement.Text = "Numéro d\'appartment : ";
+            // 
+            // txtAppartement
+            // 
+            this.txtAppartement.Location = new System.Drawing.Point(295, 204);
+            this.txtAppartement.Name = "txtAppartement";
+            this.txtAppartement.ReadOnly = true;
+            this.txtAppartement.Size = new System.Drawing.Size(24, 20);
+            this.txtAppartement.TabIndex = 31;
+            // 
             // FMiseEnRepartition
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(451, 208);
+            this.ClientSize = new System.Drawing.Size(451, 233);
+            this.Controls.Add(this.txtAppartement);
+            this.Controls.Add(this.lbAppartement);
             this.Controls.Add(this.btnSolderPeriode);
             this.Controls.Add(this.dataGridView1);
             this.Name = "FMiseEnRepartition";
             this.Text = "DataGridView";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -115,5 +138,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn AuraitDuPayer;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoldesARegler;
         private System.Windows.Forms.Button btnSolderPeriode;
+        private System.Windows.Forms.Label lbAppartement;
+        private System.Windows.Forms.TextBox txtAppartement;
     }
 }

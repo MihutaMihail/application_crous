@@ -37,29 +37,88 @@ namespace View
 
         private void load(Colocataires lesColocataires, Depenses lesDepenses)
         {
-            int nombreColocataires = lesColocataires.Count();
-            for (int i = 0; i < lesColocataires.Count(); i++)
+            Colocataires colocatairesMemeAppartement = trouverAppartement(lesColocataires);
+            int numAppartment = numeroAppartement(lesColocataires);
+
+            int nombreColocataires = colocatairesMemeAppartement.Count();
+            for (int i = 0; i < colocatairesMemeAppartement.Count(); i++)
             {
                 DataGridViewRow row = (DataGridViewRow)dataGridView1.Rows[0].Clone();
                 dataGridView1.Rows.Add(row);
-                dataGridView1.Rows[i].Cells[0].Value = lesColocataires[i].Nom;
+                dataGridView1.Rows[i].Cells[0].Value = colocatairesMemeAppartement[i].Nom;
             }
-            for (int i = 0; i < lesColocataires.Count(); i++)
+            for (int i = 0; i < colocatairesMemeAppartement.Count(); i++)
             {
-                int index = lesColocataires.GetIndex(i);
+                int index = colocatairesMemeAppartement.GetIndex(i);
                 dataGridView1.Rows[i].Cells[1].Value = lesDepenses.APayer(index).ToString();
             }
-            for (int i = 0; i < lesColocataires.Count(); i++)
+            for (int i = 0; i < colocatairesMemeAppartement.Count(); i++)
             {
-                decimal valeur = Convert.ToDecimal(lesDepenses.AuraitDuPayer()) / nombreColocataires;
+                decimal valeur = Convert.ToDecimal(lesDepenses.AuraitDuPayer(colocatairesMemeAppartement)) / nombreColocataires;
                 dataGridView1.Rows[i].Cells[2].Value = Math.Round(valeur,2);
             }
-            for (int i = 0; i < lesColocataires.Count(); i++)
+            for (int i = 0; i < colocatairesMemeAppartement.Count(); i++)
             {
-                decimal valeur = Convert.ToDecimal(lesDepenses.AuraitDuPayer()) / nombreColocataires;
-                int index = lesColocataires.GetIndex(i);
+                decimal valeur = Convert.ToDecimal(lesDepenses.AuraitDuPayer(colocatairesMemeAppartement)) / nombreColocataires;
+                int index = colocatairesMemeAppartement.GetIndex(i);
                 dataGridView1.Rows[i].Cells[3].Value = Math.Round(valeur - lesDepenses.APayer(index),2);
             }
+        }
+
+        private Colocataires trouverAppartement(Colocataires lesColocataires)
+        {
+            int numAppartement = -333;
+            string nomColocataireActuel = null;
+            Colocataires colocatairesMemeAppartement = new Colocataires();
+            Comptes lesComptes = new DaoCompte().GetAll();
+
+            for (int i = 0; i < lesComptes.Count(); i++)
+            {
+                if (lesComptes[i].Login == identifiantLogs)
+                {
+                    nomColocataireActuel = Chiffrement.DechiffrerBase64(lesComptes[i].NomColocataire);
+                }
+            }
+            for (int i = 0; i < lesColocataires.Count(); i++)
+            {
+                if (nomColocataireActuel == lesColocataires[i].Nom)
+                {
+                    numAppartement = lesColocataires[i].Appartement;
+                    this.txtAppartement.Text = Convert.ToString(numAppartement);
+                }
+            }
+            for (int i = 0; i < lesColocataires.Count(); i++)
+            {
+                if (lesColocataires[i].Appartement == numAppartement)
+                {
+                    colocatairesMemeAppartement.AjouterColocataire(lesColocataires[i]);
+                }
+            }
+            return colocatairesMemeAppartement;
+        }
+
+        private int numeroAppartement(Colocataires lesColocataires)
+        {
+            int numAppartement = -333;
+            string nomColocataireActuel = null;
+            Colocataires colocatairesMemeAppartement = new Colocataires();
+            Comptes lesComptes = new DaoCompte().GetAll();
+
+            for (int i = 0; i < lesComptes.Count(); i++)
+            {
+                if (lesComptes[i].Login == identifiantLogs)
+                {
+                    nomColocataireActuel = Chiffrement.DechiffrerBase64(lesComptes[i].NomColocataire);
+                }
+            }
+            for (int i = 0; i < lesColocataires.Count(); i++)
+            {
+                if (nomColocataireActuel == lesColocataires[i].Nom)
+                {
+                    numAppartement = lesColocataires[i].Appartement;
+                }
+            }
+            return numAppartement;
         }
 
         private void btnSolderPeriode_Click(object sender, EventArgs e)
