@@ -108,6 +108,7 @@ JD .> UC2 : <<extends>>
 ### Enchaînement Textuel - Enregistrer les dépenses
 **•** <i> **Consulter la liste des dépenses** </i> <br>
     1. On clique sur le bouton **Gestion des Dépenses** pour consulter les dépenses existantes. <br>
+    → **Les dépenses sont afficher par colocataire. Ceci signifie que chaque colocataire peut voir ses propres dépenses mais pas celles des autres**<br>
 <br>
 **•** <i> **Ajouter une dépense** </i> <br>
     1. On clique sur le bouton **Gestion des Dépenses** pour accéder au gestion des dépenses. <br>
