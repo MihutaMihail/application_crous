@@ -104,6 +104,7 @@ JD .> UC2 : <<extends>>
 ![AjouterDepense.JPG](./View/Images_Maquettes/AjouterDepense.JPG)
 ![ModifierDepense.JPG](./View/Images_Maquettes/ModifierDepense.JPG)
 ![justificatif.JPG](./View/Images_Maquettes/justificatif.JPG)
+![reparti.JPG](./View/Images_Maquettes/reparti.JPG)
 ### Enchaînement Textuel - Enregistrer les dépenses
 **•** <i> **Consulter la liste des dépenses** </i> <br>
     1. On clique sur le bouton **Gestion des Dépenses** pour consulter les dépenses existantes. <br>
@@ -121,11 +122,14 @@ JD .> UC2 : <<extends>>
     3. On modifie les données qu'on a besoin de modifier. <br>
     4. On clique sur le bouton **Valider** pour valider les modifications. <br>
     *. (les dépenses réparti ne sont plus modifiables) <br>
-    ATTENTION. Quand on clique sur "MODIFIER" pour une dépense, le colocataire ne s'affiche plus. Pour être capable de modifier la dépenses, il faut rechoisir le colocataire <br>
+    **ATTENTION. Quand on clique sur "MODIFIER" pour une dépense, le colocataire ne s'affiche plus. Pour être capable de modifier la dépenses, il faut rechoisir le colocataire** <br>
 
 **•** <i> **Supprimer une dépense** </i> <br>
     1. On clique sur la dépense qu'on veut supprimer <br>
     2. On clique sur le bouton **SUPPRIMER** <br>
+
+**•** <i> **Répartir une dépense** </i> <br>
+    → Quand on solde une période, depuis la mise en répartition, toutes les dépenses vont être réparti. Les dépenses qui ont été réparti, elles ne sont plus modifiables. Le seul chose qu'on peut faire c'est de visualiser l'image choisi au moment de la création de la dépense. (ces dépenses la ne sont plus prises en compte pour le calcul pour la mise en répartition)<br>
 
 ## 3. Mise en répartition
 ### Objectif
@@ -154,7 +158,7 @@ UC3 <. UC1 : <<include>>
 **•** <i> **Mise en répartition** </i> <br>
     1. On clique sur le bouton **Mise en répartition** pour lancer la mise en répartition. <br>
     2. Ceci va calculer le montant payé par chaque colocataire, le montant qu'ils aurait dû payer et les soldes à régler.<br>
-    ATTENTION. Pour le moment les dépenses affiche la mise en répartition de tous les colocataires. Normalement c'est censé afficher la mise en répartiion que pour les colocataires dans la même appartement. De cette façon les colocataires qui n'habitent dans le même appartement ne peuvent pas voir les dépenses des autres colocataires.<br>
+    **ATTENTION. Pour le moment les dépenses affiche la mise en répartition de tous les colocataires. Normalement c'est censé afficher la mise en répartiion que pour les colocataires dans la même appartement. De cette façon les colocataires qui n'habitent dans le même appartement ne peuvent pas voir les dépenses des autres colocataires.**<br>
 
 ## 4. Solder une période
 ### Objectif
@@ -226,7 +230,7 @@ a --> UC4 : peut
     2. Une fenêtre va apparaître qui va nous permettre a mettre nos identifiants pour se connecter en tant que admin ou colocataire. <br>
     2a. Pour se connecter en tant que colocataire, il faut que l'admin créer un compte pour ce colocataire. (identifiant : siojjr / password : siojjr) <br> 
     3. Une fois connecté, on peut accèder à la gestion des colocataires (admin) ou à la gestion des dépenses/mise en répartition (admin,colocataire) <br>
-    ATTENTION. Pour le moment, l'admin n'a pas l'accès aux dépenses des colocataires. Il y a que les colotaires qu'ils peuvent voir leur propres dépenses. <br>
+    **ATTENTION. Pour le moment, l'admin n'a pas l'accès aux dépenses des colocataires. Il y a que les colotaires qu'ils peuvent voir leur propres dépenses.** <br>
 
 ## 6. Gérer les logs
 ### Objectif
