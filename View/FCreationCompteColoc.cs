@@ -19,14 +19,18 @@ namespace View
         string login;
         string password;
         string nomColocataire;
+        string identifiantLogs;
+        string adresseIp;
 
-        public FCreationCompteColoc(string nomColocataire)
+        public FCreationCompteColoc(string nomColocataire,string identifiantLogs, string adresseIp)
         {
             InitializeComponent();
             this.Text = "Compte colocataire";
             this.tbIdentifiant.MaxLength = 15;
             this.tbMdp.MaxLength = 15;
             this.nomColocataire = nomColocataire;
+            this.identifiantLogs = identifiantLogs;
+            this.adresseIp = adresseIp;
             btnValider.Click += btnValider_Click;
             this.AcceptButton = btnValider;
         }
@@ -45,6 +49,7 @@ namespace View
                 string nomColocataire = Chiffrement.ChiffrerBase64(this.nomColocataire);
 
                 new DaoCompte().CreationCompte(loginChiffrer, passwordChiffrer, nomColocataire, State.compteCreation);
+                new DaoLogs().CreationLog(identifiantLogs, adresseIp, DateTime.Now, "Création Compte", State.logCreation);
 
                 this.Close();
             } else

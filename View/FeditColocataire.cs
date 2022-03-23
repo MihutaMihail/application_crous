@@ -113,7 +113,7 @@ namespace View
                         new DaoLogs().CreationLog(identifiantLogs, adresseIp, DateTime.Now, "Ajout Nouveau Colocataire", State.logCreation);
 
                         string nomColocataire = TbNom;
-                        FCreationCompteColoc ccc = new FCreationCompteColoc(nomColocataire);
+                        FCreationCompteColoc ccc = new FCreationCompteColoc(nomColocataire, identifiantLogs, adresseIp);
                         ccc.ShowDialog();
                     }
                     break;
