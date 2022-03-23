@@ -163,10 +163,22 @@ namespace View
         }
         private void load(Colocataires lesColocataires)
         {
+            string nomColocataireActuel = null;
+            Comptes lesComptes = new DaoCompte().GetAll();
+            for (int i = 0; i < lesComptes.Count(); i++)
+            {
+                if (lesComptes[i].Login == identifiantLogs)
+                {
+                    nomColocataireActuel = Chiffrement.DechiffrerBase64(lesComptes[i].NomColocataire);
+                }
+            }
             cbColocataire.Items.Clear();
             for (int i = 0; i < lesColocataires.Count(); i++)
             {
-                cbColocataire.Items.Add(lesColocataires[i]);
+                if (nomColocataireActuel == lesColocataires[i].Nom)
+                {
+                    cbColocataire.Text = lesColocataires[i];
+                }
             }
         }
     }
