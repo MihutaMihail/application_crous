@@ -177,7 +177,8 @@ namespace View
             {
                 if (nomColocataireActuel == lesColocataires[i].Nom)
                 {
-                    cbColocataire.Text = lesColocataires[i];
+                    cbColocataire.Items.Add(lesColocataires[i]);
+                    cbColocataire.SelectedItem = lesColocataires[i];
                 }
             }
         }
