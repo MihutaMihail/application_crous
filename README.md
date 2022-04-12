@@ -12,6 +12,12 @@ Lors du clônage si l'application ne marche pas, il existe quelques solutions a 
 → Des fois on peut avoir une problème comme si un nugget **Renci** n'existe pas. Pour résoudre ce problème il faut <br>
 Clique-droit sur **VIEW** → **Manage NuGet Packages** → Chercher **Renci.SshNet.Async** → Installer
 
+# Préparer l'environnement
+Le clonage de l'application ne suffit pas pour son fonctionnement. L'application s'appuie sur une base de données donc il faut créer cette base de données avant tout. Vous pouvez trouver le script SQL en bas du ReadMe. Ensuite, il faut dire à l'application quel base de données il faut utiliser. On fait ceci dans **View -> FApplicationCrous.cs -> F7** <br>
+![bdd.JPG](./View/Images_Maquettes/bdd.JPG) <br>
+C'est avec la dernière ligne qu'on va paramétrer la connection à la base de données <br>
+**DaoConnectionSingleton.SetStringConnection("root","MOT_DE_PASSE","localhost","NOM_BDD");**
+
 # Contexte
 Le C.R.O.U.S (Centre Régional de Oeuvres Universitaires et Scolaires) est un établissement public placé sous la tutelle du Ministère de l'Enseignement supérieur. Il a pour mission d'améliorer les conditions de vie et de travail des étudiants de l'académie de Créteil.
 
@@ -123,7 +129,6 @@ JD .> UC2 : <<extends>>
     3. On modifie les données qu'on a besoin de modifier. <br>
     4. On clique sur le bouton **Valider** pour valider les modifications. <br>
     *. (les dépenses réparti ne sont plus modifiables) <br>
-    **ATTENTION. Quand on clique sur "MODIFIER" pour une dépense, le colocataire ne s'affiche plus. Pour être capable de modifier la dépenses, il faut rechoisir le colocataire** <br>
 
 **•** <i> **Supprimer une dépense** </i> <br>
     1. On clique sur la dépense qu'on veut supprimer <br>
@@ -159,7 +164,6 @@ UC3 <. UC1 : <<include>>
 **•** <i> **Mise en répartition** </i> <br>
     1. On clique sur le bouton **Mise en répartition** pour lancer la mise en répartition. <br>
     2. Ceci va calculer le montant payé par chaque colocataire, le montant qu'ils aurait dû payer et les soldes à régler.<br>
-    **ATTENTION. Pour le moment les dépenses affiche la mise en répartition de tous les colocataires. Normalement c'est censé afficher la mise en répartiion que pour les colocataires dans la même appartement. De cette façon les colocataires qui n'habitent dans le même appartement ne peuvent pas voir les dépenses des autres colocataires.**<br>
 
 ## 4. Solder une période
 ### Objectif
@@ -231,7 +235,7 @@ a --> UC4 : peut
     2. Une fenêtre va apparaître qui va nous permettre a mettre nos identifiants pour se connecter en tant que admin ou colocataire. <br>
     2a. Pour se connecter en tant que colocataire, il faut que l'admin créer un compte pour ce colocataire. (identifiant : siojjr / password : siojjr) <br> 
     3. Une fois connecté, on peut accèder à la gestion des colocataires (admin) ou à la gestion des dépenses/mise en répartition (admin,colocataire) <br>
-    **ATTENTION. Pour le moment, l'admin n'a pas l'accès aux dépenses des colocataires. Il y a que les colotaires qu'ils peuvent voir leur propres dépenses.** <br>
+    **ATTENTION. Pour le moment, l'admin n'a pas l'accès aux dépenses des colocataires. Il y a que les colocataires qu'ils peuvent voir leur propres dépenses.** <br>
 
 ## 6. Gérer les logs
 ### Objectif
@@ -315,7 +319,7 @@ drop database if exists crous;
 CREATE DATABASE crous;
 USE crous;
 
- CREATE TABLE Colocataire (
+CREATE TABLE Colocataire (
     id INTEGER(10) NOT NULL AUTO_INCREMENT,
     nom VARCHAR(20),
     prenom VARCHAR(20),
