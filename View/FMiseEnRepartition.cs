@@ -23,7 +23,7 @@ namespace View
             btnSolderPeriode.Click += btnSolderPeriode_Click;
             this.identifiantLogs = identifiantLogs;
             this.adresseIp = adresseIp;
-            this.Text = "Calculer la répartition"; 
+            this.Text = "Calculer la répartition";  
             this.load(new DaoColocataire().GetAll(), new DaoDepense().GetAll());
             this.dataGridView1.Columns["Nom"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.dataGridView1.Columns["APaye"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;

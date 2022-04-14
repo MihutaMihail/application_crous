@@ -31,7 +31,6 @@ namespace View
             btnDepenses.Click += btnDepenses_Click;
             btnConnexion.Click += btnConnexion_Click;
             DaoConnectionSingleton.SetStringConnection("root", "siojjr", "localhost", "crous");
-
         }
 
         private void btnConnexion_Click(object sender, EventArgs e)
