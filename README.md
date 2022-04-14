@@ -1,5 +1,10 @@
 # **Application-CROUS**
 
+# Accèder à l'application
+Pour se connecter à l'application et être capable d'accèder à la gestion des colotaires il faut être connecter en tant qu'admin. <br>
+► Identifiant → **siojjr** <br>
+► Mot de passe → **siojjr** <br>
+
 # (Problèmes)
 Lors du clônage si l'application ne marche pas, il existe quelques solutions a mettre en place <br>
 **•** Il faut définir **VIEW** comme projet de démarrage <br>
