@@ -41,6 +41,7 @@ Pour réaliser ce projet on a mis en oeuvre plusiers outils :
 ### Objectif 
 **•** L'objectif est de tenir en compte toutes les colocataires qui utilisent l'application ainsi que modifier ou supprimer un colocataire si besoin.
 ### Cas Utilisation - Gérer les colocataires
+![Image](https://plantuml.gitlab-static.net/png/U9nrqByEWa0C1l2zJz6mCm2xmJ2uw6HyWAOKF3qekUij6jzTDF4F0vs-DBzyJLf7es1fy3XeAxw0oEG52_3I6PfYSFtPi7L1s9oEG6mQi56lJ4Rp6YaYmqHyfLvm9q5kUub_8Du1vqbHcA9WjhreCWcOHkIVobuzfwPOseEshdDhk5pYOvgcu8OrNS436FDyypxpIUKtLL3BsCwlW2VJbLfR)
 ```plantuml
 @startuml model1
 scale 1
@@ -90,6 +91,7 @@ c --> UC3
 → L'objectif est d'enregistrer toutes les dépenses faite par chaque colocataire ainsi que les modifier en cas de besoin.
 
 ### Cas Utilisation - Enregistrer les dépenses
+![Image](https://plantuml.gitlab-static.net/png/U9nra45gmq0CHVSwnIVx5EpiIZ21k1kJhaeF86OKT-XunemqK2WzKC_HYzKDRI0XrKQVhyVdevqQ5wjJn9Izn8RKSHGq5ELei8mInXU33qMSXPo8dUM2VOxPiV5YWnMEQ6RtogFW8HKPWrgHSX3jlpvdIIgATy8oLSMn2bPF73GKr2Jmlypg9-bvtro2Zzc7Ov2RQ8khq3hF9KotuSqbErIrVuA7dZx8ORtkJdN-L7jM6nfwt9skkCTsAsycoMlNdVtsojyjUtaoVGDl47SK)
 ```plantuml
 @startuml model1
 scale 1
@@ -146,6 +148,7 @@ JD .> UC2 : <<extends>>
 ### Objectif
 → L'objectif de la mise en répartition est de calculer le montant que chaque personne a payé, aurait du payer et les soldes à régler sur une certaine période (c'est les colocataires qui choisissent quand ils veulent lancer la répartition). Une fois calculé, ces données vont être afficher dans un tableau pour que la personne soit capable de le visualer.
 ### Cas Utilisation - Mise en répartition
+![Image](https://plantuml.gitlab-static.net/png/U9nraCrgmq0CXEzwYY5t1spVWZ41qrjpAJHt8IlfKdatxC-fz87o77cnhaiEoI42mJ1ycW7jK-QOos9OmgpMKX8sHKkcfumS4DtvAsDsKIMxu8abXuWfM13EN6rmWX1TMBxvh3Yuf6_-utQzr5otdlmGwfIamacnUMSl6c6C-01jrfZFgNrcZouLjfhuYk-U-ObDYhsaU_ebGTEC_qrrxxghkiUmNMtiC0pEYvLPnv7swkVw7Ve3zqjYNm00)
 ```plantuml
 @startuml model1
 scale 1
@@ -174,6 +177,7 @@ UC3 <. UC1 : <<include>>
 ### Objectif
 → L'objectif de solder une période est de répartir les dépenses pour qu'ils ne sont pris plus en compte lors de la prochaine répartition.
 ### Cas Utilisation - Solder une période
+![Image](https://plantuml.gitlab-static.net/png/U9nLq44A0Z4C1T1zJl5nhp3EJcGGtBeGnGE4D6gnjaFRMOa7yXnUp8pEna2XIHzfoAPKpdMu1zoJqz1G4GwAXeAUAsf2zfThXVDPfVeKYQMcZ6qAIRYobS45GjIptFYYEARWD9-Yxj-lxAqd7WIBeQXmKSn-04DKz1EPZJrEs-OVxZYAmS38xrTlK_fnWCak_-rX4iQrm5cciMYPS4jF4ipdtVSJErYCroLMMAzzb30uxRhlmm-rH1kDpjP27yvFNqW0)
 ```plantuml
 @startuml model1
 scale 1
@@ -207,6 +211,7 @@ UC1 --> UC3
 ### Objectif
 → L'objectif est de pouvoir se connecter en tant que admin ou un colocataire pour prévenir les colocataires d'ajouter de nouveaux colocataires ou d'ajouter/modifier/supprimer des dépenses qui ne leur appartient pas
 ### Cas Utilisation - Connexion
+![Image](https://plantuml.gitlab-static.net/png/U9oDaK5E0p4CHVSvXTLLMNGnRLSigbOz0mUm73EDo2GXyI0au2uiuHnpCPnHHXesY4YHhFVzzPtuN0IpZ8E78LhsdIc4dg4pdXy5949s_Kt0kimaBWQ39373DVf8AAWOi00rVB632nMWCGdf2NlMrX3uLQtmPa3FM9YmC6ncWOJpfZeUhjrl-K8qVLdEC7s2H-Yvr7omNC1Etub3qMfBDtmU6MWrpqjq0XNMXfHZoclBNKlR_vasE8KS8AjD_yVDqTlrg-_d28kXG54DK-tZWOCi2OT_lsSrVMdce_am1BlTQVuOlQtUQt3YKLRei21Ky7wgosZASL7CcOFL9PiVT6sc3000)
 ```plantuml
 @startuml model1
 scale 1
@@ -246,6 +251,7 @@ a --> UC4 : peut
 ### Objectif
 → L'objectif des logs est de sauvergarder chaque action faite par chaque utilisateur pour savoir qu'est-ce qu'ils ont fait, a quel heure, etc.
 ### Cas Utilisation - Gérer les logs
+![Image](https://plantuml.gitlab-static.net/png/U9nLZp5g0q4CHNkTukCcrGOsfJ7BmaAgT247a3NoUiZiZ9dHf34-KCxXYtcyTcEXGZnzFT1OZBFL9M19JaDFHJWeUWfwC5X2zlFHu7nMCPyYiLZAc598miODWmk4wCJooxFYAyq5PqAhMbIuA3QVQwx6bbqbc_lDpzI_fhwv_kdCsMc6urWG6FlxnhLECLx_jR6tXm87zgPFqGTTY0HTDwpM1l2-ZjXYj_DHGdKw34GqQdJjMRe1HBvFOm00)
 ```plantuml
 @startuml model1
 scale 1
@@ -267,6 +273,7 @@ UC2 .> UC1 : <<include>>
 ![Logs.JPG](./View/Images_Maquettes/Logs.JPG)
 
 # Base de données
+![Image](https://plantuml.gitlab-static.net/png/U9nrKqrBmq0GlUTN33rPKJ22bmhIK5CDjgd6L2ZImvATbfLDDcItU13_Iu_-3lrZJfB6Rfju2Pltvit7szcXDgmmcrH2gZXArz49amYkuoIIQGstc6EcKSE70o0u3208OpfoPd374NRhnJw1HfYY_7tnej6z5xrUNYm9VTje8rOYOVIrIFUYObEL6POP8iQJcLUcBZ2dbWGXSH0kgDohkwoAZvHKb8M9gaZTnsCKJBre0G_-0au4txNK9sOyY_pWBcmOIzo7o1_xaH-E_6UmyACevxCnmIvS-d3W142cqjRG07c1tGHReotUf35A2s2yGArnoeIqn5UDE2_DmHGhomuCQfdntp1fRfevf5gBpBwKgrtp5Fck2jv1qL1DuexBFcgYoj-ly7aOFCrz2pxxgzA_thStKMlTPRBWD3AjKRqhBLjgquAyWojNbRAMQqgdMAHOIn8ZLDPUo9QDbNVs2fpVx9_507fk3xwttrjShJ0n6opFq3lj7KeuYNRErv9SQVtpnR7yEGoL55gvS1n8EOUOSNgipYz0Z1Y_)
 ```plantuml
 @startuml model1
 scale 1
@@ -369,6 +376,7 @@ ALTER TABLE Compte ADD CONSTRAINT password_unique UNIQUE(password);
 
 
 # Diagramme de Classe
+![Image](https://plantuml.gitlab-static.net/png/U9orLzzhsp0GVlTV8VAKBCwWhoM4XWP6HXjAsxUn1pVMCXNPCfRSROp-xvDEadsIvMOTR0-BhVlrtTrtP_LAgg9LNSL99KhABp9vB3Wb5rbsv8MKP4SRMajAVcT4_riHLf9BmchbNij2KNrWVXvPHTsfOgernrArh3wvm-TEAlQD7GlzVoohHAsAMXbFedlYtazB6msEwUCd8NYFu5fmeTqK388CO7GgWER1_CBPqaZ9lfmlaEAIx1nSU03P3YUmTE38eya3v0XjB_sC4XehsKJ8hSqCv2Yt9MH4xcs28ErJzA1HcX5-ID2c2nASi6_Ot3XXPTxdQdgKU-pGeVuDjoRto5rFSelKjIAtNX6q7ADP_2yGVnVsHMXwtjDAlDYwcFUee-817d2_ijUGwx8d-msJQkrEDuHJwJLGdwv5vzgB-ENILz-P_69hK9Vqv-AhOPgLOSJRPz4fsZh9t5lNedkXd5Ft7YK4bWzTqxIwhYFRCcdZYhfjYb-qdOzgEkAer-_QWgbTTmTcIElLRmayaHEReXPLFFLDInEdnIcSwhgh7YaFZegofLBIsuBnaNLZU4eh2jla7tQ38yf1L9E3VmUunsBZRtkAXzMS7Y27TAJjaCo4oo6bT-m1l3tS5Fg86dp_R7kGGo1TUVjWIzxhe7A7OvTWvBkdxtLCeMW0aGI646kU6KJCozGm8dbY8749iISOpAAB9cToDgVS72Vj3SXFLEqDpldGj36lUgKXhHJ5j9hXSw3Kbx-lVzMeONgvEB5wDB1QyOTeo_XSOmk_oQcfkJ4UfsVAkPvKE0GnnceMlwyMm1z8xfpZ2KXrBoh6Y8Vcq54Gv6VP1oLD4y-8afo3D9nfppJpDeQfIogdzYqhzRxGtrDxhGftf9tdVHCBpDTP-uplGzhYg9YeuvARyF5kGM7Z_R5lSX9S1BJze0CH5gYYKvjvFqIO9ClMHnnh17S_ZU2DwzyMCCtJqw8_p20EUW0yCIV04at2SnG1wnH1RWPRJ0y366mSCympvWKUmzd5ZAnM6pBxCEklDg625gnNgs3rJde0GFvwuItJRhNLnmtyE1fValMQrKVUbNIpoVnmUSzk5gAI-X0GDxkYTQd_ICd-03Asz0W0)
 ```plantuml
 @startuml model1
 scale 1
